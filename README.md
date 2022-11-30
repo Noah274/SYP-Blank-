@@ -6,7 +6,7 @@
 + Lorenz Kasiezcka
 
 ## Ideas
-+ Skille Tree
++ Skill Tree
 + Changing avatars
 + Dungeon-like
 + based on the binding of Isaac
@@ -14,7 +14,7 @@
 ## Dungeon Rooms
 + Start Room 
 + Boss Room
-+ Room with enemies (standart)
++ Room with enemies (standard)
 + Secret Chest Room 
 
 ## Chests
@@ -25,8 +25,33 @@
 ## Main Character
 + Normal w a s d Movement
 + can attack (melee, spells)
++ LP 200
 
-## Shop 
+## Enemies
++ Normal LP 200
++ Tank LP 400
++ Ranged LP 100
++ Bomber LP 50
+
+## Skills
++ Element Fire
+    + Fireball
+        + Damage 50
+        + Cooldown .5 sec
+        + Range 1 room
+    + Fire Wall
+        + Damage 5
+        + Duration 5sec
+        + Width 3 Tiles
+        + Knocks Enemies back
+        + Cooldown 5 sec
+    + Meteor Strike
+        + Damage 200
+        + AOE 3 Tiles
+        + Cooldown 10 sec
+        + 50% chance for burn
+
+## Shop
 + by weapons
 + Spells
 + Potions
