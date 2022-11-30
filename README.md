@@ -26,6 +26,7 @@
 + Normal w a s d Movement
 + can attack (melee, spells)
 + LP 200
++ Mana?
 
 ## Enemies
 + Normal LP 200
@@ -52,9 +53,15 @@
         + 50% chance for burn
 
 ## Shop
-+ by weapons
++ Weapons
 + Spells
 + Potions
+
+## Weapons (optional)
++ Staff
+    + 25% buff of magic damage
++ Sword
+    + 25% buff of melee damage
 
 
 # Trello
