@@ -1,4 +1,4 @@
-# SYP-Blank-
+# Project red
 ## Project Members
 + Noah Grundner
 + Jonas Schönbaß
