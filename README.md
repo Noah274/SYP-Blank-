@@ -33,6 +33,7 @@
 + Tank LP 400
 + Ranged LP 100
 + Bomber LP 50
++ Boss LP 600
 
 ## Skills
 + Element Fire
