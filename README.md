@@ -13,7 +13,7 @@
 
 ## Dungeon Rooms
 + Start Room 
-+ Boss Room
++ Boss Room?
 + Room with enemies (standard)
 + Secret Chest Room 
 
@@ -33,7 +33,7 @@
 + Tank LP 400
 + Ranged LP 100
 + Bomber LP 50
-+ Boss LP 600
++ Boss LP 600?
 
 ## Skills
 + Element Fire
