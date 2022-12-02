@@ -5,14 +5,14 @@ using UnityEngine.Tilemaps;
 
 public class GenerateGrid : MonoBehaviour
 {
-    public Tilemap gridFloor;
+    public Tilemap GridFloor;
     public Tilemap gridWall;
     public Tile wall;
     public Tile dirt;
-    public Tile grass;
+    public Tile Grass;
     public int rooms;
 
-    private int[,,] arrayBuild =
+    private int[,,] _arrayBuild =
     {
         {
         {1, 1, 1, 1, 1},
@@ -51,7 +51,7 @@ public class GenerateGrid : MonoBehaviour
 
     public int CooseRoom()
     {
-        int num = Random.Range(0, arrayBuild.GetLength(0));
+        int num = Random.Range(0, _arrayBuild.GetLength(0));
         return num;
     }
 
@@ -64,25 +64,25 @@ public class GenerateGrid : MonoBehaviour
         {
             int roomtype = CooseRoom();
             //Debug.Log(roomtype);
-            for (int x = 0; x < arrayBuild.GetLength(0); x++)
+            for (int x = 0; x < _arrayBuild.GetLength(0); x++)
             {
                 if (x == roomtype)
                 {
-                    for (int y = 0; y < arrayBuild.GetLength(1); y++)
+                    for (int y = 0; y < _arrayBuild.GetLength(1); y++)
                     {
-                        for (int z = 0; z < arrayBuild.GetLength(2); z++)
+                        for (int z = 0; z < _arrayBuild.GetLength(2); z++)
                         {
-                            printMap(x, y, z, roomDif);
+                            PrintMap(x, y, z, roomDif);
                         }
                     }
-                    roomDif += arrayBuild.GetLength(2) + 2;
+                    roomDif += _arrayBuild.GetLength(2) + 2;
                 }
             }
         }
     }
 
 
-    public void printMap(int x, int y, int z, int roomDif)
+    public void PrintMap(int x, int y, int z, int roomDif)
     { 
         /*
         for (int i = 0; i < roomTypes.GetLength(0); i++)
@@ -98,17 +98,17 @@ public class GenerateGrid : MonoBehaviour
             }
         }*/
 
-        switch (arrayBuild[x, y, z])
+        switch (_arrayBuild[x, y, z])
         {
 
             case 1:
                 gridWall.SetTile(new Vector3Int(y + roomDif, z), wall);
                 break;
             case 2:
-                gridFloor.SetTile(new Vector3Int(y + roomDif, z), dirt);
+                GridFloor.SetTile(new Vector3Int(y + roomDif, z), dirt);
                 break;
             case 3:
-                gridFloor.SetTile(new Vector3Int(y + roomDif, z), grass);
+                GridFloor.SetTile(new Vector3Int(y + roomDif, z), Grass);
                 break;
         }
     }
