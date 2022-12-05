@@ -6,6 +6,10 @@
     "\\DungeonGame\\Assets\\Scenes",
     "\\DungeonGame\\Assets\\Scripts"
   ],
+<<<<<<< HEAD
   "SelectedNode": "\\DungeonGame\\Assets\\Scripts\\GenerateGrid.cs",
+=======
+  "SelectedNode": "\\DungeonGame\\Assets\\Scripts\\GenerateLayer.cs",
+>>>>>>> c6c8653c50c59471c9addc154980292ed1e00f1b
   "PreviewInSolutionExplorer": false
 }
