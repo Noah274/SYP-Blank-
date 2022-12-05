@@ -3,8 +3,9 @@
     "",
     "\\DungeonGame",
     "\\DungeonGame\\Assets",
-    "\\DungeonGame\\Assets\\Scenes"
+    "\\DungeonGame\\Assets\\Scenes",
+    "\\DungeonGame\\Assets\\Scripts"
   ],
-  "SelectedNode": "\\DungeonGame\\Assets\\Scenes\\SampleScene.unity",
+  "SelectedNode": "\\DungeonGame\\Assets\\Scenes\\StartScreen.unity",
   "PreviewInSolutionExplorer": false
 }
