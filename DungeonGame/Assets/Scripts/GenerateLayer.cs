@@ -168,9 +168,9 @@ public class GenerateLayer : MonoBehaviour
         int randomRange = Random.Range(1, 101); //zwischen 1 - 100
         int randomQuantityWay = Random.Range(1, quantityRooms-2);
         //Debug.Log("===" + randomRange);
-        //Debug.Log("===" + quantityRooms + "->" + randomQuantityWay);
+        Debug.Log("===" + quantityRooms + "->" + randomQuantityWay);
         
-        int num = 0;
+        int num = 0;0
         if (countRooms == 1)
         {
             num = 1;
@@ -277,7 +277,7 @@ public class GenerateLayer : MonoBehaviour
     void Start()
     {
         createLayer();
-        printArray();
+        //printArray();
 
     }
 
