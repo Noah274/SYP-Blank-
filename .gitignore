@@ -25,3 +25,8 @@ sysinfo.txt
 *.unityproj
 *.user
 *.userprefs
+
+###
+# logs
+###
+*.log
