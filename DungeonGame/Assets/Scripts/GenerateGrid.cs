@@ -12,23 +12,81 @@ public class GenerateGrid : MonoBehaviour
     public Tile grass;
     public int rooms;
 
+
     private int[,,] arrayBuild =
     {
         {
-        {1, 1, 1, 1, 1},
-        {1, 2, 2, 2, 1},
-        {1, 2, 2, 2, 1},
-        {1, 2, 2, 2, 1},
-        {1, 1, 1, 1, 1},
-        },
-
+            {1, 1, 2, 1, 1},
+            {1, 3, 3, 3, 1},
+            {2, 3, 3, 3, 2},
+            {1, 3, 3, 3, 1},
+            {1, 1, 2, 1, 1},
+        }
+        /*
         {
-        {1, 1, 1, 1, 1},
-        {1, 2, 2, 2, 1},
-        {1, 2, 3, 2, 1},
-        {1, 2, 2, 2, 1},
-        {1, 1, 1, 1, 1},
+            {1, 1, 1, 1, 1},
+            {1, 2, 2, 2, 1},
+            {1, 2, 2, 2, 1},
+            {1, 2, 2, 2, 1},
+            {1, 1, 1, 1, 1},
         },
+        {
+            {1, 1, 1, 1, 1},
+            {1, 2, 2, 2, 1},
+            {1, 2, 2, 2, 1},
+            {1, 2, 2, 2, 1},
+            {1, 1, 1, 1, 1},
+        },
+        {
+            {1, 1, 1, 1, 1},
+            {1, 2, 2, 2, 1},
+            {1, 2, 2, 2, 1},
+            {1, 2, 2, 2, 1},
+            {1, 1, 1, 1, 1},
+        },
+        {
+            {1, 1, 1, 1, 1},
+            {1, 2, 2, 2, 1},
+            {1, 2, 2, 2, 1},
+            {1, 2, 2, 2, 1},
+            {1, 1, 1, 1, 1},
+        },
+        {
+            {1, 1, 1, 1, 1},
+            {1, 2, 2, 2, 1},
+            {1, 2, 2, 2, 1},
+            {1, 2, 2, 2, 1},
+            {1, 1, 1, 1, 1},
+        },
+        {
+            {1, 1, 1, 1, 1},
+            {1, 2, 2, 2, 1},
+            {1, 2, 2, 2, 1},
+            {1, 2, 2, 2, 1},
+            {1, 1, 1, 1, 1},
+        },
+        {
+            {1, 1, 1, 1, 1},
+            {1, 2, 2, 2, 1},
+            {1, 2, 2, 2, 1},
+            {1, 2, 2, 2, 1},
+            {1, 1, 1, 1, 1},
+        },
+        {
+            {1, 1, 1, 1, 1},
+            {1, 2, 2, 2, 1},
+            {1, 2, 2, 2, 1},
+            {1, 2, 2, 2, 1},
+            {1, 1, 1, 1, 1},
+        },
+        {
+            {1, 1, 1, 1, 1},
+            {1, 2, 2, 2, 1},
+            {1, 2, 2, 2, 1},
+            {1, 2, 2, 2, 1},
+            {1, 1, 1, 1, 1},
+        }
+        */
 
     };
     /*private int[] roomTypes =
@@ -44,8 +102,7 @@ public class GenerateGrid : MonoBehaviour
 
     void Start()
     {
-
-        BuildRoom();
+        //BuildRoom();
 
     }
 
@@ -105,12 +162,14 @@ public class GenerateGrid : MonoBehaviour
                 gridWall.SetTile(new Vector3Int(y + roomDif, z), wall);
                 break;
             case 2:
-                gridFloor.SetTile(new Vector3Int(y + roomDif, z), dirt);
+                gridFloor.SetTile(new Vector3Int(y + roomDif, z), grass);
                 break;
             case 3:
-                gridFloor.SetTile(new Vector3Int(y + roomDif, z), grass);
+                gridFloor.SetTile(new Vector3Int(y + roomDif, z), dirt);
                 break;
         }
     }
-
+    
+    
 }
+
