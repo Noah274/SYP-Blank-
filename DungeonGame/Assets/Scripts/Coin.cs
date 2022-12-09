@@ -1,15 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class Coin : MonoBehaviour
 {
-    private void OnTriggerEnter2D(Collider2D collision)
+    public static int totalCoins = 0;
+
+    void Awake()
     {
-        if (collision.gameObject.CompareTag("Player"))
+        GetComponent<Collider2D>().isTrigger = true;
+    }
+
+    void OnTriggerEnter2D(Collider2D c2d)
+    {
+        if (c2d.CompareTag("Player"))
         {
-            CoinCounter.coinAmount += 1;
+            totalCoins++;
             Destroy(gameObject);
         }
     }
