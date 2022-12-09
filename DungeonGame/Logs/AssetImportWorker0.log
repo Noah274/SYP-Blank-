@@ -1349,3 +1349,587 @@ AssetImportParameters requested are different than current active one (requested
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 531.934684 seconds.
+  path: Assets/Texture/TilePaletteSprites
+  artifactKey: Guid(72f7ef091dfb40647a65d93b0d42e2ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/TilePaletteSprites using Guid(72f7ef091dfb40647a65d93b0d42e2ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8b8ea27a19e60f7576c4c5a816f7e1d2') in 0.057324 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000044 seconds.
+  path: Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_1.asset
+  artifactKey: Guid(85aca366f1ed7d646ac6aa290ee27120) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_1.asset using Guid(85aca366f1ed7d646ac6aa290ee27120) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e71231a9d9d7e8122c6ff8c3b7717ed2') in 0.198583 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000056 seconds.
+  path: Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_19.asset
+  artifactKey: Guid(c981f2d60b9ac8f4fb868e1be9caf63c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_19.asset using Guid(c981f2d60b9ac8f4fb868e1be9caf63c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '38e5d594dd03d765db5d0e09f571ac5f') in 0.051018 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000040 seconds.
+  path: Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_9.asset
+  artifactKey: Guid(daeecd46f8a084748ab7d52a6ec04c9f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_9.asset using Guid(daeecd46f8a084748ab7d52a6ec04c9f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f447781a357887de371413c79a09f4a9') in 0.051901 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000041 seconds.
+  path: Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_11.asset
+  artifactKey: Guid(71bd70ab109336e41a52d0f874f3e272) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_11.asset using Guid(71bd70ab109336e41a52d0f874f3e272) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5c07b4f65fc84c9928be98441c154e88') in 0.051372 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000043 seconds.
+  path: Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_3.asset
+  artifactKey: Guid(6b94d0ae137c48f4fa0429346c61825a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_3.asset using Guid(6b94d0ae137c48f4fa0429346c61825a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6528829906df13d719278db0585b5ee5') in 0.052128 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000059 seconds.
+  path: Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_20.asset
+  artifactKey: Guid(d5fe29b33bfb5674b98b38a18ae3c2c6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_20.asset using Guid(d5fe29b33bfb5674b98b38a18ae3c2c6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f8bacabe039362bf779feba4ad10ee3b') in 0.048805 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_8.asset
+  artifactKey: Guid(2b4f153ca6e42f5449daca8c40132363) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_8.asset using Guid(2b4f153ca6e42f5449daca8c40132363) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '63ed00c1d47cc019aefd88cdd46c1a42') in 0.059773 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_4.asset
+  artifactKey: Guid(97c9110c2678464449f7420941542ab7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_4.asset using Guid(97c9110c2678464449f7420941542ab7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1432aadf319d9c249402282768ea4460') in 0.045568 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_13.asset
+  artifactKey: Guid(7283273d2d2aeb34ca50c434fb5d27ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_13.asset using Guid(7283273d2d2aeb34ca50c434fb5d27ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0c45a55d9c15533ff44fd3e36a3f5814') in 0.054579 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000056 seconds.
+  path: Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_18.asset
+  artifactKey: Guid(71ada30c41ab23a448354dad62f84430) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_18.asset using Guid(71ada30c41ab23a448354dad62f84430) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '39931296d99ec90fece014e7476a613d') in 0.049592 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000053 seconds.
+  path: Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_14.asset
+  artifactKey: Guid(9c5ae4b4b1533ac4dab63299e9f6563d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_14.asset using Guid(9c5ae4b4b1533ac4dab63299e9f6563d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '50ce0fce04c1c2d89f737a7c94fbf6fd') in 0.049113 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.287705 seconds.
+  path: Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_21.asset
+  artifactKey: Guid(bba019041522dec4f9b3340122be10dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_21.asset using Guid(bba019041522dec4f9b3340122be10dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '67a81aba45dee73451507b308343f8e2') in 0.082249 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000271 seconds.
+  path: Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_23.asset
+  artifactKey: Guid(cbe422fc59c448b4fbde031543eb5150) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_23.asset using Guid(cbe422fc59c448b4fbde031543eb5150) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5be7c0ae2c5c421bd0a9cb124c4fc8a5') in 0.049172 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.205496 seconds.
+  path: Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_25.asset
+  artifactKey: Guid(69cf1c6a2391e5c40a3c93a00c4bff10) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_25.asset using Guid(69cf1c6a2391e5c40a3c93a00c4bff10) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '63bb79a65f6fa879c57d9a5261656a95') in 0.078252 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000045 seconds.
+  path: Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_31.asset
+  artifactKey: Guid(f76b437e2e3f001469404c25086f7c80) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_31.asset using Guid(f76b437e2e3f001469404c25086f7c80) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1cb0c567b531ea510f8aaed0212aebd1') in 0.067614 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000041 seconds.
+  path: Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_28.asset
+  artifactKey: Guid(88c60184c1832564fbbe1ee1126ff97a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_28.asset using Guid(88c60184c1832564fbbe1ee1126ff97a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '76bd45b51de31ed60dc81b1ed15aafd2') in 0.055387 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000043 seconds.
+  path: Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_30.asset
+  artifactKey: Guid(a1990b44dc1961b4aa9214603a790021) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_30.asset using Guid(a1990b44dc1961b4aa9214603a790021) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5b8ff59c113cf99071bdb553a1a41aac') in 0.049270 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.034205 seconds.
+  path: Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_33.asset
+  artifactKey: Guid(df1d53b3ac4845a419af2bd446004f64) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_33.asset using Guid(df1d53b3ac4845a419af2bd446004f64) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dff8f2a61abd908f68f15f440ee13490') in 0.068998 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000044 seconds.
+  path: Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_35.asset
+  artifactKey: Guid(48b67b3bad6fd3349984d594c33e1b07) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_35.asset using Guid(48b67b3bad6fd3349984d594c33e1b07) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd03ae7ff8a309a6e61c64b2ba51c341e') in 0.050044 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_48.asset
+  artifactKey: Guid(7f223b046b8464f46a5331417ecd21e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_48.asset using Guid(7f223b046b8464f46a5331417ecd21e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '48060bf3390ae66b2db4b1549ba4b808') in 0.043955 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.006954 seconds.
+  path: Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_39.asset
+  artifactKey: Guid(c059352a7a17ea44d9593aca52b961a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_39.asset using Guid(c059352a7a17ea44d9593aca52b961a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '547c718ddca0366323cff761175fb56d') in 0.051814 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000622 seconds.
+  path: Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_37.asset
+  artifactKey: Guid(7fabcdd3e61183849b4282d684064938) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_37.asset using Guid(7fabcdd3e61183849b4282d684064938) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '48a7bdc893e84516d56d807c770343de') in 0.049111 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000061 seconds.
+  path: Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_52.asset
+  artifactKey: Guid(7e2fabb0e3b94344dbdc8b39ed6ef6a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_52.asset using Guid(7e2fabb0e3b94344dbdc8b39ed6ef6a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '19dbfd5083dda9b4f1e393e28af16498') in 0.056997 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000042 seconds.
+  path: Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_49.asset
+  artifactKey: Guid(8c3ffa13a2d4f3c45a79feb6d6408c32) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_49.asset using Guid(8c3ffa13a2d4f3c45a79feb6d6408c32) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5a882721c151a990ae952e409c50facc') in 0.050049 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000186 seconds.
+  path: Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_44.asset
+  artifactKey: Guid(60193df521579e84fbd5a0ab2dc05e52) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_44.asset using Guid(60193df521579e84fbd5a0ab2dc05e52) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9e7c04f9764b7948880193ef0d5ed37b') in 0.072676 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000153 seconds.
+  path: Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_40.asset
+  artifactKey: Guid(3694973179df7df4a9981ade3606bf5a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_40.asset using Guid(3694973179df7df4a9981ade3606bf5a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '19f4018c677bc34f15b89162bc6c8b68') in 0.065086 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000041 seconds.
+  path: Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_47.asset
+  artifactKey: Guid(987a9ce9d03568646ac47e9374c734fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_47.asset using Guid(987a9ce9d03568646ac47e9374c734fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a6d0242898b54ffc42346a25353db022') in 0.074407 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.118540 seconds.
+  path: Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_53.asset
+  artifactKey: Guid(58f3dc4200177cb4997672a7fef9e1da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_53.asset using Guid(58f3dc4200177cb4997672a7fef9e1da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'df0406b5056d3cace99a24b4d39c7d90') in 0.051761 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000046 seconds.
+  path: Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_55.asset
+  artifactKey: Guid(b90211fb10116b3478733c88944d6e98) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_55.asset using Guid(b90211fb10116b3478733c88944d6e98) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3ee886ab8a4b8530270ca1491a8d453d') in 0.045249 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.025304 seconds.
+  path: Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_57.asset
+  artifactKey: Guid(80fa13b5b5a90af47ba3b31b58e2ab2d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_57.asset using Guid(80fa13b5b5a90af47ba3b31b58e2ab2d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2def03bf939a0c141b3ce626c6a8578e') in 0.068284 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000042 seconds.
+  path: Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_59.asset
+  artifactKey: Guid(1145d4fa4a48fcc4d93509877ed1c3d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_59.asset using Guid(1145d4fa4a48fcc4d93509877ed1c3d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6b99b1248241277d42e96d6037ace4a8') in 0.064433 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.109847 seconds.
+  path: Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_61.asset
+  artifactKey: Guid(3e53fc8a299ca9445ba9c685d29860e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_61.asset using Guid(3e53fc8a299ca9445ba9c685d29860e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3cbd103b7f6bbff1825129be5839d41f') in 0.043487 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000040 seconds.
+  path: Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_64.asset
+  artifactKey: Guid(000d87cb5320dfa4b9236fd1dda9c562) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_64.asset using Guid(000d87cb5320dfa4b9236fd1dda9c562) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '10dcdc6a03f21d041a6cc9c62435cb2a') in 0.048786 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000044 seconds.
+  path: Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_65.asset
+  artifactKey: Guid(f5ef9761013b2a241998b2ffb92f10bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_65.asset using Guid(f5ef9761013b2a241998b2ffb92f10bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c89098521147097a68ae79d871f6ecd7') in 0.046302 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000056 seconds.
+  path: Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_67.asset
+  artifactKey: Guid(75ca86eba08678243b30d8836a044508) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_67.asset using Guid(75ca86eba08678243b30d8836a044508) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2b6efee79ec8b74e89033b6be1b967e7') in 0.054380 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.104676 seconds.
+  path: Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_69.asset
+  artifactKey: Guid(e818532e8651add40be9da772adc8205) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_69.asset using Guid(e818532e8651add40be9da772adc8205) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f6e6c1d2ee49879ea54bdff59442b807') in 0.055154 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000045 seconds.
+  path: Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_74.asset
+  artifactKey: Guid(1203c2cff0a62aa4ca2e88699e767e8a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_74.asset using Guid(1203c2cff0a62aa4ca2e88699e767e8a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c655ed45471d4f9b7d9be4172b876d5f') in 0.031906 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000060 seconds.
+  path: Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_72.asset
+  artifactKey: Guid(c2127d02a7352dd43b5747160681617d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_72.asset using Guid(c2127d02a7352dd43b5747160681617d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '62bafd6719d625ce9d87530f3c4687b6') in 0.048117 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000045 seconds.
+  path: Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_82.asset
+  artifactKey: Guid(42453fbc882e8f84aa1728e84ac7d476) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_82.asset using Guid(42453fbc882e8f84aa1728e84ac7d476) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f69b5b3afa7133932a21fdd2ac413601') in 0.041569 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000221 seconds.
+  path: Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_79.asset
+  artifactKey: Guid(cd45f444aedb4e84da294d6a1065a61f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_79.asset using Guid(cd45f444aedb4e84da294d6a1065a61f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7fc15f3b73c47ecf761c58f11e15b943') in 0.060291 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000047 seconds.
+  path: Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_84.asset
+  artifactKey: Guid(807a5e831aa96744cbef61a629cd1e40) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_84.asset using Guid(807a5e831aa96744cbef61a629cd1e40) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8f8d79d5af4ce58a33ec628389bcb826') in 0.049529 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000060 seconds.
+  path: Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_75.asset
+  artifactKey: Guid(9611997a9b2a010498087fb12194dc20) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_75.asset using Guid(9611997a9b2a010498087fb12194dc20) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '869df5e497a04000b43ef546ff536f7d') in 0.046269 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000050 seconds.
+  path: Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_87.asset
+  artifactKey: Guid(04dd02dba1b6da44b83a5fa032966a15) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_87.asset using Guid(04dd02dba1b6da44b83a5fa032966a15) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '35a5feecf69e8ad442ec7da02540cd36') in 0.046063 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000055 seconds.
+  path: Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_80.asset
+  artifactKey: Guid(6fe6c08c2fd549c4aa7933588794876f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_80.asset using Guid(6fe6c08c2fd549c4aa7933588794876f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ea7cbeae073d58e1352c01e59c70cadd') in 0.042470 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000051 seconds.
+  path: Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_73.asset
+  artifactKey: Guid(8757df8798167434fb3553c990b92af9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_73.asset using Guid(8757df8798167434fb3553c990b92af9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7309487b078ff09f9ad559056178aaec') in 0.050575 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000080 seconds.
+  path: Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_85.asset
+  artifactKey: Guid(b8a9b7b3c393309498dddb02f4cd9c76) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_85.asset using Guid(b8a9b7b3c393309498dddb02f4cd9c76) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4a3230b49129bcbbf03e4e9670e5622c') in 0.046311 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.090321 seconds.
+  path: Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_89.asset
+  artifactKey: Guid(4b4a80bec5397a449b1284b4f1f8143e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_89.asset using Guid(4b4a80bec5397a449b1284b4f1f8143e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cccf3d391e2e6fbd77e89d4e82386b60') in 0.052903 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000042 seconds.
+  path: Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_91.asset
+  artifactKey: Guid(ccb70357f6eedff4b939bd1385ec29e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_91.asset using Guid(ccb70357f6eedff4b939bd1385ec29e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2f18ed321b6522edf490127052c0a867') in 0.089824 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000144 seconds.
+  path: Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_95.asset
+  artifactKey: Guid(7305d4dca9da3984b87fc4e56ccda8fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_95.asset using Guid(7305d4dca9da3984b87fc4e56ccda8fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '74ecf0da1fc112ca198a6ecae6f46a00') in 0.067307 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000053 seconds.
+  path: Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_94.asset
+  artifactKey: Guid(7f3aa3be25b0acb4e8491354a4396f6c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_94.asset using Guid(7f3aa3be25b0acb4e8491354a4396f6c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9e2e1d34dc99c5f3c63007d7cb480b94') in 0.064664 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000759 seconds.
+  path: Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_100.asset
+  artifactKey: Guid(30a566bd1a16ffb469c80013d8ad8129) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_100.asset using Guid(30a566bd1a16ffb469c80013d8ad8129) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ee6b5ac0215e5f8ecd195875c30abc46') in 0.048577 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000047 seconds.
+  path: Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_101.asset
+  artifactKey: Guid(41cecc6813652bb489ed3f508b2f5a22) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_101.asset using Guid(41cecc6813652bb489ed3f508b2f5a22) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'edef2b9394a9d1ec6dafd01f5d696f81') in 0.050602 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000108 seconds.
+  path: Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_103.asset
+  artifactKey: Guid(c8f2d83fc797e3b4da1149e7d8b62509) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_103.asset using Guid(c8f2d83fc797e3b4da1149e7d8b62509) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ad44de9d51fd2eeb6c493c6c9cd80a94') in 0.046890 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_108.asset
+  artifactKey: Guid(db69b4b417a9b404da340c83ea56e69c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_108.asset using Guid(db69b4b417a9b404da340c83ea56e69c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fc8f9cf2c816f6e8dae2b8daae3e59ca') in 0.053697 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000044 seconds.
+  path: Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_102.asset
+  artifactKey: Guid(025272c5e6837d543bca90d5ae3d6db8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_102.asset using Guid(025272c5e6837d543bca90d5ae3d6db8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b3b1ecb2002cc3feb1e6a4167df04b23') in 0.071289 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000056 seconds.
+  path: Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_104.asset
+  artifactKey: Guid(22f90d190afba3c419ada7f588d290a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_104.asset using Guid(22f90d190afba3c419ada7f588d290a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3acbc7f565971f0cbdedd3e3cd2847d0') in 0.049491 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_110.asset
+  artifactKey: Guid(efad3613f665c994aa1d23456edcb725) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_110.asset using Guid(efad3613f665c994aa1d23456edcb725) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00ef3246c1c1a18291bf955fc133f040') in 0.052803 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000774 seconds.
+  path: Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_109.asset
+  artifactKey: Guid(dcb9be51ab57c674387912a00330e61d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_109.asset using Guid(dcb9be51ab57c674387912a00330e61d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f586bec768a33f7aa8ba3f6b7c39a21a') in 0.050211 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_111.asset
+  artifactKey: Guid(3f0f4e84e56d6e347b6a1ea19c396093) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_111.asset using Guid(3f0f4e84e56d6e347b6a1ea19c396093) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '56728a99e305c184a60d35d210886cc8') in 0.075706 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000063 seconds.
+  path: Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_116.asset
+  artifactKey: Guid(c496bd7230e338b408f93d8718b77edc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_116.asset using Guid(c496bd7230e338b408f93d8718b77edc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1676fceed06121647d6febd09e6f9b0d') in 0.057322 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_115.asset
+  artifactKey: Guid(330c2a9489b15de4b931921108b01ea2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_115.asset using Guid(330c2a9489b15de4b931921108b01ea2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '05eef1b6f164c108f4f867fa4d94184a') in 0.052658 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.074027 seconds.
+  path: Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_117.asset
+  artifactKey: Guid(bf4fb14624f96b644a6db062e0d5b75d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_117.asset using Guid(bf4fb14624f96b644a6db062e0d5b75d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '27242e9bdd6a8c7adfaddc78e26fa415') in 0.081178 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000167 seconds.
+  path: Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_124.asset
+  artifactKey: Guid(86c2b0e1ebd6eba4f8784937a5ab8f4d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_124.asset using Guid(86c2b0e1ebd6eba4f8784937a5ab8f4d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c54937238e7207b4eb2333cabee9d22d') in 0.083916 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000040 seconds.
+  path: Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_120.asset
+  artifactKey: Guid(cb382690b63bb044eb99efa9d23c82a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_120.asset using Guid(cb382690b63bb044eb99efa9d23c82a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aeeb3e073f123a30702e3f23b612b1b6') in 0.042425 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000090 seconds.
+  path: Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_121.asset
+  artifactKey: Guid(c2fc2e7537d7c4b4bb8d84b2b7f69720) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_121.asset using Guid(c2fc2e7537d7c4b4bb8d84b2b7f69720) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ea5c776c7153b48ee0cef154ed3e9557') in 0.046837 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.301711 seconds.
+  path: Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_125.asset
+  artifactKey: Guid(c978cdf7ce401244083a9e2e8ff52e73) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_125.asset using Guid(c978cdf7ce401244083a9e2e8ff52e73) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '222f2849f486107e7f98d741b7047c3f') in 0.049029 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000057 seconds.
+  path: Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_132.asset
+  artifactKey: Guid(75bf8dd5171f5a54c99c310af1e80c69) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_132.asset using Guid(75bf8dd5171f5a54c99c310af1e80c69) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0a0f347f6007dbb79d6ea18002a5b955') in 0.059664 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000080 seconds.
+  path: Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_138.asset
+  artifactKey: Guid(0d3b0980ab84912429c111c2e18813bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_138.asset using Guid(0d3b0980ab84912429c111c2e18813bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e948134eae227c06208c79ef6e63c054') in 0.045285 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000040 seconds.
+  path: Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_135.asset
+  artifactKey: Guid(3a4932fc66db0b1419f7cb956899ab41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_135.asset using Guid(3a4932fc66db0b1419f7cb956899ab41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9e6721c672e4c1811c809834eb640eb6') in 0.042525 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_137.asset
+  artifactKey: Guid(2d08d62e634e6be43927e11b96e72efb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_137.asset using Guid(2d08d62e634e6be43927e11b96e72efb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f5255198e5bbcedbe37c9fe26b00f608') in 0.044076 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_139.asset
+  artifactKey: Guid(c2c7aca05413021419363c168b937c4a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_139.asset using Guid(c2c7aca05413021419363c168b937c4a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5969b75997f60f3752833c783a242444') in 0.053032 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000056 seconds.
+  path: Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_130.asset
+  artifactKey: Guid(b98c53c4be54c384c95d7a99c21bb985) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_130.asset using Guid(b98c53c4be54c384c95d7a99c21bb985) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5ba24f3ece596afc8df34b22e269a36c') in 0.037665 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000049 seconds.
+  path: Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_128.asset
+  artifactKey: Guid(24274353fda854b40ae8bda9f0cec7c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_128.asset using Guid(24274353fda854b40ae8bda9f0cec7c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1c913c84751a41511279d0eccb337e44') in 0.045094 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_129.asset
+  artifactKey: Guid(6c2908765c43c9e46bd560d9a19fb641) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_129.asset using Guid(6c2908765c43c9e46bd560d9a19fb641) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7629776af9ba829209a276b1354ef560') in 0.054237 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000041 seconds.
+  path: Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_131.asset
+  artifactKey: Guid(217e70f0cdb5d2744aceb4472fcb7b57) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_131.asset using Guid(217e70f0cdb5d2744aceb4472fcb7b57) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2f05e517ba4a7b39823d998911fececc') in 0.077964 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000041 seconds.
+  path: Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_142.asset
+  artifactKey: Guid(d57bb31126e42964ea0d39b45602f8cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_142.asset using Guid(d57bb31126e42964ea0d39b45602f8cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f52fc203eef652185c1550805ca363c1') in 0.042519 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000057 seconds.
+  path: Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_143.asset
+  artifactKey: Guid(96ab973ed0bea6a4b9d429978ae369a7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_143.asset using Guid(96ab973ed0bea6a4b9d429978ae369a7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4bfb6a3b35e569944cdc8472c9a915d6') in 0.047871 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.341486 seconds.
+  path: Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_145.asset
+  artifactKey: Guid(6adf5197933a3b34fb71223db07915c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_145.asset using Guid(6adf5197933a3b34fb71223db07915c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b33e0f3b2cf2b565ccc738c737341358') in 0.064646 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_148.asset
+  artifactKey: Guid(00f72ec59960c804b9949bc2b266bdac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_148.asset using Guid(00f72ec59960c804b9949bc2b266bdac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1547c85f05fdc528abb38b74f15d95de') in 0.049561 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.658636 seconds.
+  path: Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_149.asset
+  artifactKey: Guid(cc2341c66b56bfc4c92b51c6c0ae5364) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_149.asset using Guid(cc2341c66b56bfc4c92b51c6c0ae5364) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '232e65ac3a4eae5156f38f77ba7499cd') in 0.060686 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000133 seconds.
+  path: Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_151.asset
+  artifactKey: Guid(edebf24b0d2a5094c8ee2cdfdbfc4c20) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_151.asset using Guid(edebf24b0d2a5094c8ee2cdfdbfc4c20) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bd1688ed0e66cab0fda0815e18dd9c30') in 0.046999 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.277848 seconds.
+  path: Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_153.asset
+  artifactKey: Guid(db5c677306f698241986ba78a00e61e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_153.asset using Guid(db5c677306f698241986ba78a00e61e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bbb2244c930f0b88457807855226e0d8') in 0.050640 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_156.asset
+  artifactKey: Guid(d658f765b6ee9bc498e3596fcad945bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_156.asset using Guid(d658f765b6ee9bc498e3596fcad945bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '68136a8fc26edbe0589ceaee50e2b9be') in 0.059360 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 21.624520 seconds.
+  path: Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_158.asset
+  artifactKey: Guid(9871e3f9e88b69846a192ed051ed6bf7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_158.asset using Guid(9871e3f9e88b69846a192ed051ed6bf7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c12b9f49714c533bef3ba9f91d5737fa') in 0.048863 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000052 seconds.
+  path: Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_160.asset
+  artifactKey: Guid(c1fdeae5819d6d84bb943971d76d6041) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_160.asset using Guid(c1fdeae5819d6d84bb943971d76d6041) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2676061dcf82317e973a2a927b2cdebd') in 0.067409 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.272619 seconds.
+  path: Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_162.asset
+  artifactKey: Guid(e1350925628a4284786cfa94b794b898) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Texture/TilePaletteSprites/mk_16_16_nature_tileset_162.asset using Guid(e1350925628a4284786cfa94b794b898) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '69e14817fd144be46b0cdb7b6a92e866') in 0.070798 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.018640 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\DI Paul Krenmayr\OneDrive - HTBLA Leonding\Schule\SYP\SYP-Blank-\DungeonGame\Library\PackageCache\com.unity.visualscripting@1.7.5\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\DI Paul Krenmayr\OneDrive - HTBLA Leonding\Schule\SYP\SYP-Blank-\DungeonGame\Library\PackageCache\com.unity.visualscripting@1.7.5\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 3.64 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  4.829 seconds
+Domain Reload Profiling:
+	ReloadAssembly (4831ms)
+		BeginReloadAssembly (771ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (61ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (1ms)
+			CreateAndSetChildDomain (257ms)
+		EndReloadAssembly (3654ms)
+			LoadAssemblies (402ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (723ms)
+			ReleaseScriptCaches (7ms)
+			RebuildScriptCaches (206ms)
+			SetupLoadedEditorAssemblies (1990ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (43ms)
+				SetLoadedEditorAssemblies (2ms)
+				RefreshPlugins (4ms)
+				BeforeProcessingInitializeOnLoad (306ms)
+				ProcessInitializeOnLoadAttributes (1480ms)
+				ProcessInitializeOnLoadMethodAttributes (133ms)
+				AfterProcessingInitializeOnLoad (22ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (68ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 2.40 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3892 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 26 unused Assets / (24.7 KB). Loaded Objects now: 4679.
+Memory consumption went from 163.4 MB to 163.4 MB.
+Total: 10.202900 ms (FindLiveObjects: 1.237700 ms CreateObjectMapping: 0.625200 ms MarkObjects: 8.269500 ms  DeleteObjects: 0.067100 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0
