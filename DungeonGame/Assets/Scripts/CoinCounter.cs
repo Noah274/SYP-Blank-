@@ -5,17 +5,18 @@ using UnityEngine.UI;
 
 public class CoinCounter : MonoBehaviour
 {
-    Text coinText;
-    public static int coinAmount;
-    // Start is called before the first frame update
+    Text counterText;
+
     void Start()
     {
-        coinText = GetComponent<Text>();
+        counterText = GetComponent<Text>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        coinText.text = coinAmount.ToString();
+        if (counterText.text != Coin.totalCoins.ToString())
+        {
+            counterText.text = Coin.totalCoins.ToString();
+        }
     }
 }
