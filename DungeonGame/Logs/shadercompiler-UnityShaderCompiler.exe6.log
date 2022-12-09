@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 Base path: 'D:/Noah/2021.2.7f1/Editor/Data', plugins path 'D:/Noah/2021.2.7f1/Editor/Data/PlaybackEngines'
+=======
+Base path: 'C:/Program Files/Unity/Hub/Editor/2021.2.3f1/Editor/Data', plugins path 'C:/Program Files/Unity/Hub/Editor/2021.2.3f1/Editor/Data/PlaybackEngines'
+>>>>>>> Stashed changes
 Cmd: initializeCompiler
 
 Cmd: compileSnippet

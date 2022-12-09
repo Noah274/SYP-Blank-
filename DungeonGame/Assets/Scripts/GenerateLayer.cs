@@ -109,9 +109,9 @@ public class GenerateLayer : MonoBehaviour
         Shuffle(possibleRooms);
         selRoom();
         
-        Debug.Log("-" + possibleRooms[0] + "-" + possibleRooms[1] + "-" + possibleRooms[2] + "-" + possibleRooms[3]);
-        Debug.Log("-" + selectedRoom[0] + "-" + selectedRoom[1] + "-" + selectedRoom[2] + "-" + selectedRoom[3]);
-        Debug.Log("-" + quantityWay[0] + "-" + quantityWay[1] + "-" + quantityWay[2] + "-" + quantityWay[3]);
+        //Debug.Log("-" + possibleRooms[0] + "-" + possibleRooms[1] + "-" + possibleRooms[2] + "-" + possibleRooms[3]);
+        //Debug.Log("-" + selectedRoom[0] + "-" + selectedRoom[1] + "-" + selectedRoom[2] + "-" + selectedRoom[3]);
+        //Debug.Log("-" + quantityWay[0] + "-" + quantityWay[1] + "-" + quantityWay[2] + "-" + quantityWay[3]);
         
         
         //int[] roomPos = {5,5};
@@ -266,7 +266,7 @@ public class GenerateLayer : MonoBehaviour
         
 
         //int num  = Random.Range(1, countRooms+1);
-        Debug.Log("===" + num);
+        //Debug.Log("===" + num);
         for (int i = 0; i < num; i++) 
         { 
             selectedRoom[i] = possibleRooms[i];
