@@ -206,8 +206,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 512807134}
-        m_TargetAssemblyTypeName: SkillTree, Assembly-CSharp
+      - m_Target: {fileID: 512807136}
+        m_TargetAssemblyTypeName: BackToGame, Assembly-CSharp
         m_MethodName: Back
         m_Mode: 1
         m_Arguments:
@@ -444,7 +444,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 512807135}
-  - component: {fileID: 512807134}
+  - component: {fileID: 512807136}
   m_Layer: 0
   m_Name: SkillTreeNav
   m_TagString: Untagged
@@ -452,18 +452,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &512807134
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 512807133}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e419615f890eac7479fc0acf3bf431af, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &512807135
 Transform:
   m_ObjectHideFlags: 0
@@ -479,6 +467,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &512807136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 512807133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9528d238004a6fe458b5456a0bc70105, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1185213577
 GameObject:
   m_ObjectHideFlags: 0
