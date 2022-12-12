@@ -1,4 +1,4 @@
-# Project red
+# Alone in the Dungeon
 ## Project Members
 + Noah Grundner
 + Jonas Schönbaß
