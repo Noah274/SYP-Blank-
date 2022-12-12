@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="274b1a0d-6185-49ff-8d65-e208f110d541" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../.vs/SYP/FileContentIndex/13a53bff-ec29-4e21-8196-984d143dc6d7.vsidx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.vs/SYP/FileContentIndex/1c854456-f8a6-4846-b5da-39b32ac41803.vsidx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.vs/SYP/FileContentIndex/5c0d02c1-6c20-408f-96a4-b22a24b130f6.vsidx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.vs/SYP/FileContentIndex/a4c276cf-1477-4e6e-9081-b52b53921ca7.vsidx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.vs/SYP/FileContentIndex/dc2953e3-5108-4adb-a00a-885632cde22e.vsidx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.vs/SYP/FileContentIndex/read.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.vs/SYP/v17/.wsuo" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.vs/SYP/v17/workspaceFileList.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Objects/Coin.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scenes/SkillTree.unity" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/MainMenu.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/MainMenu.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/SkillTree.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/SkillTree.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Texture/Base_Ground.aseprite" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Texture/Download.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Texture/Download.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Texture/Sprites_USE_THIS/Assprite/Lvl1/Base_Corner_UL.aseprite" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Texture/Sprites_USE_THIS/Assprite/Lvl1/Base_Ground.aseprite" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Texture/Sprites_USE_THIS/Assprite/Lvl1/Base_Ground_B.aseprite" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Texture/Sprites_USE_THIS/Assprite/Lvl1/Base_Ground_BL.aseprite" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Texture/Sprites_USE_THIS/Assprite/Lvl1/Base_Ground_BR.aseprite" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Texture/Sprites_USE_THIS/Assprite/Lvl1/Base_Ground_L.aseprite" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Texture/Sprites_USE_THIS/Assprite/Lvl1/Base_Ground_R.aseprite" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Texture/Sprites_USE_THIS/Assprite/Lvl1/Base_Ground_U.aseprite" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Texture/Sprites_USE_THIS/Assprite/Lvl1/Base_Ground_UR.aseprite" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Texture/Sprites_USE_THIS/Assprite/Lvl1/Base_Wall_T.aseprite" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Texture/Sprites_USE_THIS/Assprite/Lvl1/Base_Wall_TD.aseprite" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Texture/Sprites_USE_THIS/PNG/Lvl1/Base_Corner_UL.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Texture/Sprites_USE_THIS/PNG/Lvl1/Base_Ground.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Texture/Sprites_USE_THIS/PNG/Lvl1/Base_Ground_B.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Texture/Sprites_USE_THIS/PNG/Lvl1/Base_Ground_BL.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Texture/Sprites_USE_THIS/PNG/Lvl1/Base_Ground_BR.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Texture/Sprites_USE_THIS/PNG/Lvl1/Base_Ground_L.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Texture/Sprites_USE_THIS/PNG/Lvl1/Base_Ground_R.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Texture/Sprites_USE_THIS/PNG/Lvl1/Base_Ground_U.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Texture/Sprites_USE_THIS/PNG/Lvl1/Base_Ground_UR.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Texture/Sprites_USE_THIS/PNG/Lvl1/Base_Wall_T.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Texture/Sprites_USE_THIS/PNG/Lvl1/Base_Wall_TD.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.vs/VSWorkspaceState.json" beforeDir="false" afterPath="$PROJECT_DIR$/../.vs/VSWorkspaceState.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.vs/slnx.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/../.vs/slnx.sqlite" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Objects/CoinColor.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Objects/CoinColor.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Objects/Coin.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Objects/New Material.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Objects/New Material.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SkillTree.unity.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/StartScreen.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/StartScreen.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/TestSecen(Jonas S).unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/TestSecen(Jonas S).unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/.idea/.idea.Scripts.dir/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/.idea/.idea.Scripts.dir/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/.idea/.idea.Scripts.dir/.idea/indexLayout.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/.idea/.idea.Scripts.dir/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Coin.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Coin.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CoinCounter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CoinCounter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GenerateGrid.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GenerateGrid.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GenerateLayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GenerateLayer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GenerateLayer.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GenerateLayer.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logs/AssetImportWorker0-prev.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/AssetImportWorker0-prev.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logs/AssetImportWorker0.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/AssetImportWorker0.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logs/AssetImportWorker1-prev.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/AssetImportWorker1-prev.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logs/AssetImportWorker1.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/AssetImportWorker1.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logs/AssetImportWorker2.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/AssetImportWorker2.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logs/Packages-Update.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/Packages-Update.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe0.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe0.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="2IgB74yWIMjiMgpBdrIYkPgD9ec" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="274b1a0d-6185-49ff-8d65-e208f110d541" name="Changes" comment="" />
+      <created>1670593180359</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1670593180359</updated>
+      <workItem from="1670593182675" duration="21000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
