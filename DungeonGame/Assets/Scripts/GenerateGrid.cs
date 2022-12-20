@@ -115,8 +115,8 @@ public class GenerateGrid : MonoBehaviour
     public void BuildRoom()
     {
         int roomDif = 0;
-        
-        
+
+
         for (int i = 0; i < rooms; i++)
         {
             int roomtype = CooseRoom();
@@ -140,7 +140,7 @@ public class GenerateGrid : MonoBehaviour
 
 
     public void printMap(int x, int y, int z, int roomDif)
-    { 
+    {
         /*
         for (int i = 0; i < roomTypes.GetLength(0); i++)
         {
@@ -154,10 +154,8 @@ public class GenerateGrid : MonoBehaviour
                 //Debug.Log((roomBlockName)i);
             }
         }*/
-
         switch (arrayBuild[x, y, z])
         {
-
             case 1:
                 gridWall.SetTile(new Vector3Int(y + roomDif, z), wall);
                 break;
@@ -169,7 +167,4 @@ public class GenerateGrid : MonoBehaviour
                 break;
         }
     }
-    
-    
 }
-

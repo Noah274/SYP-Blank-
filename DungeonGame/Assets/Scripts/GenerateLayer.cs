@@ -277,7 +277,7 @@ public class GenerateLayer : MonoBehaviour
     void Start()
     {
         createLayer();
-        //printArray();
+        printArray();
 
     }
 
