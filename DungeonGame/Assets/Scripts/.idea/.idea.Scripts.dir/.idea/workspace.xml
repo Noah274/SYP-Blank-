@@ -4,6 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< Updated upstream
     <list default="true" id="42c80243-8271-4074-bd31-09c90cc2ed4f" name="Changes" comment="">
       <change afterPath="$PROJECT_DIR$/.idea/.idea.Scripts.dir/.idea/indexLayout.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/.idea.Scripts.dir/.idea/projectSettingsUpdater.xml" afterDir="false" />
@@ -40,11 +41,15 @@
       <change beforePath="$PROJECT_DIR$/../Scenes/TestSecen(Jonas S).unity" beforeDir="false" afterPath="$PROJECT_DIR$/../Scenes/TestSecen(Jonas S).unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GenerateGrid.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GenerateGrid.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GenerateGrid.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/GenerateGrid.cs.meta" afterDir="false" />
+=======
+    <list default="true" id="1b7af102-1a4f-4197-a073-84daa27ef1df" name="Changes" comment="">
+>>>>>>> Stashed changes
       <change beforePath="$PROJECT_DIR$/GenerateLayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GenerateLayer.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Logs/AssetImportWorker0-prev.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../Logs/AssetImportWorker0-prev.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Logs/AssetImportWorker0.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../Logs/AssetImportWorker0.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Logs/AssetImportWorker1-prev.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../Logs/AssetImportWorker1-prev.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Logs/AssetImportWorker1.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../Logs/AssetImportWorker1.log" afterDir="false" />
+<<<<<<< Updated upstream
       <change beforePath="$PROJECT_DIR$/../../Logs/AssetImportWorker2-prev.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../Logs/AssetImportWorker2-prev.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Logs/AssetImportWorker3-prev.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../Logs/AssetImportWorker3-prev.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Logs/AssetImportWorker3.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../Logs/AssetImportWorker3.log" afterDir="false" />
@@ -52,6 +57,14 @@
       <change beforePath="$PROJECT_DIR$/../../Logs/AssetImportWorker5-prev.log" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Logs/shadercompiler-UnityShaderCompiler.exe0.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../Logs/shadercompiler-UnityShaderCompiler.exe0.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/../../ProjectSettings/TagManager.asset" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/../../Logs/AssetImportWorker2-prev.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Logs/AssetImportWorker3-prev.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../Logs/AssetImportWorker3-prev.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Logs/AssetImportWorker3.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Logs/AssetImportWorker4-prev.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Logs/AssetImportWorker5-prev.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Logs/shadercompiler-UnityShaderCompiler.exe0.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../Logs/shadercompiler-UnityShaderCompiler.exe0.log" afterDir="false" />
+>>>>>>> Stashed changes
       <change beforePath="$PROJECT_DIR$/../../UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/../../UserSettings/EditorUserSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/../../UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
     </list>
@@ -60,6 +73,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+<<<<<<< Updated upstream
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -79,6 +93,12 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2JT3JTEWRrPlhCywdMwvZgC0rlc" />
+=======
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2IgBKOxWHml1q88miVYhfqaOgaR" />
+>>>>>>> Stashed changes
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -99,6 +119,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
+<<<<<<< Updated upstream
       <changelist id="42c80243-8271-4074-bd31-09c90cc2ed4f" name="Changes" comment="" />
       <created>1672088179917</created>
       <option name="number" value="Default" />
@@ -113,6 +134,16 @@
       <workItem from="1672316170113" duration="8516000" />
       <workItem from="1672327071830" duration="283000" />
       <workItem from="1672327402176" duration="21148000" />
+=======
+      <changelist id="1b7af102-1a4f-4197-a073-84daa27ef1df" name="Changes" comment="" />
+      <created>1670593292857</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1670593292857</updated>
+      <workItem from="1670593294620" duration="3000" />
+      <workItem from="1670593325733" duration="635000" />
+      <workItem from="1670594822243" duration="511000" />
+>>>>>>> Stashed changes
     </task>
     <servers />
   </component>
