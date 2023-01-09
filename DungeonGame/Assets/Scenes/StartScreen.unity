@@ -368,8 +368,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1283584401}
-        m_TargetAssemblyTypeName: Option, Assembly-CSharp
+      - m_Target: {fileID: 1283584400}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
         m_MethodName: SwitchToOptionMenu
         m_Mode: 1
         m_Arguments:
@@ -674,7 +674,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1283584398}
+      - m_Target: {fileID: 1283584400}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
         m_MethodName: PlayGame
         m_Mode: 1
@@ -895,9 +895,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1283584399}
-  - component: {fileID: 1283584398}
   - component: {fileID: 1283584400}
-  - component: {fileID: 1283584401}
   m_Layer: 0
   m_Name: MainMenuNav
   m_TagString: Untagged
@@ -905,18 +903,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1283584398
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1283584397}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d4dc4d0d625b0849aa4410056405293, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1283584399
 Transform:
   m_ObjectHideFlags: 0
@@ -941,19 +927,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1283584397}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16e307b37a5f15e4999001d108caeb9c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1283584401
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1283584397}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5bba20d1190e9734580688649605b3c1, type: 3}
+  m_Script: {fileID: 11500000, guid: 2d4dc4d0d625b0849aa4410056405293, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1423352711
@@ -1121,8 +1095,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1283584400}
-        m_TargetAssemblyTypeName: Quit, Assembly-CSharp
-        m_MethodName: OnApplicationQuit
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: PlayGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

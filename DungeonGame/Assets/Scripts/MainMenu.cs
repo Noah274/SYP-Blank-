@@ -15,4 +15,14 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene("SkillTree");
         Debug.Log("Button Press");
     }
+        
+    public void OnApplicationQuit()
+    {
+        Debug.Log("My benis is hoat");
+        Application.Quit();
+    }
+    public void SwitchToOptionMenu()
+    {
+        SceneManager.LoadScene("OptionMenu");
+    }
 }
