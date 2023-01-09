@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="42c80243-8271-4074-bd31-09c90cc2ed4f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.Scripts.dir/.idea/indexLayout.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.Scripts.dir/.idea/projectSettingsUpdater.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.Scripts.dir/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.Scripts.dir/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Texture/Base_Ground.aseprite.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Texture/Sprites_USE_THIS.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Texture/Sprites_USE_THIS/Assprite.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Texture/Sprites_USE_THIS/Assprite/Lvl1.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Texture/Sprites_USE_THIS/Assprite/Lvl1/Base_Corner_UL.aseprite.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Texture/Sprites_USE_THIS/Assprite/Lvl1/Base_Ground.aseprite.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Texture/Sprites_USE_THIS/Assprite/Lvl1/Base_Ground_B.aseprite.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Texture/Sprites_USE_THIS/Assprite/Lvl1/Base_Ground_BL.aseprite.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Texture/Sprites_USE_THIS/Assprite/Lvl1/Base_Ground_BR.aseprite.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Texture/Sprites_USE_THIS/Assprite/Lvl1/Base_Ground_L.aseprite.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Texture/Sprites_USE_THIS/Assprite/Lvl1/Base_Ground_R.aseprite.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Texture/Sprites_USE_THIS/Assprite/Lvl1/Base_Ground_U.aseprite.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Texture/Sprites_USE_THIS/Assprite/Lvl1/Base_Ground_UR.aseprite.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Texture/Sprites_USE_THIS/Assprite/Lvl1/Base_Wall_T.aseprite.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Texture/Sprites_USE_THIS/Assprite/Lvl1/Base_Wall_TD.aseprite.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Texture/Sprites_USE_THIS/PNG.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Texture/Sprites_USE_THIS/PNG/Lvl1.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Texture/Sprites_USE_THIS/PNG/Lvl1/Base_Corner_UL.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Texture/Sprites_USE_THIS/PNG/Lvl1/Base_Ground.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Texture/Sprites_USE_THIS/PNG/Lvl1/Base_Ground_B.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Texture/Sprites_USE_THIS/PNG/Lvl1/Base_Ground_BL.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Texture/Sprites_USE_THIS/PNG/Lvl1/Base_Ground_BR.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Texture/Sprites_USE_THIS/PNG/Lvl1/Base_Ground_L.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Texture/Sprites_USE_THIS/PNG/Lvl1/Base_Ground_R.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Texture/Sprites_USE_THIS/PNG/Lvl1/Base_Ground_U.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Texture/Sprites_USE_THIS/PNG/Lvl1/Base_Ground_UR.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Texture/Sprites_USE_THIS/PNG/Lvl1/Base_Wall_T.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Texture/Sprites_USE_THIS/PNG/Lvl1/Base_Wall_TD.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Scenes/TestSecen(Jonas S).unity" beforeDir="false" afterPath="$PROJECT_DIR$/../Scenes/TestSecen(Jonas S).unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GenerateGrid.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GenerateGrid.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GenerateGrid.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/GenerateGrid.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GenerateLayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/GenerateLayer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Logs/AssetImportWorker0-prev.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../Logs/AssetImportWorker0-prev.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Logs/AssetImportWorker0.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../Logs/AssetImportWorker0.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Logs/AssetImportWorker1-prev.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../Logs/AssetImportWorker1-prev.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Logs/AssetImportWorker1.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../Logs/AssetImportWorker1.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Logs/AssetImportWorker2-prev.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../Logs/AssetImportWorker2-prev.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Logs/AssetImportWorker3-prev.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../Logs/AssetImportWorker3-prev.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Logs/AssetImportWorker3.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../Logs/AssetImportWorker3.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Logs/AssetImportWorker4-prev.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Logs/AssetImportWorker5-prev.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Logs/shadercompiler-UnityShaderCompiler.exe0.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../Logs/shadercompiler-UnityShaderCompiler.exe0.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/../../ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/../../UserSettings/EditorUserSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/../../UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="tsconfig.json" />
+        <option value="JSON File" />
+      </list>
+    </option>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/GenerateGrid.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/GenerateLayer.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/MapBuilderData.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/MapsArray.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../Unity-Test/Syp-Test/Assets/GridMap/Scripts/Testing.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2JT3JTEWRrPlhCywdMwvZgC0rlc" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="42c80243-8271-4074-bd31-09c90cc2ed4f" name="Changes" comment="" />
+      <created>1672088179917</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1672088179917</updated>
+      <workItem from="1672088197589" duration="10773000" />
+      <workItem from="1672160589505" duration="3403000" />
+      <workItem from="1672258096926" duration="881000" />
+      <workItem from="1672259022398" duration="225000" />
+      <workItem from="1672259298991" duration="15583000" />
+      <workItem from="1672315715307" duration="414000" />
+      <workItem from="1672316170113" duration="8516000" />
+      <workItem from="1672327071830" duration="283000" />
+      <workItem from="1672327402176" duration="21148000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+</project>

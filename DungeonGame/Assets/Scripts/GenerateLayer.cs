@@ -1,213 +1,194 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
 
 public class GenerateLayer : MonoBehaviour
-{ 
-    public int Layerlevel = 1;
-    private System.Random _random = new System.Random();
-    int[] possibleRooms = { 0, 0, 0, 0};
-    int[] selectedRoom= { 0, 0, 0, 0};
-    int countRooms = 0;
-    int quantityRooms = 0;
-    int[] quantityWay = { 0, 0, 0, 0};
-    int[,] roomLayer ={
-        //1 = Start
-        //2 = End
-        //Way1 = 10;
-        //Way2 = 11;
-        //Way3 = 12;
-        //Way4 = 13;
-        //0  1  2  3  4  5  6  7  8  9 10
-        { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, //0
-        { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, //1
-        { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, //2
-        { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, //3
-        { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, //4
-        { 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0}, //5
-        { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, //6
-        { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, //7
-        { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, //8
-        { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, //9
-        { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, //10
+{
+    //---Einstellungen---
+    public const int mapArrayLength = 11;
+    public static int[,] mapArray = new int[mapArrayLength, mapArrayLength];
+    const int startX = 5;
+    const int startY = 5;
             
-    };
+    const int branch1Value = 1;
+    const int branch2Value = 2;
+    const int branch3Value = 3;
+    const int branch4Value = 4;
+    public const int spawnRoom = 10;
+    public const int bossRoom = 11;
+    //----
+    public System.Random _random = new System.Random();
+    public int Layerlevel = 1;
+    int[] quantityWay = { 0, 0, 0, 0};
+    /*
+    void Start()
+        {
+            makeRooms();
 
-    public void createLayer()
-    {
-        int[] roomPos = {5,5};
-        /*
-        locRoom(roomPos);
-        Debug.Log(possibleRooms[0]+ " "+possibleRooms[1]+ " "+possibleRooms[2]+ " "+possibleRooms[3]);
+            mapScript = gameObject.FindGameObjectQitchTag(EngineMap).GetComponent<>(GenerateGrid);
+            //GenerateLayer.GetComponent<GenerateGrid>().startClass();
+            //GenerateGrid generateGrid = new GenerateGrid();
+            //generateGrid.startClass();
+        }
         */
 
-        QuantityRoom();
-        spawnRoom(roomPos);
+    public void makeRooms()
+        {
+            int quantityRooms = QuantityRoom();
+            //Debug.Log(quantityRooms);
+            selRoom(quantityRooms);
+            Shuffle(quantityWay);
 
-        spawnWays();
-    }
+            GenerateRooms();
+            spawnBossRoom();
+            
+            //printArray(mapArray, quantityRooms);
+        }
 
-    public void spawnWays()
-    {
+        public void spawnBossRoom()
+        {
+            int[] posFathest = FindFarthestField(mapArray, startX, startY);
+            mapArray[posFathest[0], posFathest[1]] = bossRoom;
+        }
         
-    }
-    
-    public void QuantityRoom()
-    {
-        quantityRooms = (Random.Range(1, 4) + (5 + (Layerlevel * 2)));
-    }
-    
-    public void locRoom(int[] roomPos)
-    {
-        countRooms = 0;
-        //Über
-        if (roomLayer[roomPos[0] - 1,roomPos[1]] == 0)
+        public void printArray(int[,] array, int quantityRooms)
         {
-            addPos(1);
-            countRooms++;
-        }
-        //Rechts
-        if (roomLayer[roomPos[0],roomPos[1] + 1] == 0)
-        {
-            addPos(2);
-            countRooms++;
-        }
-        //Unten 
-        if (roomLayer[roomPos[0] + 1,roomPos[1]] == 0)
-        {
-            addPos(3);
-            countRooms++;
-        }
-        //Links
-        if (roomLayer[roomPos[0],roomPos[1] - 1] == 0)
-        {
-            addPos(4);
-            countRooms++;
-        }
-    }
-
-    public void addPos(int value)
-    {
-        bool found = false;
-        int countPossible = 0;
-        while (found == false)
-        {
-            if (possibleRooms[countPossible] == 0)
+            Debug.Log(quantityRooms);
+            Debug.Log("--"+quantityWay[0] + quantityWay[1] + quantityWay[2] + quantityWay[3]);
+            
+            for (int x = 0; x < mapArrayLength; x++)
             {
-                possibleRooms[countPossible] = value;
-                found = true;
+                string msg = " ";
+                for (int y = 0; y < mapArrayLength; y++)
+                {
+                    msg += " - " + array[x, y];
+                }
+
+                Debug.Log(x +": "+msg);
             }
-            countPossible++;
+
         }
-    }
-    
-    public void spawnRoom(int[] roomPos)
-    {
-        //int[] possibleRooms = { 1, 2, 3, 4};
         
-        locRoom(roomPos);
-        Shuffle(possibleRooms);
-        selRoom();
-        
-        Debug.Log("-" + possibleRooms[0] + "-" + possibleRooms[1] + "-" + possibleRooms[2] + "-" + possibleRooms[3]);
-        Debug.Log("-" + selectedRoom[0] + "-" + selectedRoom[1] + "-" + selectedRoom[2] + "-" + selectedRoom[3]);
-        Debug.Log("-" + quantityWay[0] + "-" + quantityWay[1] + "-" + quantityWay[2] + "-" + quantityWay[3]);
-        
-        
-        //int[] roomPos = {5,5};
-        for (int i = 0; i < selectedRoom.GetLength(0); i++)
-        {
-            if (selectedRoom[i] != 0)
+        public void GenerateRooms(){
+            mapArray[startX, startY] = spawnRoom;
+            
+            if (quantityWay[0] != 0)
             {
-                if (selectedRoom[i] == 1)
-                {
-                    roomLayer[roomPos[0] - 1, roomPos[1]] = 10;
-                }
-                if (selectedRoom[i] == 2)
-                {
-                    roomLayer[roomPos[0], roomPos[1] + 1] = 11;
-                }
-                if (selectedRoom[i] == 3)
-                {
-                    roomLayer[roomPos[0] + 1, roomPos[1]] = 12;
-                }
-                if (selectedRoom[i] == 4)
-                {
-                    roomLayer[roomPos[0], roomPos[1] - 1] = 13;
-                }
+                mapArray[startX+1, startY] = branch1Value;
+            }
+            if (quantityWay[1] != 0)
+            {
+                mapArray[startX-1, startY] = branch2Value;
+            }
+            if (quantityWay[2] != 0)
+            {
+                mapArray[startX, startY+1] = branch3Value;
                 
             }
-        }
-    }
- 
-    public void Shuffle(int[] array)
-    {
-        int[] rooms = new int[4];
-
-        for (int i = 0; i < 4; i++)
-        {
-            int next = _random.Next(0,4);
-            while (true)
+            if (quantityWay[3] != 0)
             {
-                if (rooms[next] == 0)
+                mapArray[startX, startY-1] = branch4Value;
+            }
+            
+            GenerateBranch(mapArray, startX + 2, startY, branch1Value, quantityWay[0]-1);
+            GenerateBranch(mapArray, startX - 2, startY, branch2Value, quantityWay[1]-1);
+            GenerateBranch(mapArray, startX, startY + 2, branch3Value, quantityWay[2]-1);
+            GenerateBranch(mapArray, startX, startY - 2, branch4Value, quantityWay[3]-1);
+        }
+
+        public void GenerateBranch(int[,] array, int x, int y, int value, int remainingBranches)
+        {
+            if (IsPositionInArray(mapArray, x, y) == false || remainingBranches <= 0)
+            {
+                return;
+            }
+
+            if (array[x, y] != 0)
+            {
+                return;
+            }
+            
+            array[x, y] = value;
+            
+            if (remainingBranches > 0)
+            {
+                bool done = false;
+                int count = 0;
+                while (done == false)
                 {
-                    rooms[next] = array[i];
-                    break;
-                }
-                else
-                {
-                    next= _random.Next(0,4);
+                    int direction = _random.Next(0, 4);
+                    if (direction == 0)
+                    {
+                        if (IsPositionInArray(mapArray, x+1, y) && array[x+1, y] == 0)
+                        {
+                            done = true;
+                            GenerateBranch(array, x + 1, y, value, remainingBranches - 1);
+                        }
+
+                    }
+                    else if (direction == 1)
+                    {
+                        if (IsPositionInArray(mapArray, x-1, y) && array[x-1, y] == 0)
+                        {
+                            done = true;
+                            GenerateBranch(array, x - 1, y, value, remainingBranches - 1);
+                        }
+                    }
+                    else if (direction == 2)
+                    {
+                        if (IsPositionInArray(mapArray, x, y+1) && array[x, y+1] == 0)
+                        {
+                            done = true;
+                            GenerateBranch(array, x, y + 1, value, remainingBranches - 1);
+                        }
+                    }
+                    else
+                    {
+                        if (IsPositionInArray(mapArray, x, y-1) && array[x, y-1] == 0)
+                        {
+                            done = true;
+                            GenerateBranch(array, x, y - 1, value, remainingBranches - 1);
+                        }
+                    }
+
+                    if (count == 20)
+                    {
+                        done = true;
+                    }
+
+                    count++;
                 }
             }
         }
-
-        possibleRooms = rooms;
-    }
-    
-    public void selRoom(){
-        int randomRange = Random.Range(1, 101); //zwischen 1 - 100
-        int randomQuantityWay = Random.Range(1, quantityRooms-2);
-        //Debug.Log("===" + randomRange);
-        //Debug.Log("===" + quantityRooms + "->" + randomQuantityWay);
         
-        int num = 0;
-        if (countRooms == 1)
+        public bool IsPositionInArray(int[,] array, int x, int y)
         {
-            num = 1;
+            int rows = array.GetLength(0);
+            int columns = array.GetLength(1);
+            
+            if (x >= 0 && x < rows && y >= 0 && y < columns)
+            {
+                return true;
+            }
+
+            return false;
         }
-        else if (countRooms == 2)
+        
+        public int QuantityRoom()
         {
-            // 2 Räume = 85%
-            // 1 Raum = 15%
-            if (randomRange <= 15)
-            {
-                num = 1;
-            }
-            else
-            {
-                num = 2;
-            }
+            return(_random.Next(0, 4) + (5 + (Layerlevel * 2)));
         }
-        else if (countRooms == 3)
+        
+        public void selRoom(int quantityRooms)
         {
-            // 3 Räume = 65%
-            // 2 Raum = 25%
-            // 1 Raum = 10%
-            if (randomRange <= 10)
-            {
-                num = 1;
-            }
-            else if(randomRange <= 25)
-            {
-                num = 2;
-            }
-            else
-            {
-                num = 3;
-            }
-        }
-        else if (countRooms == 4)
-        {
+            int randomRange = _random.Next(1, 101); //zwischen 1 - 100
+            int randomQuantityWay = _random.Next(1, quantityRooms-2);
+            int num = 0;
             // 4 Räume = 65%
             // 3 Raum = 25%
             // 2 Räume = 10%
@@ -216,7 +197,7 @@ public class GenerateLayer : MonoBehaviour
             {
                 num = 2;
             }
-            else if(randomRange <= 25)
+            else if(randomRange <= 35)
             {
                 num = 3;
             }
@@ -224,76 +205,88 @@ public class GenerateLayer : MonoBehaviour
             {
                 num = 4;
             }
-        }
-        
-        // 4 Räume
-        //  -Way1 = randomQuantityWay / 2
-        //  -Way2 = randomQuantityWay / 2
-        //  -Way3 = (quantityRooms - randomQuantityWay)/2
-        //  -Way4 = (quantityRooms - randomQuantityWay)/2
-        // 3 Raum
-        //  -Way1 = randomQuantityWay / 2
-        //  -Way2 = randomQuantityWay / 2
-        //  -Way3 = quantityRooms - randomQuantityWay
-        // 2 Räume
-        //  -Way1 = randomQuantityWay
-        //  -Way2 = quantityRooms - randomQuantityWay
-        // 1 Raum
-        //  -Way1 = quantityRooms
-        if (num == 1)
-        {
-            quantityWay[0] = quantityRooms;
-        }
-        else if (num == 2)
-        {
-            quantityWay[0] = randomQuantityWay;
-            quantityWay[1] = quantityRooms - randomQuantityWay;
-        }
-        else if (num == 3)
-        {
-            quantityWay[0] = randomQuantityWay / 2;
-            quantityWay[1] = randomQuantityWay / 2;
-            quantityWay[2] = quantityRooms - randomQuantityWay;
-        }
-        else if (num == 4)
-        {
-            quantityWay[0] = randomQuantityWay / 2;
-            quantityWay[1] = randomQuantityWay / 2;
-            quantityWay[2] = (quantityRooms - randomQuantityWay) /2;
-            quantityWay[3] = (quantityRooms - randomQuantityWay) /2;
-        }
-        
-        
-
-        //int num  = Random.Range(1, countRooms+1);
-        Debug.Log("===" + num);
-        for (int i = 0; i < num; i++) 
-        { 
-            selectedRoom[i] = possibleRooms[i];
-        }   
-
-    }
-
-    void Start()
-    {
-        createLayer();
-        printArray();
-
-    }
-
-    public void printArray()
-    {
-
-        for (int x = 0; x < roomLayer.GetLength(0); x++)
-        {
-            string msg = " ";
-            for (int y = 0; y < roomLayer.GetLength(1); y++)
+            // 4 Räume
+            //  -Way1 = randomQuantityWay / 2
+            //  -Way2 = randomQuantityWay / 2
+            //  -Way3 = (quantityRooms - randomQuantityWay)/2
+            //  -Way4 = (quantityRooms - randomQuantityWay)/2
+            // 3 Raum
+            //  -Way1 = randomQuantityWay / 2
+            //  -Way2 = randomQuantityWay / 2
+            //  -Way3 = quantityRooms - randomQuantityWay
+            // 2 Räume
+            //  -Way1 = randomQuantityWay
+            //  -Way2 = quantityRooms - randomQuantityWay
+            // 1 Raum
+            //  -Way1 = quantityRooms
+            
+            //Überarbeiten 
+            if (num == 2)
             {
-                msg += " - " + roomLayer[x, y];
+                quantityWay[0] = randomQuantityWay;
+                quantityWay[1] = quantityRooms - randomQuantityWay;
+            }
+            else if (num == 3)
+            {
+                quantityWay[0] = randomQuantityWay / 2;
+                quantityWay[1] = randomQuantityWay / 2;
+                quantityWay[2] = quantityRooms - randomQuantityWay;
+            }
+            else if (num == 4)
+            {
+                quantityWay[0] = randomQuantityWay / 2;
+                quantityWay[1] = randomQuantityWay / 2;
+                quantityWay[2] = (quantityRooms - randomQuantityWay) /2;
+                quantityWay[3] = (quantityRooms - randomQuantityWay) /2;
+            }
+        }
+
+        public void Shuffle(int[] array)
+        {
+            int[] rooms = new int[4];
+
+            for (int i = 0; i < 4; i++)
+            {
+                int next = _random.Next(0,4);
+                while (true)
+                {
+                    if (rooms[next] == 0)
+                    {
+                        rooms[next] = array[i];
+                        break;
+                    }
+                    else
+                    {
+                        next= _random.Next(0,4);
+                    }
+                }
             }
 
-            Debug.Log(x +": "+msg);
+            quantityWay = rooms;
+        }
+        
+    public int[] FindFarthestField(int[,] array,  int centerX,  int centerY)
+    { 
+        double farthestDistance = 0;
+        int[] farthestPosition = new int[2];
+        for (int i = 0; i < array.GetLength(0); i++)
+        { 
+            for (int j = 0; j < array.GetLength(1); j++)
+            { 
+                if (array[i,j] != 0)
+                { 
+                    double distance = Math.Sqrt(Math.Pow(centerX - i, 2) + Math.Pow(centerY - j, 2)); 
+                    if (distance > farthestDistance) 
+                    { 
+                        farthestDistance = distance; 
+                        farthestPosition[0] = i; 
+                        farthestPosition[1] = j;
+                    } 
+                }
+            }
         }
 
+        return farthestPosition;
     }
 }
+
