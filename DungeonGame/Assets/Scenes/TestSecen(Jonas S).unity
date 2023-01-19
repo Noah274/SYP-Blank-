@@ -196,7 +196,8 @@ SpriteRenderer:
   m_SortingLayerID: -1900684071
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -348,14 +349,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 424796476}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 1, y: 0, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1631015594}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 180, y: 0, z: 0}
 --- !u!483693784 &424796478
 TilemapRenderer:
   m_ObjectHideFlags: 0
@@ -468,14 +469,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 873951837}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 1, y: 0, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1631015594}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 180, y: 0, z: 0}
 --- !u!483693784 &873951839
 TilemapRenderer:
   m_ObjectHideFlags: 0
@@ -677,10 +678,13 @@ MonoBehaviour:
   script: {fileID: 1594595082}
   gridFloor: {fileID: 873951840}
   gridWall: {fileID: 424796479}
-  wall: {fileID: 11400000, guid: 6b94d0ae137c48f4fa0429346c61825a, type: 2}
-  dirt: {fileID: 11400000, guid: 92268e7b5cefd2148bece98ed64169a6, type: 2}
-  grass: {fileID: 11400000, guid: ad1e6e0f670cbfd40a541b4709db6d9c, type: 2}
-  gold: {fileID: 11400000, guid: 282b73e32a71f2d4c9064c9fc20d0f03, type: 2}
+  doorFrame: {fileID: 6644944589867386885, guid: 4be821d0b78ad5043985b57b738e951b,
+    type: 3}
+  fGrass: {fileID: 11400000, guid: 8143e435c2ff5f342951e4e9991c11ea, type: 2}
+  wTop: {fileID: 11400000, guid: 4e1e2fa91134aaf47a8d4022b0d0a6ac, type: 2}
+  wBottom: {fileID: 11400000, guid: f8a08cc7e1ef4bd41ad3d91c4ae0824a, type: 2}
+  wCorner: {fileID: 11400000, guid: 1d152d7da7af5144aaa09f2cfe101265, type: 2}
+  test: {fileID: 11400000, guid: e11c32a79e84ef5488f2204694bbdfa4, type: 2}
 --- !u!4 &1594595084
 Transform:
   m_ObjectHideFlags: 0
