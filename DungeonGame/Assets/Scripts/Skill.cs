@@ -18,7 +18,7 @@ public class Skill : MonoBehaviour
         DescriptionText.text = $"{skillTree.SkillDescription[id]}\nCost: {skillTree.SkillPoint}/1 SP";
 
         GetComponent<Image>().color = skillTree.SkillLevels[id] >= skillTree.SkillCaps[id] ? Color.yellow
-            : skillTree.SkillPoint > 1 ? Color.green : Color.white;
+            : skillTree.SkillPoint > 0 ? Color.green : Color.white;
         foreach (var connectedSkill in ConnectedSkills)
         {
             skillTree.SkillList[connectedSkill].gameObject.SetActive(skillTree.SkillLevels[id] > 0);
