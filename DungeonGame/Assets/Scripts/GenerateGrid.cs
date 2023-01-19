@@ -23,6 +23,7 @@ public class GenerateGrid : MonoBehaviour
     public Tilemap gridFloor;
     public Tilemap gridWall;
     public GameObject doorFrame;
+    public GameObject doorClosed;
     
     private Dictionary<Tile, string> mapTile = new Dictionary<Tile, string>();
     public Tile fGrass;
@@ -41,7 +42,7 @@ public class GenerateGrid : MonoBehaviour
         
         
         script.makeRooms();
-        //printArray(mapArray);
+        printArray(mapArray);
         BuildRoom();
     }
 
@@ -81,7 +82,7 @@ public class GenerateGrid : MonoBehaviour
             string msg = " ";
             for (int y = 0; y < mapArrayLength; y++)
             {
-                msg += " - " + array[x, y];
+                msg += " - " + array[y, x];
             }
 
             Debug.Log(x +": "+msg);
@@ -154,13 +155,6 @@ public class GenerateGrid : MonoBehaviour
                             //Die Vorlage wird platziert
                             for (int y = 0; y < boxLength; y++)
                             {
-                                /*
-                                for (int x = boxLength; x > 0; x--)
-                                {
-                                    printMap(arrayNum, y, x, distanceY, distanceX, mapArrayPosX, mapArrayPosY, roomtype[1]);
-                                }*/
-                                
-                                
                                 for (int x = 0; x < boxLength; x++)
                                 {
                                     printMap(arrayNum, y, x, distanceY, distanceX, mapArrayPosX, mapArrayPosY, roomtype[1]);
@@ -222,11 +216,12 @@ public class GenerateGrid : MonoBehaviour
         switch (tileBlock)
         {
             case "dUp":
+                //Unten
                 output = makeDoor(mapArrayPosX, mapArrayPosY, mapArrayPosX, mapArrayPosY + 1);
                 if (output)
                 {
-                    outputTile = 2;
-                    //Instantiate(doorFrame, new Vector3Int(x + distanceX, y- distanceY), Quaternion.Euler(0, 0, 0));   
+                    placeGameObject(doorFrame, x + distanceX, y- distanceY+1, 180f);
+                    placeGameObject(doorClosed, x + distanceX, y- distanceY+1, 180f); 
                 }
                 else
                 {
@@ -234,11 +229,12 @@ public class GenerateGrid : MonoBehaviour
                 }
                 break;
             case "dDown":
+                //Oben
                 output = makeDoor(mapArrayPosX, mapArrayPosY, mapArrayPosX, mapArrayPosY - 1);
                 if (output)
                 {
-                    outputTile = 2;
-                    //Instantiate(doorFrame, new Vector3Int(x + distanceX, y- distanceY), Quaternion.Euler(0, 0, 0));
+                    placeGameObject(doorFrame, x + distanceX, y- distanceY, 0f);
+                    placeGameObject(doorClosed, x + distanceX, y- distanceY, 0f);
                 }
                 else
                 {
@@ -249,8 +245,8 @@ public class GenerateGrid : MonoBehaviour
                 output = makeDoor(mapArrayPosX, mapArrayPosY, mapArrayPosX + 1, mapArrayPosY);
                 if (output)
                 {
-                    outputTile = 2;
-                    //Instantiate(doorFrame, new Vector3Int(x + distanceX, y- distanceY), Quaternion.Euler(0, 0, 0));  
+                    placeGameObject(doorFrame, x + distanceX-0.5f, y- distanceY+0.5f, -90f);
+                    placeGameObject(doorClosed, x + distanceX-0.5f, y- distanceY+0.5f, -90f); 
                 }
                 else
                 {
@@ -261,8 +257,8 @@ public class GenerateGrid : MonoBehaviour
                 output = makeDoor(mapArrayPosX, mapArrayPosY, mapArrayPosX - 1, mapArrayPosY);
                 if (output)
                 {
-                    outputTile = 2;
-                    //Instantiate(doorFrame, new Vector3Int(x + distanceX, y- distanceY), Quaternion.Euler(0, 0, 0));
+                    placeGameObject(doorFrame, x + distanceX+0.5f, y- distanceY+0.5f, 90f);
+                    placeGameObject(doorClosed, x + distanceX+0.5f, y- distanceY+0.5f, 90f);
                 }
                 else
                 {
@@ -335,6 +331,11 @@ public class GenerateGrid : MonoBehaviour
         {
             gridFloor.SetTile(new Vector3Int(x + distanceX, y- distanceY), GetTileByNum(getNumOfTile(tileBlock)));   
         }
+    }
+
+    private void placeGameObject(GameObject o, float distanceX, float distanceY, float f)
+    {
+        Instantiate(o, new Vector3(distanceX , distanceY), Quaternion.Euler(0, 0, f));
     }
 
     private void paceWallOnMAp(int x, int y, int secondX, int secondY, float rotation)

@@ -50,7 +50,7 @@ public class MapsArray : MonoBehaviour
             {"wUpLeft", "wUp", "wUp", "dUp", "wUp", "wUp", "wUpRight"},
             {"wLeft", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "wRight"},
             {"wLeft", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "wRight"},
-            {"dLeft","fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "dRight"},
+            {"dLeft","fGrass", "fGrass", "test", "fGrass", "fGrass", "dRight"},
             {"wLeft", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "wRight"},
             {"wLeft", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "wRight"},
             {"wDownLeft","wDown", "wDown", "dDown", "wDown","wDown", "wDownRight"},
