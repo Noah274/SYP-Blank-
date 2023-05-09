@@ -1,4 +1,4 @@
-﻿
+﻿/*
 public class Player
 {
     public enum Skill
@@ -14,3 +14,4 @@ public class Player
     Skill.Skill[] _skill = new Skill.Skill[3]{Skill.NAN,Skill.NAN,Skill.NAN};
 
 }
+*/
