@@ -1,0 +1,31 @@
+@startuml
+top to bottom direction
+package UC_Alone_in_the_Dungeon{
+Title: Author: Noah Gabriel Grundner \n Date: 07.03.2023
+
+package Main_Menu{
+usecase "Play" as P
+usecase "Options" as O
+usecase "Exit" as E
+usecase "Close Game" as C
+usecase "in menu" as M
+usecase "completeing dungeon levels" as D
+usecase "beated the game" as B
+usecase "adjusting Settings settings" as A
+
+
+M --> P
+M --> O
+M --> E
+
+E --> C
+P --> D
+D --> B
+O --> A
+A --> M
+B --> C
+
+}
+actor Player
+Player -> M
+}@enduml

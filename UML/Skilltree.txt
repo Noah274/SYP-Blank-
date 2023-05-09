@@ -1,0 +1,19 @@
+@startuml
+title Author: Paul Krenmayr \n Date: 07.03.2023
+
+package UC_How_to_use_skills{
+actor User
+package Game{
+  (Main Menu) as UC1
+  (Show All avaiable Skills) as UC2
+  (Press Skill to unlock in game) as UC3
+  note "Press button to \nenter the skill menu" as N1
+  
+  UC1 <|.. N1
+  N1 .. UC2 : extends
+  UC2 --> UC3 : includes
+}
+
+User -- UC1
+}
+@enduml

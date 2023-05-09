@@ -1,0 +1,25 @@
+@startuml
+title Author: Paul Krenmayr \n Date: 07.03.2023
+
+
+package UC_Entering_the_Game{
+actor User
+package Game{
+  (Main Menu) as UC1
+  (Generate Dungeon) as UC2
+  (Generate Layer) as UC3
+  (Generate Rooms) as UC4
+  (Generate Mobs) as UC5
+  
+  UC2 --> UC3 : includes
+  UC2 --> UC4 : includes
+  UC4 --> UC5 : includes
+ note "Press button to \nenter in the Game" as N1
+ UC1 <|.. N1
+ N1 .. UC2 : extends
+}
+
+
+User -- UC1
+}
+@enduml
