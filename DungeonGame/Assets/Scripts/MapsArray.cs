@@ -22,60 +22,67 @@ public class MapsArray : MonoBehaviour
 
     }
     
+    
+    /*
+        wUp
+        wLeft
+        wRight
+        wDown
+        wCorner
+        
+        dUp
+        dRight
+        dLeft
+        dDown
+        
+        fGrass
+     */
+    /*
+     * wUpLeft
+     * 21
+     * 22
+     *
+     * 
+     */
     public static string[,,] spawnBuild =
     {
         {
-            {"wall", "wall", "wall", "doorUp", "wall", "wall", "wall"},
-            {"wall", "grass", "grass", "grass", "grass", "grass", "wall"},
-            {"wall","grass", "grass", "dirt","grass", "grass", "wall"},
-            {"doorLeft","grass", "dirt", "gold", "dirt", "grass", "doorRight"},
-            {"wall","grass", "grass", "dirt","grass", "grass", "wall"},
-            {"wall","grass", "grass", "grass","grass", "grass", "wall"},
-            {"wall","wall", "wall", "doorDown", "wall","wall", "wall"},
-        },
-        {
-            {"wall", "wall", "wall", "doorUp", "wall", "wall", "wall"},
-            {"wall", "dirt", "dirt", "grass", "grass", "grass", "wall"},
-            {"wall","grass", "grass", "grass","grass", "grass", "wall"},
-            {"doorLeft","grass", "grass", "gold", "grass", "grass", "doorRight"},
-            {"wall","grass", "grass", "grass","grass", "grass", "wall"},
-            {"wall","grass", "grass", "grass","dirt", "dirt", "wall"},
-            {"wall","wall", "wall", "doorDown", "wall","wall", "wall"},
+            {"wUpLeft", "wUp", "wUp", "dUp", "wUp", "wUp", "wUpRight"},
+            {"wLeft", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "wRight"},
+            {"wLeft", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "wRight"},
+            {"dLeft","fGrass", "fGrass", "test", "fGrass", "fGrass", "dRight"},
+            {"wLeft", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "wRight"},
+            {"wLeft", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "wRight"},
+            {"wDownLeft","wDown", "wDown", "dDown", "wDown","wDown", "wDownRight"},
         }
     };
     
     public static string[,,] bossBuild =
     {
         {
-            {"wall", "wall", "wall", "doorUp", "wall", "wall", "wall"},
-            {"wall", "grass", "grass", "grass", "grass", "grass", "wall"},
-            {"wall","grass", "dirt", "grass","dirt", "grass", "wall"},
-            {"doorLeft","grass", "grass", "dirt", "grass", "grass", "doorRight"},
-            {"wall","grass", "dirt", "grass","dirt", "grass", "wall"},
-            {"wall","grass", "grass", "grass","grass", "grass", "wall"},
-            {"wall","wall", "wall", "doorDown", "wall","wall", "wall"},
+            {"wUpLeft", "wUp", "wUp", "dUp", "wUp", "wUp", "wUpRight"},
+            {"wLeft", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "wRight"},
+            {"wLeft", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "wRight"},
+            {"dLeft","fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "dRight"},
+            {"wLeft", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "wRight"},
+            {"wLeft", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "wRight"},
+            {"wDownLeft","wDown", "wDown", "dDown", "wDown","wDown", "wDownRight"},
         }
     };
     
     public static string[,,] roomBuild =
     {
+        //y
         {
-            {"wall", "wall", "wall", "doorUp", "wall", "wall", "wall"},
-            {"wall", "grass", "grass", "grass", "grass", "grass", "wall"},
-			{"wall","grass", "grass", "grass","grass", "grass", "wall"},
-            {"doorLeft","grass", "grass", "dirt", "grass", "grass", "doorRight"},
-            {"wall","grass", "grass", "grass","grass", "grass", "wall"},
-			{"wall","grass", "grass", "grass","grass", "grass", "wall"},
-            {"wall","wall", "wall", "doorDown", "wall","wall", "wall"},
-        },
-        {
-            { "wall", "wall", "wall", "doorUp", "wall", "wall", "wall"},
-            {"wall", "wall", "grass", "grass", "grass", "wall", "wall"},
-            {"wall","grass", "grass", "grass","grass", "grass", "wall"},
-            {"doorLeft","grass", "grass", "dirt", "grass", "grass", "doorRight"},
-            {"wall","grass", "grass", "grass","grass", "grass", "wall"},
-            {"wall","wall", "grass", "grass","grass", "wall", "wall"},
-            {"wall","wall", "wall", "doorDown", "wall","wall", "wall"},
+            //x
+            {"wUpLeft", "wUp", "wUp", "dUp", "wUp", "wUp", "wUpRight"},
+            {"wLeft", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "wRight"},
+            {"wLeft", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "wRight"},
+            {"dLeft","fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "dRight"},
+            {"wLeft", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "wRight"},
+            {"wLeft", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "wRight"},
+            {"wDownLeft","wDown", "wDown", "dDown", "wDown","wDown", "wDownRight"},
         }
+
     };
 }

@@ -250,7 +250,7 @@ public class GenerateLayer : MonoBehaviour
                 int next = _random.Next(0,4);
                 while (true)
                 {
-                    if (rooms[next] == 0)
+                    if (rooms[next] == 0) 
                     {
                         rooms[next] = array[i];
                         break;

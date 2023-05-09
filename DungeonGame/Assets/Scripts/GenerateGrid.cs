@@ -11,47 +11,49 @@ using Newtonsoft.Json;
 
 public class GenerateGrid : MonoBehaviour
 {
-    public GenerateLayer script;
+	public GenerateLayer script;
     public System.Random _random = new System.Random();
     private int[,] mapArray = GenerateLayer.mapArray;
     private int mapArrayLength = GenerateLayer.mapArrayLength;
 
-    private string[,,] roomBuild;
+    private string[,,] roomBuild = MapsArray.roomBuild;
     //LoadRoomBuild()
     //MapsArray.roomBuild
     
     public Tilemap gridFloor;
     public Tilemap gridWall;
+    public GameObject doorFrame;
+    public GameObject doorClosed;
     
     private Dictionary<Tile, string> mapTile = new Dictionary<Tile, string>();
-    public Tile wall;
-    public Tile dirt;
-    public Tile grass;
-    public Tile gold;
-
-
+    public Tile fGrass;
+    public Tile wTop;
+    public Tile wBottom;
+    public Tile wCorner;
+    public Tile test;
+    
     void Start()
     {
         tileLinkedList();
-        roomBuild = LoadRoomBuild();
+        //roomBuild = LoadRoomBuild();
         //Debug.Log(roomBuild.GetLength(0));
         //string jsonString = PlayerPrefs.GetString("firstJason");
         //Debug.Log(jsonString);
         
         
         script.makeRooms();
-        //printArray(mapArray);
+        printArray(mapArray);
         BuildRoom();
     }
 
     public void tileLinkedList()
     {
         //Alle Tiles die es zur verfügung gibt
-        mapTile.Add(wall, "wall");
-        mapTile.Add(dirt, "dirt");
-        mapTile.Add(grass, "grass");
-        mapTile.Add(gold, "gold");
-
+        mapTile.Add(fGrass, "fGrass");
+        mapTile.Add(wTop, "wTop");
+        mapTile.Add(wBottom, "wBottom");
+        mapTile.Add(wCorner, "wCorner");
+        mapTile.Add(test, "test");
     }
 
     public Tile GetTileByNum(int num)
@@ -80,7 +82,7 @@ public class GenerateGrid : MonoBehaviour
             string msg = " ";
             for (int y = 0; y < mapArrayLength; y++)
             {
-                msg += " - " + array[x, y];
+                msg += " - " + array[y, x];
             }
 
             Debug.Log(x +": "+msg);
@@ -115,8 +117,8 @@ public class GenerateGrid : MonoBehaviour
     public void BuildRoom()
     {
         //Debug.Log("-BuildRoom");
-        int arrayX = 0;
-        int arrayY = 0;
+        int distanceX = 0;
+        int distanceY = 0;
         int boxLength = roomBuild.GetLength(2);
         int arrayLength = 0;
         
@@ -155,71 +157,202 @@ public class GenerateGrid : MonoBehaviour
                             {
                                 for (int x = 0; x < boxLength; x++)
                                 {
-                                    printMap(arrayNum, y, x, arrayY, arrayX, mapArrayPosX, mapArrayPosY, roomtype[1]);
+                                    printMap(arrayNum, y, x, distanceY, distanceX, mapArrayPosX, mapArrayPosY, roomtype[1]);
                                 }
                             }
 
-                            arrayX += boxLength;
+                            distanceX += boxLength + 3;
                         }
                     }  
                 }
                 else
                 {
-                    arrayX += boxLength;
+                    distanceX += boxLength + 3;
                 }
             }
-            arrayY += boxLength;
-            arrayX = 0;
+            distanceY += boxLength + 3;
+            distanceX = 0;
         }
     }
     
-    public void printMap(int arrayNum, int y, int x, int arrayY, int arrayX, int mapArrayPosX, int mapArrayPosY, int roomType)
+    /*
+        wUp
+        wLeft
+        wRight
+        wDown
+        wCorners
+        
+        dUp
+        dRight
+        dLeft
+        dDown
+        
+        fGrass
+     */
+    
+    public void printMap(int arrayNum, int y, int x, int distanceY, int distanceX, int mapArrayPosX, int mapArrayPosY, int roomType)
     {
         //Auswahl, welche Art von raum es ist
         string tileBlock = "";
         switch (roomType)
         {
             case 0:
-                tileBlock = roomBuild[arrayNum, x, y];
+                tileBlock = roomBuild[arrayNum, y, x];
                 break;
             case 1:
-                tileBlock = MapsArray.bossBuild[arrayNum, x, y];
+                tileBlock = MapsArray.bossBuild[arrayNum, y, x];
                 break;
             case 2:
-                tileBlock = MapsArray.spawnBuild[arrayNum, x, y];
+                tileBlock = MapsArray.spawnBuild[arrayNum, y, x];
                 break;
         }
         
         int outputTile = 0;
         bool output = false;
+        bool tile = true;
         
         //Auswahl, auf welcher seite die Tür Platziert werden muss
+        
         switch (tileBlock)
         {
-            case "doorUp":
-                output = makeDoor(mapArrayPosX, mapArrayPosY, mapArrayPosX - 1, mapArrayPosY);
-                break;
-            case "doorDown":
-                output = makeDoor(mapArrayPosX, mapArrayPosY, mapArrayPosX + 1, mapArrayPosY);
-                break;
-            case "doorRight":
-                output = makeDoor(mapArrayPosX, mapArrayPosY, mapArrayPosX, mapArrayPosY - 1);
-                break;
-            case "doorLeft":
+            case "dUp":
+                //Unten
                 output = makeDoor(mapArrayPosX, mapArrayPosY, mapArrayPosX, mapArrayPosY + 1);
+                if (output)
+                {
+                    placeGameObject(doorFrame, x + distanceX, y- distanceY+1, 180f);
+                    placeGameObject(doorClosed, x + distanceX, y- distanceY+1, 180f); 
+                }
+                else
+                {
+                    tile = false;
+                }
+                break;
+            case "dDown":
+                //Oben
+                output = makeDoor(mapArrayPosX, mapArrayPosY, mapArrayPosX, mapArrayPosY - 1);
+                if (output)
+                {
+                    placeGameObject(doorFrame, x + distanceX, y- distanceY, 0f);
+                    placeGameObject(doorClosed, x + distanceX, y- distanceY, 0f);
+                }
+                else
+                {
+                    tile = false;
+                }
+                break;
+            case "dRight":
+                output = makeDoor(mapArrayPosX, mapArrayPosY, mapArrayPosX + 1, mapArrayPosY);
+                if (output)
+                {
+                    placeGameObject(doorFrame, x + distanceX-0.5f, y- distanceY+0.5f, -90f);
+                    placeGameObject(doorClosed, x + distanceX-0.5f, y- distanceY+0.5f, -90f); 
+                }
+                else
+                {
+                    tile = false;
+                }
+                break;
+            case "dLeft":
+                output = makeDoor(mapArrayPosX, mapArrayPosY, mapArrayPosX - 1, mapArrayPosY);
+                if (output)
+                {
+                    placeGameObject(doorFrame, x + distanceX+0.5f, y- distanceY+0.5f, 90f);
+                    placeGameObject(doorClosed, x + distanceX+0.5f, y- distanceY+0.5f, 90f);
+                }
+                else
+                {
+                    tile = false;
+                }
+                break;
+        }
+
+        
+        if (tileBlock == "wUp" || (tileBlock == "dUp" && tile == false))
+        {   
+            Debug.Log("test");
+            tile = false;
+            paceWallOnMAp(x + distanceX, y - distanceY, 0 , 1, 180);
+        }
+        else if (tileBlock == "wDown" || (tileBlock == "dDown" && tile == false))
+        {   
+            Debug.Log("test");
+            tile = false;
+            paceWallOnMAp(x + distanceX, y - distanceY, 0 , -1, 0);
+        }
+        else if (tileBlock == "wRight" || (tileBlock == "dRight" && tile == false))
+        {   
+            Debug.Log("test");
+            tile = false;
+            paceWallOnMAp(x + distanceX, y - distanceY, 1 , 0, -90);
+        }
+        else if (tileBlock == "wLeft" || (tileBlock == "dLeft" && tile == false))
+        {
+            Debug.Log("test");
+            tile = false;
+            paceWallOnMAp(x + distanceX, y - distanceY, -1 , 0, 90);
+        }
+        
+        switch (tileBlock)
+        {
+            case "wUpLeft":
+                tile = false;
+                gridFloor.SetTile(new Vector3Int(x + distanceX, y- distanceY), GetTileByNum(getNumOfTile("wCorner")));  
+                gridFloor.SetTile(new Vector3Int(x + distanceX-1, y- distanceY), GetTileByNum(getNumOfTile("wCorner")));  
+                gridFloor.SetTile(new Vector3Int(x + distanceX, y- distanceY-1), GetTileByNum(getNumOfTile("wCorner")));  
+                gridFloor.SetTile(new Vector3Int(x + distanceX-1, y- distanceY-1), GetTileByNum(getNumOfTile("wCorner")));  
+                break;
+            case "wUpRight":
+                tile = false;
+                gridFloor.SetTile(new Vector3Int(x + distanceX, y- distanceY), GetTileByNum(getNumOfTile("wCorner")));  
+                gridFloor.SetTile(new Vector3Int(x + distanceX+1, y- distanceY), GetTileByNum(getNumOfTile("wCorner")));  
+                gridFloor.SetTile(new Vector3Int(x + distanceX, y- distanceY-1), GetTileByNum(getNumOfTile("wCorner")));  
+                gridFloor.SetTile(new Vector3Int(x + distanceX+1, y- distanceY-1), GetTileByNum(getNumOfTile("wCorner")));  
+                break;
+            case "wDownLeft":
+                tile = false;
+                gridFloor.SetTile(new Vector3Int(x + distanceX, y- distanceY), GetTileByNum(getNumOfTile("wCorner")));  
+                gridFloor.SetTile(new Vector3Int(x + distanceX-1, y- distanceY), GetTileByNum(getNumOfTile("wCorner")));  
+                gridFloor.SetTile(new Vector3Int(x + distanceX, y- distanceY+1), GetTileByNum(getNumOfTile("wCorner")));  
+                gridFloor.SetTile(new Vector3Int(x + distanceX-1, y- distanceY+1), GetTileByNum(getNumOfTile("wCorner")));  
+                break;
+            case "wDownRight":
+                tile = false;
+                gridFloor.SetTile(new Vector3Int(x + distanceX, y- distanceY), GetTileByNum(getNumOfTile("wCorner")));  
+                gridFloor.SetTile(new Vector3Int(x + distanceX+1, y- distanceY), GetTileByNum(getNumOfTile("wCorner")));  
+                gridFloor.SetTile(new Vector3Int(x + distanceX, y- distanceY+1), GetTileByNum(getNumOfTile("wCorner")));  
+                gridFloor.SetTile(new Vector3Int(x + distanceX+1, y- distanceY+1), GetTileByNum(getNumOfTile("wCorner")));  
                 break;
         }
         
-        if (output)
+
+        //Tile wird platziert
+        if (tile)
         {
-            outputTile = 2;
+            gridFloor.SetTile(new Vector3Int(x + distanceX, y- distanceY), GetTileByNum(getNumOfTile(tileBlock)));   
         }
-        else
-        {
-            outputTile = 0;
-        }
+    }
+
+    private void placeGameObject(GameObject o, float distanceX, float distanceY, float f)
+    {
+        Instantiate(o, new Vector3(distanceX , distanceY), Quaternion.Euler(0, 0, f));
+    }
+
+    private void paceWallOnMAp(int x, int y, int secondX, int secondY, float rotation)
+    {
+        Matrix4x4 matrix = Matrix4x4.TRS(Vector3.zero, Quaternion.Euler(0f, 0f, rotation), Vector3.one);
         
+        gridFloor.SetTile(new Vector3Int(x , y), GetTileByNum(getNumOfTile("wBottom")));
+        gridFloor.SetTransformMatrix(new Vector3Int(x , y), matrix);  
+        
+        gridFloor.SetTile(new Vector3Int(x + secondX, y- secondY), GetTileByNum(getNumOfTile("wTop")));
+        gridFloor.SetTransformMatrix(new Vector3Int(x + secondX, y- secondY), matrix);  
+    }
+
+    private int getNumOfTile(string tileBlock)
+    {
         //Es wird geschaut, welches Tile platziert werden muss
+        int outputTile = 0;
         int count = 0;
         foreach (KeyValuePair<Tile, string> combi in mapTile)
         {
@@ -231,9 +364,8 @@ public class GenerateGrid : MonoBehaviour
 
             count++;
         }
-        
-        //Tile wird platziert
-        gridFloor.SetTile(new Vector3Int(x + arrayX, y- arrayY),  GetTileByNum(outputTile));
+
+        return outputTile;
     }
 
     private bool makeDoor(int mapArrayPosX, int mapArrayPosY, int posX, int posY)
