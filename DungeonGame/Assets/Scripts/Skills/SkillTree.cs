@@ -21,7 +21,7 @@ public class SkillTree : MonoBehaviour
 
     private void Start()
     {
-        SkillPoint = 20;
+        
 
         SkillLevels = new int[6];
         SkillCaps = new[] { 1, 5, 1, 5, 1, 1 };
@@ -33,7 +33,7 @@ public class SkillTree : MonoBehaviour
             "So you don't die",
             "A flaming ball of fire",
             "You are a strong Boy",
-            "That's strait out of Valorant",
+            "That's strait out of  Valorant",
             "Who doesn't like explosions",
         };
 
