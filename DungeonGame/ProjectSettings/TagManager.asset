@@ -50,3 +50,15 @@ TagManager:
   - name: Layer 3
     uniqueID: 4189426099
     locked: 0
+  - name: Layer Level Floor
+    uniqueID: 1928354951
+    locked: 0
+  - name: Layer Level Wall
+    uniqueID: 1895993533
+    locked: 0
+  - name: Layer Interactables
+    uniqueID: 736127785
+    locked: 0
+  - name: Layer GUI
+    uniqueID: 3654026061
+    locked: 0
