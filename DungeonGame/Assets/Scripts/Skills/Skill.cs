@@ -6,7 +6,7 @@ using static SkillTree;
 public class Skill : MonoBehaviour
 {
     public int id;
-
+    Player player;
     public TMP_Text TitleText;
     public TMP_Text DescriptionText;
 
@@ -14,8 +14,8 @@ public class Skill : MonoBehaviour
 
     public void UpdateUI()
     {
-        TitleText.text = $"{skillTree.SkillLevels[id]}/{skillTree.SkillCaps[id]}\n{skillTree.SkillNames[id]}";
-        DescriptionText.text = $"{skillTree.SkillDescription[id]}\nCost: {skillTree.SkillPoint}/1 SP";
+        TitleText.text = $"    {skillTree.SkillLevels[id]}/{skillTree.SkillCaps[id]}    \n{skillTree.SkillNames[id]}";
+        DescriptionText.text = $"{skillTree.SkillDescription[id]}";
 
         GetComponent<Image>().color = skillTree.SkillLevels[id] >= skillTree.SkillCaps[id] ? Color.yellow
             : skillTree.SkillPoint > 0 ? Color.green : Color.white;
@@ -33,7 +33,10 @@ public class Skill : MonoBehaviour
         {
             return;
         }
-
+        /*if (id == 2)
+        {
+            player.SetPrimarySkill(2);
+        }*/
         skillTree.SkillPoint -= 1;
         skillTree.SkillLevels[id]++;
         skillTree.UpdateAllSkillUI();

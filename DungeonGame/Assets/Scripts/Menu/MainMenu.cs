@@ -7,22 +7,22 @@ public class MainMenu : MonoBehaviour
 {
     public void PlayGame()
     {
-        SceneManager.LoadScene("SampleScene");
-        Debug.Log("Button Press");
+        SceneManager.LoadScene("Scenes/MainGame-Test");
     }
-    public void SkillTree()
+
+    public void GoBackToMenu()
     {
-        SceneManager.LoadScene("SkillTree");
-        Debug.Log("Button Press");
+        SceneManager.LoadScene("StartScreen");
     }
-        
-    public void OnApplicationQuit()
-    {
-        Debug.Log("My benis is hoat");
-        Application.Quit();
-    }
+    
     public void SwitchToOptionMenu()
     {
         SceneManager.LoadScene("OptionMenu");
     }
+        
+    public void OnApplicationQuit()
+    {
+        Application.Quit();
+    }
+    
 }
