@@ -10,10 +10,16 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene("SampleScene");
         Debug.Log("Button Press");
     }
-    public void SkillTree()
+
+    public void GoBackToMenu()
     {
-        SceneManager.LoadScene("SkillTree");
-        Debug.Log("Button Press");
+        SceneManager.LoadScene("StartScreen");
+        Debug.Log("Jonas Schönbaß hat deine Mom verändert");
+    }
+    
+    public void SwitchToOptionMenu()
+    {
+        SceneManager.LoadScene("OptionMenu");
     }
         
     public void OnApplicationQuit()
@@ -21,8 +27,5 @@ public class MainMenu : MonoBehaviour
         Debug.Log("My benis is hoat");
         Application.Quit();
     }
-    public void SwitchToOptionMenu()
-    {
-        SceneManager.LoadScene("OptionMenu");
-    }
+    
 }
