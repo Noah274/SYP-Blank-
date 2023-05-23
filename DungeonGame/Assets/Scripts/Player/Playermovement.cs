@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Playermovement : MonoBehaviour
 {
@@ -17,7 +18,10 @@ public class Playermovement : MonoBehaviour
         
         float moveX = Input.GetAxisRaw("Horizontal");
         float moveY = Input.GetAxisRaw("Vertical");
-        
+        if (Input.GetKey(KeyCode.O))
+        {
+            SceneManager.LoadScene("OptionMenu");
+        }
         if(Input.GetMouseButtonDown(0))
         {
             weapon.Fire();
