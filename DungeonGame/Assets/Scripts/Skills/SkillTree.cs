@@ -24,17 +24,17 @@ public class SkillTree : MonoBehaviour
         SkillPoint = 20;
 
         SkillLevels = new int[6];
-        SkillCaps = new[] { 1, 5, 5, 2, 10, 10 };
+        SkillCaps = new[] { 1, 5, 1, 5, 1, 1 };
 
-        SkillNames = new[] { "Upgrade 1", "Upgrade 2", "Upgrade 3", "Upgrade 4", "Booster 5", "Booster 6", };
+        SkillNames = new[] { "Fire Element", "More Hp", "Fire Ball", "More Damage", "Wall of Fire", "Meteor strike", };
         SkillDescription = new[]
         {
-            "Does a thing",
-            "Does a cool thing",
-            "Does a really cool thing",
-            "Dose an awesome thing",
-            "Does this math thing",
-            "Does this compounding thing",
+            "Don't burn your self",
+            "So you don't die",
+            "A flaming ball of fire",
+            "You are a strong Boy",
+            "That's strait out of Valorant",
+            "Who doesn't like explosions",
         };
 
         foreach (var skill in SkillHolder.GetComponentsInChildren<Skill>())
