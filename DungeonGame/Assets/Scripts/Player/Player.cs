@@ -44,7 +44,15 @@ public class Player : MonoBehaviour
     
     void TakeDamage(int damage)
     {
-        currentHealth -= damage; 
+        if (damage < 0 && (currentHealth-damage) >= maxHealth){
+            currentHealth = maxHealth;
+        }
+        else if (damage > 0 && (currentHealth - damage) <= 0){
+            currentHealth = 0;
+        }
+        else{
+            currentHealth -= damage;
+        }
         healthBar.setHealth(currentHealth);
     }
 }
