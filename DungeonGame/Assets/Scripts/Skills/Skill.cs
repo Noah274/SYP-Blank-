@@ -6,7 +6,7 @@ using static SkillTree;
 public class Skill : MonoBehaviour
 {
     public int id;
-
+    Player player;
     public TMP_Text TitleText;
     public TMP_Text DescriptionText;
 
@@ -33,10 +33,10 @@ public class Skill : MonoBehaviour
         {
             return;
         }
-        if (id == 2)
+        /*if (id == 2)
         {
-            
-        }
+            player.SetPrimarySkill(2);
+        }*/
         skillTree.SkillPoint -= 1;
         skillTree.SkillLevels[id]++;
         skillTree.UpdateAllSkillUI();
