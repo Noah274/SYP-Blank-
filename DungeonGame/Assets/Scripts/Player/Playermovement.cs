@@ -18,7 +18,7 @@ public class Playermovement : MonoBehaviour
         
         float moveX = Input.GetAxisRaw("Horizontal");
         float moveY = Input.GetAxisRaw("Vertical");
-        if (Input.GetKey(KeyCode.O))
+        if (Input.GetKey(KeyCode.Escape))
         {
             SceneManager.LoadScene("OptionMenu");
         }
