@@ -1264,7 +1264,7 @@ MonoBehaviour:
   SkillHolder: {fileID: 12493232}
   ConnectorList: []
   ConnectorHolder: {fileID: 715200674}
-  SkillPoint: 0
+  SkillPoint: 10
 --- !u!4 &1387668385
 Transform:
   m_ObjectHideFlags: 0

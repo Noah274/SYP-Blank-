@@ -7,14 +7,12 @@ public class MainMenu : MonoBehaviour
 {
     public void PlayGame()
     {
-        SceneManager.LoadScene("SampleScene");
-        Debug.Log("Button Press");
+        SceneManager.LoadScene("Scenes/MainGame-Test");
     }
 
     public void GoBackToMenu()
     {
         SceneManager.LoadScene("StartScreen");
-        Debug.Log("Jonas Schönbaß hat deine Mom verändert");
     }
     
     public void SwitchToOptionMenu()
@@ -24,7 +22,6 @@ public class MainMenu : MonoBehaviour
         
     public void OnApplicationQuit()
     {
-        Debug.Log("My benis is hoat");
         Application.Quit();
     }
     
