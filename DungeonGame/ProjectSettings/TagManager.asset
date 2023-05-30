@@ -6,6 +6,8 @@ TagManager:
   tags:
   - spawnable
   - Bullet
+  - Enemy
+  - Wall
   layers:
   - Default
   - TransparentFX
