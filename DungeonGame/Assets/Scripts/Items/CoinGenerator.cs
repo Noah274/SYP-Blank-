@@ -25,7 +25,6 @@ public class CoinGenerator:MonoBehaviour
         
         for (int i = 0; i < numberToSpawn; i++)
         {
-            Debug.Log("Spawned "+ (i+1) );
             randomItem = Random.Range(0, spawnPool.Count);
             toSpawn = spawnPool[randomItem];
             

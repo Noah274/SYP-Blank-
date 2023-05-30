@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - spawnable
+  - Bullet
+  - Enemy
+  - Wall
   layers:
   - Default
   - TransparentFX

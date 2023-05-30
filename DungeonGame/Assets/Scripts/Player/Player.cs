@@ -12,8 +12,8 @@ public class Player : MonoBehaviour
         Meteor
     };
 
-    public int maxHealth = 100;
-    public int currentHealth;
+    public int maxHealth;
+    private int currentHealth;
     public HealthBar healthBar;
     private SkillDef[] _skill;
 
@@ -34,6 +34,16 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetKey(KeyCode.I))
+        {
+            SceneManager.LoadScene("SkillTree");
+        }
+        
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            SceneManager.LoadScene("OptionMenu");
+        }
+
         if (Input.GetKeyDown(KeyCode.Space))
         {
             TakeDamage(10);

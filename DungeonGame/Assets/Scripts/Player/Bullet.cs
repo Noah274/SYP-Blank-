@@ -4,8 +4,14 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    private void OnCollisionEnter2D(Collision2D collision)
+    void Awake()
     {
-        Destroy(gameObject);
+        GetComponent<Collider2D>().isTrigger = true;
+    }
+    void OnTriggerEnter2D(Collider2D c2d)
+    {
+        if (c2d.CompareTag("Enemy") || c2d.CompareTag("Wall")) {
+            Destroy(gameObject);
+        }
     }
 }

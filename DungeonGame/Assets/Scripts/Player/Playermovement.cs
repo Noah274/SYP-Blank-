@@ -1,7 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.IO;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -13,11 +9,12 @@ public class Playermovement : MonoBehaviour
 
     Vector2 moveDirection;
     Vector2 mousePosition;
+
     void Update()
     {
-        
         float moveX = Input.GetAxisRaw("Horizontal");
         float moveY = Input.GetAxisRaw("Vertical");
+<<<<<<< HEAD
         if (Input.GetKey(KeyCode.Escape))
         {
             //TODO: Open pause menu 
@@ -26,21 +23,27 @@ public class Playermovement : MonoBehaviour
         {
             SceneManager.LoadScene("SkillTree");
         }
+=======
+
+
+        moveDirection = new Vector2(moveX, moveY).normalized;
+        mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+>>>>>>> 640deef4b759cb7e37306fecd9f2450bb9fcf401
         if(Input.GetMouseButtonDown(0))
+
         {
             weapon.Fire();
         }
-        moveDirection = new Vector2(moveX, moveY).normalized;
-        mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
     }
 
     private void FixedUpdate()
     {
         rb.velocity = new Vector2(moveDirection.x * speed, moveDirection.y * speed);
-        
+
         Vector2 aimDirection = mousePosition - rb.position;
         float aimAngle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg - 90f;
-        
+
         rb.rotation = aimAngle;
     }
 }
