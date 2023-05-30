@@ -15,10 +15,12 @@ public class Playermovement : MonoBehaviour
         float moveX = Input.GetAxisRaw("Horizontal");
         float moveY = Input.GetAxisRaw("Vertical");
 
+
         moveDirection = new Vector2(moveX, moveY).normalized;
         mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        
-        if (Input.GetMouseButtonDown(0))
+
+        if(Input.GetMouseButtonDown(0))
+
         {
             weapon.Fire();
         }
