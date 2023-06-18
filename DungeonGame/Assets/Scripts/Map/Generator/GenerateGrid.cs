@@ -103,8 +103,7 @@ public class GenerateGrid : MonoBehaviour
 
 	private void PlaceTile(int posX, int posY, string tileBlock, GenerateRoom room)
 	{
-		bool output = false;
-        bool wallPlaces = false;
+		bool wallPlaces = false;
 
         if (tileBlock == "")
         {
