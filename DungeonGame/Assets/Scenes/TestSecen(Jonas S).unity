@@ -351,14 +351,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 424796476}
-  m_LocalRotation: {x: 1, y: 0, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.5, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1631015594}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 180, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!483693784 &424796478
 TilemapRenderer:
   m_ObjectHideFlags: 0
@@ -693,18 +693,30 @@ MonoBehaviour:
   layerLevel: 1
   gridFloor: {fileID: 873951840}
   gridWall: {fileID: 424796479}
-  fGrass: {fileID: 11400000, guid: e11c32a79e84ef5488f2204694bbdfa4, type: 2}
+  fGrass:
+  - {fileID: 11400000, guid: 34303d25145ab104f8fabf97fe65552d, type: 2}
+  - {fileID: 11400000, guid: cd739c4b4eb31934494017ea1d34324b, type: 2}
+  - {fileID: 11400000, guid: 78357bde4dab3464886f927c077dc765, type: 2}
+  - {fileID: 11400000, guid: f332210fa22ba8549b6ac4d19975e7b1, type: 2}
+  - {fileID: 11400000, guid: abe9370c58435f244a894542a9d0f78d, type: 2}
+  - {fileID: 11400000, guid: 1d9b2716edff8d7418583a4c52cba7b7, type: 2}
+  - {fileID: 11400000, guid: fedab419fdbdeea488795e51c83727c9, type: 2}
+  - {fileID: 11400000, guid: aa14e442c407b164a9e0bba1fd35004d, type: 2}
+  fSpawnPoint: {fileID: 11400000, guid: 6d62ee5bebfab4543a4d42e4d00e4921, type: 2}
   wTop: {fileID: 11400000, guid: cfb6b2e88c5f0ae4c9a8decf2233316d, type: 2}
   wBottom: {fileID: 11400000, guid: 815a98150ae40f24482bf4ae569f8718, type: 2}
   wCorner: {fileID: 11400000, guid: 8be27a7af89a7164283e45689a61753d, type: 2}
-  test: {fileID: 11400000, guid: f8ae1ba7c05ccda478ce21eeefaf606f, type: 2}
   doorFrame: {fileID: 6644944589867386885, guid: 4be821d0b78ad5043985b57b738e951b,
     type: 3}
   doorClosed: {fileID: 2055102311959635369, guid: 6a057178eb028e94fb93bf39262ea3e8,
     type: 3}
   doorOpen: {fileID: 2055102311959635369, guid: 8e9c401d7a70ec94d956296ea011f594,
     type: 3}
-  doorBackground: {fileID: 0}
+  floorDecorations:
+  - {fileID: 7947911505737750455, guid: 5d42979a3c318c341b37b4b1f2c85750, type: 3}
+  - {fileID: 2055102311959635369, guid: 413081fc53a78a043b38591243616398, type: 3}
+  - {fileID: 9021710266125520640, guid: 4800845c2c4caa84eb6194552ae9c841, type: 3}
+  - {fileID: 2055102311959635369, guid: a0a71fda412ad0941ab44f1732ea4c1e, type: 3}
   layerArrayLength: 11
   branch1Value: 1
   branch2Value: 2
