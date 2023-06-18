@@ -23,6 +23,7 @@ public class GeneratorOptions : MonoBehaviour
     [Header("Tiles")]
     public Tile[] fGrass;
     public Tile fSpawnPoint;
+    public Tile[] fStone;
     
     
     [Header("Tiles - GenerateGrid")]

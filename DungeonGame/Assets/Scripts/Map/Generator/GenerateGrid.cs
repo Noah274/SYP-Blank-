@@ -224,14 +224,22 @@ public class GenerateGrid : MonoBehaviour
 
         if (!wallPlaces)
         {
-	        if (tileBlock == "fGrass")
+	        if (tileBlock == "fGrass" || tileBlock == "centerfGrass")
 	        {
 		        gOptions.gridFloor.SetTile(new Vector3Int(posX, posY), gOptions.fGrass[_random.Next(0, gOptions.fGrass.Length)]);
-		        PlaceFloorDecoration(posX, posY, room);
+		        PlaceGrassFloorDecoration(posX, posY, room);
+		        PlaceCenterPoint(posX, posY, room, tileBlock);
+		        
+	        }
+	        else  if (tileBlock == "fStone" || tileBlock == "centerfStone")
+	        {
+		        gOptions.gridFloor.SetTile(new Vector3Int(posX, posY), gOptions.fStone[_random.Next(0, gOptions.fStone.Length)]);
+		        PlaceCenterPoint(posX, posY, room, tileBlock);
 	        }
 	        else if (tileBlock == "fSpawnPoint")
 	        {
 		        gOptions.gridFloor.SetTile(new Vector3Int(posX, posY), gOptions.fSpawnPoint);
+		        PlaceCenterPoint(posX, posY, room, tileBlock);
 		        
 		        Vector3 spawnPosition = new Vector3(posX, posY, 0f);
 		        GameObject spawnPointPlayer = new GameObject("spawnPointPlayer");
@@ -245,7 +253,18 @@ public class GenerateGrid : MonoBehaviour
         }
 	}
 
-	private void PlaceFloorDecoration(int posX, int posY, GenerateRoom room)
+	private void PlaceCenterPoint(int posX, int posY, GenerateRoom room, string tileBlock)
+	{
+		if (tileBlock == "centerfGrass" || tileBlock == "centerfStone"|| tileBlock == "fSpawnPoint")
+		{
+			Vector3 spawnPosition = new Vector3(posX, posY, 0f);
+			GameObject spawnPointPlayer = new GameObject("RoomCenterPoint_" + room.GetRoomId());
+			spawnPointPlayer.transform.position = spawnPosition;
+		}
+	}
+
+
+	private void PlaceGrassFloorDecoration(int posX, int posY, GenerateRoom room)
 	{
 		int random = _random.Next(0, 8);
 		if (random == 1)

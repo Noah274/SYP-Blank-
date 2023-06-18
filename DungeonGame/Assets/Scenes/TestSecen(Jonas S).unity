@@ -1413,6 +1413,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: fedab419fdbdeea488795e51c83727c9, type: 2}
   - {fileID: 11400000, guid: aa14e442c407b164a9e0bba1fd35004d, type: 2}
   fSpawnPoint: {fileID: 11400000, guid: 6d62ee5bebfab4543a4d42e4d00e4921, type: 2}
+  fStone:
+  - {fileID: 11400000, guid: f5945c4f4a016ae419bd0fb1152e2d1a, type: 2}
   wTop: {fileID: 11400000, guid: cfb6b2e88c5f0ae4c9a8decf2233316d, type: 2}
   wBottom: {fileID: 11400000, guid: 815a98150ae40f24482bf4ae569f8718, type: 2}
   wCorner: {fileID: 11400000, guid: 8be27a7af89a7164283e45689a61753d, type: 2}
