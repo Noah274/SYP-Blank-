@@ -54,7 +54,7 @@ public class Player : MonoBehaviour
                 {
                     Debug.Log(transform.position);
                     transform.position = playerSpawnPoint.transform.position;
-                   
+                    
                 }
                 Debug.Log("test 2");
     }
