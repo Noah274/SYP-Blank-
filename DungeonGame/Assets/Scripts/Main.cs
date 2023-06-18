@@ -30,7 +30,7 @@ public class Main : MonoBehaviour
         {
             Debug.LogError("Error: Player script not found!");
         }
-        
+
         RoomLogic logic = FindObjectOfType<RoomLogic>();
         if (logic != null)
         {
@@ -39,6 +39,15 @@ public class Main : MonoBehaviour
         else
         {
             Debug.LogError("Error: RoomLogic script not found!");
+        }
+        CameraController camera = FindObjectOfType<CameraController>();
+        if (camera != null)
+        {
+            camera.StartCamera();
+        }
+        else
+        {
+            Debug.LogError("Error: CameraController script not found!");
         }
     }
     

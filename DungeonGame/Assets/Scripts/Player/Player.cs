@@ -15,19 +15,19 @@ public class Player : MonoBehaviour
     public int maxHealth;
     private int currentHealth;
     public HealthBar healthBar;
-    private SkillDef[] _skill;
+    private SkillDef[] skill;
 
     public void SetPrimarySkill(int skillNum)
     {
         if (skillNum == 2)
         {
-            _skill[0] = SkillDef.Fireball;
+            skill[0] = SkillDef.Fireball;
         }
     }
 
     void Start()
     {
-        _skill = new SkillDef[3] { SkillDef.Non, SkillDef.Non, SkillDef.Non };
+        skill = new SkillDef[3] { SkillDef.Non, SkillDef.Non, SkillDef.Non };
         currentHealth = maxHealth;
         healthBar.setMaxHealth(maxHealth);
     }
@@ -35,28 +35,24 @@ public class Player : MonoBehaviour
     public void MovePlayer()
     {
         Debug.Log("test");
-                GameObject[] spawnPoints = GameObject.FindGameObjectsWithTag("spawnPointPlayer");
-                Debug.Log(spawnPoints.Length);
-                GameObject playerSpawnPoint = null;
+        GameObject[] spawnPoints = GameObject.FindGameObjectsWithTag("spawnPointPlayer");
+        Debug.Log(spawnPoints.Length);
+        GameObject playerSpawnPoint = null;
         
-                foreach (GameObject spawnPoint in spawnPoints)
-                {
-                    if (spawnPoint.CompareTag("spawnPointPlayer"))
-                    {
-                        playerSpawnPoint = spawnPoint;
-                        Debug.Log(spawnPoint.transform.position);
-                        
-                        break;
-                    }
-                }
+        foreach (GameObject spawnPoint in spawnPoints)
+        {
+            if (spawnPoint.CompareTag("spawnPointPlayer"))
+            {
+                playerSpawnPoint = spawnPoint;
+                break;
+            }
+        }
         
-                if (playerSpawnPoint != null)
-                {
-                    Debug.Log(transform.position);
-                    transform.position = playerSpawnPoint.transform.position;
-                    
-                }
-                Debug.Log("test 2");
+        if (playerSpawnPoint != null)
+        {
+            transform.position = playerSpawnPoint.transform.position;
+        }
+        Debug.Log("test 2");
     }
     void Update()
     {
