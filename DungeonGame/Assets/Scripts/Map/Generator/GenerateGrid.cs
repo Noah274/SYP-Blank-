@@ -18,9 +18,10 @@ public class GenerateGrid : MonoBehaviour
 	private LinkedList<GenerateRoom> rooms = new LinkedList<GenerateRoom>();
 
 
-	public void StartGenerationGrid()
+	public void StartGenerationGrid(GeneratorOptions gOptions)
 	{
-		gOptions = gameObject.GetComponent<GeneratorOptions>();
+
+		this.gOptions = gOptions;
 
 		GoThroughLayer();
 		PrintLayer();

@@ -4,12 +4,17 @@ using UnityEngine;
 
 public class Main : MonoBehaviour
 {
+    private GeneratorOptions gOptions;
+    private int roomNumber = 0;
+    
     void Start()
     {
+        gOptions = gameObject.GetComponent<GeneratorOptions>();
+        
         GenerateGrid generate = FindObjectOfType<GenerateGrid>();
         if (generate != null)
         {
-            generate.StartGenerationGrid();
+            generate.StartGenerationGrid(gOptions);
         }
         else
         {
@@ -29,12 +34,14 @@ public class Main : MonoBehaviour
         RoomLogic logic = FindObjectOfType<RoomLogic>();
         if (logic != null)
         {
-            logic.StartRoomLogic();
+            logic.StartRoomLogic(gOptions, ref roomNumber);
         }
         else
         {
             Debug.LogError("Error: RoomLogic script not found!");
         }
     }
+    
+    
 
 }
