@@ -100,16 +100,6 @@ public class GenerateGrid : MonoBehaviour
 	        return;
         }
 
-        if (room.GetRoomType() == gOptions.spawnRoom && tileBlock == "spawnPoint")
-        {
-	        Vector3 spawnPosition = new Vector3(posX, posY, 0f);
-	        GameObject spawnPointPlayer = new GameObject("spawnPointPlayer");
-	        spawnPointPlayer.transform.position = spawnPosition;
-	        spawnPointPlayer.tag = "spawnPointPlayer";
-        }
-
-
-
         switch (tileBlock)
         {
 	        case "dUp":
@@ -228,6 +218,15 @@ public class GenerateGrid : MonoBehaviour
 	        {
 		        gOptions.gridFloor.SetTile(new Vector3Int(posX, posY), gOptions.fGrass[_random.Next(0, gOptions.fGrass.Length)]);
 		        PlaceFloorDecoration(posX, posY, room);
+	        }
+	        else if (tileBlock == "fSpawnPoint")
+	        {
+		        gOptions.gridFloor.SetTile(new Vector3Int(posX, posY), gOptions.fSpawnPoint);
+		        
+		        Vector3 spawnPosition = new Vector3(posX, posY, 0f);
+		        GameObject spawnPointPlayer = new GameObject("spawnPointPlayer");
+		        spawnPointPlayer.transform.position = spawnPosition;
+		        spawnPointPlayer.tag = "spawnPointPlayer";
 	        }
 	        else
 	        {

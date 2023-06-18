@@ -154,9 +154,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f17c693a02c89f429e27f92823c9981, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4
-  rb: {fileID: 0}
-  weapon: {fileID: 0}
 --- !u!212 &309509198
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -714,7 +711,6 @@ MonoBehaviour:
     type: 3}
   floorDecorations:
   - {fileID: 7947911505737750455, guid: 5d42979a3c318c341b37b4b1f2c85750, type: 3}
-  - {fileID: 2055102311959635369, guid: 413081fc53a78a043b38591243616398, type: 3}
   - {fileID: 9021710266125520640, guid: 4800845c2c4caa84eb6194552ae9c841, type: 3}
   - {fileID: 2055102311959635369, guid: a0a71fda412ad0941ab44f1732ea4c1e, type: 3}
   layerArrayLength: 11
