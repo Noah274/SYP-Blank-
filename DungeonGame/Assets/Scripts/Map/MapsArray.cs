@@ -70,6 +70,7 @@ public class MapsArray : MonoBehaviour
         }
     };
     
+    /*
     public static string[,,] roomBuild =
     {
         //y
@@ -77,12 +78,48 @@ public class MapsArray : MonoBehaviour
             //x
             {"wUpLeft", "wUp", "wUp", "dUp", "wUp", "wUp", "wUpRight"},
             {"wLeft", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "wRight"},
-            {"wLeft", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "wRight"},
-            {"dLeft","fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "dRight"},
+            {"wLeft", "fGrass", "fGrass", "test", "fGrass", "fGrass", "wRight"},
+            {"dLeft","fGrass", "test", "test", "fGrass", "fGrass", "dRight"},
             {"wLeft", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "wRight"},
             {"wLeft", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "wRight"},
             {"wDownLeft","wDown", "wDown", "dDown", "wDown","wDown", "wDownRight"},
+        },
+        {
+            //x
+            {"wUpLeft", "wUp", "wUp", "dUp", "wUp", "wUp", "wUp", "wUpRight"},
+            {"wLeft", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "wRight"},
+            {"wLeft", "fGrass", "fGrass", "test", "fGrass", "fGrass", "fGrass", "wRight"},
+            {"dLeft","fGrass", "test", "test", "test", "test", "fGrass", "dRight"},
+            {"wLeft", "fGrass", "fGrass", "test", "fGrass", "fGrass", "fGrass", "wRight"},
+            {"wLeft", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "wRight"},
+            {"wDownLeft","wDown", "wDown", "dDown", "wDown","wDown","wDown", "wDownRight"},
+        }
+
+    };*/
+    
+    public static string[,,] roomBuild =
+    {
+        //y
+        {
+            {"wUpLeft", "wUp", "wUp", "dUp", "wUp", "wUp", "wUpRight", ""},
+            {"wLeft", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "wRight", ""},
+            {"wLeft", "fGrass", "fGrass", "test", "fGrass", "fGrass", "wRight", ""},
+            {"dLeft","fGrass", "test", "test", "fGrass", "fGrass", "dRight", ""},
+            {"wLeft", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "wRight", ""},
+            {"wLeft", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "wRight", ""},
+            {"wDownLeft","wDown", "wDown", "dDown", "wDown","wDown", "wDownRight", ""},
+        },
+        {
+            //x
+            {"wUpLeft", "wUp", "wUp", "dUp", "wUp", "wUp", "wUp", "wUpRight"},
+            {"wLeft", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "wRight"},
+            {"wLeft", "fGrass", "fGrass", "test", "fGrass", "fGrass", "fGrass", "wRight"},
+            {"dLeft","fGrass", "test", "test", "test", "test", "fGrass", "dRight"},
+            {"wLeft", "fGrass", "fGrass", "test", "fGrass", "fGrass", "fGrass", "wRight"},
+            {"wLeft", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "wRight"},
+            {"wDownLeft","wDown", "wDown", "dDown", "wDown","wDown","wDown", "wDownRight"},
         }
 
     };
+    
 }

@@ -640,9 +640,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1594595084}
-  - component: {fileID: 1594595083}
-  - component: {fileID: 1594595082}
   - component: {fileID: 1594595085}
+  - component: {fileID: 1594595086}
   m_Layer: 0
   m_Name: Engine
   m_TagString: Untagged
@@ -650,43 +649,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1594595082
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1594595081}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 54d44542dcb2c9c418e67bfbe4386ce3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Layerlevel: 1
---- !u!114 &1594595083
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1594595081}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 57b34afe6132abe43baab6d0caf809f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  script: {fileID: 1594595082}
-  gridFloor: {fileID: 873951840}
-  gridWall: {fileID: 424796479}
-  doorFrame: {fileID: 6644944589867386885, guid: 4be821d0b78ad5043985b57b738e951b,
-    type: 3}
-  doorClosed: {fileID: 2055102311959635369, guid: 6a057178eb028e94fb93bf39262ea3e8,
-    type: 3}
-  fGrass: {fileID: 11400000, guid: 8143e435c2ff5f342951e4e9991c11ea, type: 2}
-  wTop: {fileID: 11400000, guid: 4e1e2fa91134aaf47a8d4022b0d0a6ac, type: 2}
-  wBottom: {fileID: 11400000, guid: f8a08cc7e1ef4bd41ad3d91c4ae0824a, type: 2}
-  wCorner: {fileID: 11400000, guid: 1d152d7da7af5144aaa09f2cfe101265, type: 2}
-  test: {fileID: 11400000, guid: e11c32a79e84ef5488f2204694bbdfa4, type: 2}
 --- !u!4 &1594595084
 Transform:
   m_ObjectHideFlags: 0
@@ -711,9 +673,41 @@ MonoBehaviour:
   m_GameObject: {fileID: 1594595081}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a788ff8c9deaaa4a9a490144ec2158f, type: 3}
+  m_Script: {fileID: 11500000, guid: 57b34afe6132abe43baab6d0caf809f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1594595086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1594595081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a3b6b9fa403641428a318e605043d04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  layerLevel: 1
+  gridFloor: {fileID: 873951840}
+  gridWall: {fileID: 424796479}
+  fGrass: {fileID: 11400000, guid: e11c32a79e84ef5488f2204694bbdfa4, type: 2}
+  wTop: {fileID: 11400000, guid: cfb6b2e88c5f0ae4c9a8decf2233316d, type: 2}
+  wBottom: {fileID: 11400000, guid: 815a98150ae40f24482bf4ae569f8718, type: 2}
+  wCorner: {fileID: 11400000, guid: 8be27a7af89a7164283e45689a61753d, type: 2}
+  test: {fileID: 11400000, guid: f8ae1ba7c05ccda478ce21eeefaf606f, type: 2}
+  doorFrame: {fileID: 6644944589867386885, guid: 4be821d0b78ad5043985b57b738e951b,
+    type: 3}
+  doorClosed: {fileID: 2055102311959635369, guid: 6a057178eb028e94fb93bf39262ea3e8,
+    type: 3}
+  layerArrayLength: 11
+  branch1Value: 1
+  branch2Value: 2
+  branch3Value: 3
+  branch4Value: 4
+  spawnRoom: 10
+  bossRoom: 11
+  baseOffset: 2
 --- !u!1 &1631015592
 GameObject:
   m_ObjectHideFlags: 0
