@@ -6,7 +6,7 @@ public class RoomLogic : MonoBehaviour
 {
     public void StartRoomLogic()
     {
-        Debug.Log("StartRoomLogic");
+        
     }
     
 }

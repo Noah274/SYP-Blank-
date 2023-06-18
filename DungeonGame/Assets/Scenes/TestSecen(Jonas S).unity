@@ -1354,6 +1354,8 @@ GameObject:
   - component: {fileID: 1594595084}
   - component: {fileID: 1594595085}
   - component: {fileID: 1594595086}
+  - component: {fileID: 1594595087}
+  - component: {fileID: 1594595088}
   m_Layer: 0
   m_Name: Engine
   m_TagString: Untagged
@@ -1436,6 +1438,30 @@ MonoBehaviour:
   spawnRoom: 10
   bossRoom: 11
   baseOffset: 5
+--- !u!114 &1594595087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1594595081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a2c12bb0c5d622409548c9cff58d44f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1594595088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1594595081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4952649dcfe4e80429bdc8980653c749, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1631015592
 GameObject:
   m_ObjectHideFlags: 0

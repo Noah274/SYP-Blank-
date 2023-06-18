@@ -252,6 +252,7 @@ public class GenerateGrid : MonoBehaviour
 			Vector3 spawnPosition = new Vector3(posX, posY, 0f);
 			GameObject spawnPointPlayer = new GameObject("RoomCenterPoint_" + room.GetRoomId());
 			spawnPointPlayer.transform.position = spawnPosition;
+			spawnPointPlayer.tag = "RoomCenterPoint";
 		}
 	}
 
