@@ -155,6 +155,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 4
+  rb: {fileID: 0}
+  weapon: {fileID: 0}
 --- !u!212 &309509198
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -700,6 +702,9 @@ MonoBehaviour:
     type: 3}
   doorClosed: {fileID: 2055102311959635369, guid: 6a057178eb028e94fb93bf39262ea3e8,
     type: 3}
+  doorOpen: {fileID: 2055102311959635369, guid: 8e9c401d7a70ec94d956296ea011f594,
+    type: 3}
+  doorBackground: {fileID: 0}
   layerArrayLength: 11
   branch1Value: 1
   branch2Value: 2
@@ -707,7 +712,7 @@ MonoBehaviour:
   branch4Value: 4
   spawnRoom: 10
   bossRoom: 11
-  baseOffset: 2
+  baseOffset: 5
 --- !u!1 &1631015592
 GameObject:
   m_ObjectHideFlags: 0

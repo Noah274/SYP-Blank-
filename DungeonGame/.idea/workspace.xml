@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="b952b3e2-6f1c-4d30-b7ac-5c1ffda0ceea" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../.idea/.idea.SYP-Blank-.dir/.idea/projectSettingsUpdater.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/.idea.SYP-Blank-.dir/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Bullet.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Bullet.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Coin.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Coin.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scenes/CoinGenerator.unity" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scenes/MainGame-Test.unity" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scenes/MainGame-Test.unity.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyAI.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyAI.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Items/CoinGenerator.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Items/CoinGenerator.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Bullet.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Bullet.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Player/HealthBar.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Player/HealthBar.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Weapon.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Weapon.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/SoundAdjuster.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/SoundAdjuster.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Bar.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Bar.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Heart.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Heart.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/joystix monospace.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/joystix monospace.otf.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/joystix.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/joystix.zip.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Texture/Animation.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Texture/Animation/Exit.controller" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Texture/Animation/Exit.controller.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Texture/Animation/ExitOption.controller" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Texture/Animation/ExitOption.controller.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Texture/Animation/Options.controller" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Texture/Animation/Options.controller.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Texture/Animation/PlayGame.controller" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Texture/Animation/PlayGame.controller.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Texture/Background.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Texture/Background.jpg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Texture/Button.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Texture/Button.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Texture/OptionMenu.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Texture/OptionMenu.jpg.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Skill.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Skill.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/OptionMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/OptionMenu.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/CoinGenerator.unity.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SkillTree.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SkillTree.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/StartScreen.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/StartScreen.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Items/Coin.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Items/Coin.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Menu/MainMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Menu/MainMenu.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Player.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Playermovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Playermovement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Skills/Skill.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Skills/Skill.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Skills/SkillTree.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Skills/SkillTree.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="2RNzC1ock4Nl77eEsw2GTg6U78U" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b952b3e2-6f1c-4d30-b7ac-5c1ffda0ceea" name="Changes" comment="" />
+      <created>1687105211655</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1687105211655</updated>
+      <workItem from="1687105217403" duration="33000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

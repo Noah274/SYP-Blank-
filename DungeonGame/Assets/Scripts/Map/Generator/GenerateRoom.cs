@@ -29,7 +29,7 @@ public class GenerateRoom
         this.layerPosX = layerPosX;
         this.layerPosY = layerPosY;
         this.roomId = roomId;
-        this.roomDone = true;
+        this.roomDone = false;
 
         this.doorDirections[0] = doors[0]; //dUp;
         this.doorDirections[1] = doors[1]; //dDown;

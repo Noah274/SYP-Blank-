@@ -24,6 +24,19 @@ public class GenerateGrid : MonoBehaviour
 
 		GoThroughLayer();
 		PrintLayer();
+		
+		GameObject[] gameObjects = FindObjectsOfType<GameObject>();
+		foreach (GameObject obj in gameObjects)
+		{
+			if (obj.name == "1")
+			{
+				SpriteRenderer spriteRenderer = obj.GetComponent<SpriteRenderer>();
+				spriteRenderer.sprite = gOptions.doorOpen.GetComponent<SpriteRenderer>().sprite;
+				
+				spriteRenderer.color = Color.red;
+				obj.GetComponent<RoomReference>().room.SetRoomDone();
+			}
+		}
 	}
 
 	private void PrintLayer()
@@ -88,18 +101,26 @@ public class GenerateGrid : MonoBehaviour
 	        return;
         }
 
+        if (room.GetRoomType() == gOptions.spawnRoom && tileBlock == "spawnPoint")
+        {
+	        Vector3 spawnPosition = new Vector3(posX, posY, 0f);
+	        GameObject spawnPointPlayer = new GameObject("spawnPointPlayer");
+	        spawnPointPlayer.transform.position = spawnPosition;
+        }
+
+
         switch (tileBlock)
         {
 	        case "dUp":
 		        int roomTypeUp = IsValidRoom(room, room.GetDUp());
 		        if (roomTypeUp == gOptions.bossRoom)
 		        {
-			        PlaceDoor(posX, posY, 0f, room.GetRoomDone(), true);
+			        PlaceDoor(posX, posY, 0f, room.GetRoomDone(), true, room);
 			        wallPlaces = true;
 		        }
 		        else if (roomTypeUp == 0)
 		        {
-			        PlaceDoor(posX, posY, 0f, room.GetRoomDone());
+			        PlaceDoor(posX, posY, 0f, room.GetRoomDone(), false, room);
 			        wallPlaces = true;
 		        }
 		        break;
@@ -107,12 +128,12 @@ public class GenerateGrid : MonoBehaviour
 		        int roomTypeDown = IsValidRoom(room, room.GetDDown());
 		        if (roomTypeDown == gOptions.bossRoom)
 		        {
-			        PlaceDoor(posX, posY + 1, 180f, room.GetRoomDone(), true);
+			        PlaceDoor(posX, posY + 1, 180f, room.GetRoomDone(), true, room);
 			        wallPlaces = true;
 		        }
 		        else if (roomTypeDown == 0)
 		        {
-			        PlaceDoor(posX, posY + 1, 180f, room.GetRoomDone());
+			        PlaceDoor(posX, posY + 1, 180f, room.GetRoomDone(), false, room);
 			        wallPlaces = true;
 		        }
 		        break;
@@ -120,12 +141,12 @@ public class GenerateGrid : MonoBehaviour
 		        int roomTypeLeft = IsValidRoom(room, room.GetDLeft());
 		        if (roomTypeLeft == gOptions.bossRoom)
 		        {
-			        PlaceDoor(posX + 0.5f, posY + 0.5f, 90f, room.GetRoomDone(), true);
+			        PlaceDoor(posX + 0.5f, posY + 0.5f, 90f, room.GetRoomDone(), true, room);
 			        wallPlaces = true;
 		        }
 		        else if (roomTypeLeft == 0)
 		        {
-			        PlaceDoor(posX + 0.5f, posY + 0.5f, 90f, room.GetRoomDone());
+			        PlaceDoor(posX + 0.5f, posY + 0.5f, 90f, room.GetRoomDone(), false, room);
 			        wallPlaces = true;
 		        }
 		        break;
@@ -133,12 +154,12 @@ public class GenerateGrid : MonoBehaviour
 		        int roomTypeRight = IsValidRoom(room, room.GetDRight());
 		        if (roomTypeRight == gOptions.bossRoom)
 		        {
-			        PlaceDoor(posX - 0.5f, posY + 0.5f, -90f, room.GetRoomDone(), true);
+			        PlaceDoor(posX - 0.5f, posY + 0.5f, -90f, room.GetRoomDone(), true, room);
 			        wallPlaces = true;
 		        }
 		        else if (roomTypeRight == 0)
 		        {
-			        PlaceDoor(posX - 0.5f, posY + 0.5f, -90f, room.GetRoomDone());
+			        PlaceDoor(posX - 0.5f, posY + 0.5f, -90f, room.GetRoomDone(), false, room);
 			        wallPlaces = true;
 		        }
 		        break;
@@ -238,31 +259,31 @@ public class GenerateGrid : MonoBehaviour
 		return 0;
 	}
 
-	private void PlaceDoor(float posX, float posY, float rotation, bool roomDone, bool isBossRoom = false)
+	private void PlaceDoor(float posX, float posY, float rotation, bool roomDone, bool isBossRoom, GenerateRoom room)
 	{
 		placeGameObject(gOptions.doorFrame, posX, posY, rotation);
-
+		placeWhitePlate(posX, posY, rotation);
+		
 		if (roomDone)
 		{
-			placeWhitePlate(posX, posY, rotation);
 			if (isBossRoom)
 			{
-				placeGameObject(gOptions.doorOpen, posX, posY, rotation, true);
+				placeGameObject(gOptions.doorOpen, posX, posY, rotation, true,room);
 			}
 			else
 			{
-				placeGameObject(gOptions.doorOpen, posX, posY, rotation);	
+				placeGameObject(gOptions.doorOpen, posX, posY, rotation, false, room);	
 			}
 		}
 		else
 		{
 			if (isBossRoom)
 			{
-				placeGameObject(gOptions.doorClosed, posX, posY, rotation, true);
+				placeGameObject(gOptions.doorClosed, posX, posY, rotation, true, room);
 			}
 			else
 			{
-				placeGameObject(gOptions.doorClosed, posX, posY, rotation);
+				placeGameObject(gOptions.doorClosed, posX, posY, rotation, false, room);
 			}
 		}
 	}
@@ -280,10 +301,16 @@ public class GenerateGrid : MonoBehaviour
 	}
 
 	
-	private void placeGameObject(GameObject o, float distanceX, float distanceY, float f, bool isBossRoom = false)
+	private void placeGameObject(GameObject o, float distanceX, float distanceY, float f, bool isBossRoom = false, GenerateRoom room = null)
 	{
 		GameObject obj = Instantiate(o, new Vector3(distanceX, distanceY), Quaternion.Euler(0, 0, f));
 
+		if (room != null)
+		{
+			obj.name = (room.GetRoomId()).ToString();
+			obj.AddComponent<RoomReference>().room = room;
+		}
+		
 		if (isBossRoom)
 		{
 			Renderer renderer = obj.GetComponent<Renderer>();
@@ -430,3 +457,4 @@ public class GenerateGrid : MonoBehaviour
 		Debug.Log(msg);
 	}
 }
+

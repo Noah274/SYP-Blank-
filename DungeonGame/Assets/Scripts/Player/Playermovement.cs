@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+/*
 public class Playermovement : MonoBehaviour
 {
     public float speed;
@@ -14,7 +14,6 @@ public class Playermovement : MonoBehaviour
     {
         float moveX = Input.GetAxisRaw("Horizontal");
         float moveY = Input.GetAxisRaw("Vertical");
-<<<<<<< HEAD
         if (Input.GetKey(KeyCode.Escape))
         {
             //TODO: Open pause menu 
@@ -23,13 +22,11 @@ public class Playermovement : MonoBehaviour
         {
             SceneManager.LoadScene("SkillTree");
         }
-=======
 
 
         moveDirection = new Vector2(moveX, moveY).normalized;
         mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
->>>>>>> 640deef4b759cb7e37306fecd9f2450bb9fcf401
+        
         if(Input.GetMouseButtonDown(0))
 
         {
@@ -47,3 +44,4 @@ public class Playermovement : MonoBehaviour
         rb.rotation = aimAngle;
     }
 }
+*/

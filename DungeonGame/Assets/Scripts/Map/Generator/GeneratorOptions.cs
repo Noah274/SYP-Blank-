@@ -26,6 +26,7 @@ public class GeneratorOptions : MonoBehaviour
     public Tile wBottom;
     public Tile wCorner;
     public Tile test;
+    public Tile spawnPoint;
         
     [Header("GameObjects")]
     public GameObject doorFrame;
@@ -60,6 +61,8 @@ public class GeneratorOptions : MonoBehaviour
         mapTile.Add(wBottom, "wBottom");
         mapTile.Add(wCorner, "wCorner");
         mapTile.Add(test, "test");
+        mapTile.Add(spawnPoint, "spawnPoint");
+        
     }
     
     public Dictionary<Tile, string> GetTileLinkedList()
