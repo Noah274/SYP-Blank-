@@ -106,7 +106,9 @@ public class GenerateGrid : MonoBehaviour
 	        Vector3 spawnPosition = new Vector3(posX, posY, 0f);
 	        GameObject spawnPointPlayer = new GameObject("spawnPointPlayer");
 	        spawnPointPlayer.transform.position = spawnPosition;
+	        spawnPointPlayer.tag = "spawnPointPlayer";
         }
+
 
 
         switch (tileBlock)
@@ -226,14 +228,12 @@ public class GenerateGrid : MonoBehaviour
 	        if (tileBlock == "fGrass")
 	        {
 		        gOptions.gridFloor.SetTile(new Vector3Int(posX, posY), gOptions.fGrass[_random.Next(0, gOptions.fGrass.Length)]);
+		        PlaceFloorDecoration(posX, posY, room);
 	        }
 	        else
 	        {
 		        gOptions.gridFloor.SetTile(new Vector3Int(posX, posY), GetTileByNum(getNumOfTile(tileBlock)));       
 	        }
-	        
-	        
-	        PlaceFloorDecoration(posX, posY, room);
         }
 	}
 
