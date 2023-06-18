@@ -193,39 +193,56 @@ public class GenerateGrid : MonoBehaviour
         {
             case "wUpLeft":
 	            wallPlaces = true;
-                gOptions.gridFloor.SetTile(new Vector3Int(posX, posY), GetTileByNum(getNumOfTile("wCorner")));  
-                gOptions.gridFloor.SetTile(new Vector3Int(posX-1, posY), GetTileByNum(getNumOfTile("wCorner")));  
-                gOptions.gridFloor.SetTile(new Vector3Int(posX, posY+1), GetTileByNum(getNumOfTile("wCorner")));  
-                gOptions.gridFloor.SetTile(new Vector3Int(posX-1, posY+1), GetTileByNum(getNumOfTile("wCorner")));  
+                gOptions.gridWall.SetTile(new Vector3Int(posX, posY), GetTileByNum(getNumOfTile("wCorner")));  
+                gOptions.gridWall.SetTile(new Vector3Int(posX-1, posY), GetTileByNum(getNumOfTile("wCorner")));  
+                gOptions.gridWall.SetTile(new Vector3Int(posX, posY+1), GetTileByNum(getNumOfTile("wCorner")));  
+                gOptions.gridWall.SetTile(new Vector3Int(posX-1, posY+1), GetTileByNum(getNumOfTile("wCorner")));  
                 break;
             case "wUpRight":
 	            wallPlaces = true;
-                gOptions.gridFloor.SetTile(new Vector3Int(posX, posY), GetTileByNum(getNumOfTile("wCorner")));  
-                gOptions.gridFloor.SetTile(new Vector3Int(posX+1, posY), GetTileByNum(getNumOfTile("wCorner")));  
-                gOptions.gridFloor.SetTile(new Vector3Int(posX, posY+1), GetTileByNum(getNumOfTile("wCorner")));  
-                gOptions.gridFloor.SetTile(new Vector3Int(posX+1, posY+1), GetTileByNum(getNumOfTile("wCorner")));  
+                gOptions.gridWall.SetTile(new Vector3Int(posX, posY), GetTileByNum(getNumOfTile("wCorner")));  
+                gOptions.gridWall.SetTile(new Vector3Int(posX+1, posY), GetTileByNum(getNumOfTile("wCorner")));  
+                gOptions.gridWall.SetTile(new Vector3Int(posX, posY+1), GetTileByNum(getNumOfTile("wCorner")));  
+                gOptions.gridWall.SetTile(new Vector3Int(posX+1, posY+1), GetTileByNum(getNumOfTile("wCorner")));  
                 break;
             case "wDownLeft":
 	            wallPlaces = true;
-                gOptions.gridFloor.SetTile(new Vector3Int(posX, posY), GetTileByNum(getNumOfTile("wCorner")));  
-                gOptions.gridFloor.SetTile(new Vector3Int(posX-1, posY), GetTileByNum(getNumOfTile("wCorner")));  
-                gOptions.gridFloor.SetTile(new Vector3Int(posX, posY-1), GetTileByNum(getNumOfTile("wCorner")));  
-                gOptions.gridFloor.SetTile(new Vector3Int(posX-1, posY-1), GetTileByNum(getNumOfTile("wCorner")));  
+                gOptions.gridWall.SetTile(new Vector3Int(posX, posY), GetTileByNum(getNumOfTile("wCorner")));  
+                gOptions.gridWall.SetTile(new Vector3Int(posX-1, posY), GetTileByNum(getNumOfTile("wCorner")));  
+                gOptions.gridWall.SetTile(new Vector3Int(posX, posY-1), GetTileByNum(getNumOfTile("wCorner")));  
+                gOptions.gridWall.SetTile(new Vector3Int(posX-1, posY-1), GetTileByNum(getNumOfTile("wCorner")));  
                 break;
             case "wDownRight":
 	            wallPlaces = true;
-                gOptions.gridFloor.SetTile(new Vector3Int(posX, posY), GetTileByNum(getNumOfTile("wCorner")));  
-                gOptions.gridFloor.SetTile(new Vector3Int(posX+1, posY), GetTileByNum(getNumOfTile("wCorner")));  
-                gOptions.gridFloor.SetTile(new Vector3Int(posX, posY-1), GetTileByNum(getNumOfTile("wCorner")));  
-                gOptions.gridFloor.SetTile(new Vector3Int(posX+1, posY-1), GetTileByNum(getNumOfTile("wCorner")));  
+                gOptions.gridWall.SetTile(new Vector3Int(posX, posY), GetTileByNum(getNumOfTile("wCorner")));  
+                gOptions.gridWall.SetTile(new Vector3Int(posX+1, posY), GetTileByNum(getNumOfTile("wCorner")));  
+                gOptions.gridWall.SetTile(new Vector3Int(posX, posY-1), GetTileByNum(getNumOfTile("wCorner")));  
+                gOptions.gridWall.SetTile(new Vector3Int(posX+1, posY-1), GetTileByNum(getNumOfTile("wCorner")));  
                 break;
         }
 
         if (!wallPlaces)
         {
-	        gOptions.gridFloor.SetTile(new Vector3Int(posX, posY), GetTileByNum(getNumOfTile(tileBlock)));    
+	        gOptions.gridFloor.SetTile(new Vector3Int(posX, posY), GetTileByNum(getNumOfTile(tileBlock)));   
+	        
+	        PlaceFloorDecoration(posX, posY, room);
         }
 	}
+
+	private void PlaceFloorDecoration(int posX, int posY, GenerateRoom room)
+	{
+		int random = _random.Next(0, 8);
+		if (random == 1)
+		{
+			int tileNumber = _random.Next(0, gOptions.floorDecorations.Length);
+			GameObject randomDecoration = gOptions.floorDecorations[tileNumber];
+        
+			Vector3 position = new Vector3(posX, posY, 0f);
+			GameObject decorationInstance = Instantiate(randomDecoration, position, Quaternion.identity);
+			decorationInstance.transform.position = position;
+		}
+	}
+
 
 	private int IsValidRoom(GenerateRoom room, int direction)
 	{
@@ -329,11 +346,11 @@ public class GenerateGrid : MonoBehaviour
 	{
 		Matrix4x4 matrix = Matrix4x4.TRS(Vector3.zero, Quaternion.Euler(0f, 0f, rotation), Vector3.one);
         
-		gOptions.gridFloor.SetTile(new Vector3Int(x , y), GetTileByNum(getNumOfTile("wBottom")));
-		gOptions.gridFloor.SetTransformMatrix(new Vector3Int(x , y), matrix);  
+		gOptions.gridWall.SetTile(new Vector3Int(x , y), GetTileByNum(getNumOfTile("wBottom")));
+		gOptions.gridWall.SetTransformMatrix(new Vector3Int(x , y), matrix);  
         
-		gOptions.gridFloor.SetTile(new Vector3Int(x + secondX, y- secondY), GetTileByNum(getNumOfTile("wTop")));
-		gOptions.gridFloor.SetTransformMatrix(new Vector3Int(x + secondX, y- secondY), matrix);  
+		gOptions.gridWall.SetTile(new Vector3Int(x + secondX, y- secondY), GetTileByNum(getNumOfTile("wTop")));
+		gOptions.gridWall.SetTransformMatrix(new Vector3Int(x + secondX, y- secondY), matrix);  
 	}
 	
 	private int getNumOfTile(string tileBlock)

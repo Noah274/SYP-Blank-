@@ -77,7 +77,15 @@ public class GenerateRoom
         {
             for (int x = 0; x < arrayLengthX; x++)
             {
-                roomArrayBuild[y, x] = roomArray[selectRoom, y, x];
+                string tile = roomArray[selectRoom, y, x];
+                if (tile == "fGrassArray")
+                {
+                    //roomArrayBuild[y, x] = gOptions.fGrassArray[_random.Next(0, gOptions.fGrassArray.Length)];
+                }
+                else
+                {
+                    roomArrayBuild[y, x] = tile;   
+                }
             }
         }
     }

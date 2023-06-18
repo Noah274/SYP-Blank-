@@ -22,17 +22,20 @@ public class GeneratorOptions : MonoBehaviour
         
     [Header("Tiles")]
     public Tile fGrass;
+    public Tile fSpawnPoint;
+    
+    public Tile[] fGrassArray;
+    
+    [Header("Tiles - GenerateGrid")]
     public Tile wTop;
     public Tile wBottom;
     public Tile wCorner;
-    public Tile test;
-    public Tile spawnPoint;
-        
+
     [Header("GameObjects")]
     public GameObject doorFrame;
     public GameObject doorClosed;
     public GameObject doorOpen;
-    public GameObject doorBackground;
+    public GameObject[] floorDecorations;
     
     [Header("Options - GenerateLayer")]
     public int layerArrayLength = 11;
@@ -60,8 +63,7 @@ public class GeneratorOptions : MonoBehaviour
         mapTile.Add(wTop, "wTop");
         mapTile.Add(wBottom, "wBottom");
         mapTile.Add(wCorner, "wCorner");
-        mapTile.Add(test, "test");
-        mapTile.Add(spawnPoint, "spawnPoint");
+        mapTile.Add(fSpawnPoint, "spawnPoint");
         
     }
     
