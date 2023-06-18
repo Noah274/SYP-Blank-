@@ -21,10 +21,9 @@ public class GeneratorOptions : MonoBehaviour
     public Tilemap gridWall;
         
     [Header("Tiles")]
-    public Tile fGrass;
+    public Tile[] fGrass;
     public Tile fSpawnPoint;
     
-    public Tile[] fGrassArray;
     
     [Header("Tiles - GenerateGrid")]
     public Tile wTop;
@@ -59,7 +58,7 @@ public class GeneratorOptions : MonoBehaviour
     {
         tilesFilled = true;
         //Alle Tiles die es zur verfügung gibt
-        mapTile.Add(fGrass, "fGrass");
+        //mapTile.Add(fGrass, "fGrass");
         mapTile.Add(wTop, "wTop");
         mapTile.Add(wBottom, "wBottom");
         mapTile.Add(wCorner, "wCorner");

@@ -223,7 +223,15 @@ public class GenerateGrid : MonoBehaviour
 
         if (!wallPlaces)
         {
-	        gOptions.gridFloor.SetTile(new Vector3Int(posX, posY), GetTileByNum(getNumOfTile(tileBlock)));   
+	        if (tileBlock == "fGrass")
+	        {
+		        gOptions.gridFloor.SetTile(new Vector3Int(posX, posY), gOptions.fGrass[_random.Next(0, gOptions.fGrass.Length)]);
+	        }
+	        else
+	        {
+		        gOptions.gridFloor.SetTile(new Vector3Int(posX, posY), GetTileByNum(getNumOfTile(tileBlock)));       
+	        }
+	        
 	        
 	        PlaceFloorDecoration(posX, posY, room);
         }
@@ -239,6 +247,7 @@ public class GenerateGrid : MonoBehaviour
         
 			Vector3 position = new Vector3(posX, posY, 0f);
 			GameObject decorationInstance = Instantiate(randomDecoration, position, Quaternion.identity);
+
 			decorationInstance.transform.position = position;
 		}
 	}
