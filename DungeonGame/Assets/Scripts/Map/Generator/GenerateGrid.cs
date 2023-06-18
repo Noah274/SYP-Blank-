@@ -18,23 +18,14 @@ public class GenerateGrid : MonoBehaviour
 	private LinkedList<GenerateRoom> rooms = new LinkedList<GenerateRoom>();
 
 
-	private void Start()
+	public void StartGenerationGrid()
 	{
 		gOptions = gameObject.GetComponent<GeneratorOptions>();
 
 		GoThroughLayer();
 		PrintLayer();
 		
-		Player player = FindObjectOfType<Player>();
-		if (player != null)
-		{
-			player.MovePlayer();
-		}
-		else
-		{
-			Debug.LogError("Player script not found!");
-		}
-		
+		/*
 		GameObject[] gameObjects = FindObjectsOfType<GameObject>();
 		foreach (GameObject obj in gameObjects)
 		{
@@ -46,8 +37,9 @@ public class GenerateGrid : MonoBehaviour
 				spriteRenderer.color = Color.red;
 				obj.GetComponent<RoomReference>().room.SetRoomDone();
 			}
-		}
+		}*/
 	}
+	
 
 	private void PrintLayer()
 	{
