@@ -25,6 +25,16 @@ public class GenerateGrid : MonoBehaviour
 		GoThroughLayer();
 		PrintLayer();
 		
+		Player player = FindObjectOfType<Player>();
+		if (player != null)
+		{
+			player.MovePlayer();
+		}
+		else
+		{
+			Debug.LogError("Player script not found!");
+		}
+		
 		GameObject[] gameObjects = FindObjectsOfType<GameObject>();
 		foreach (GameObject obj in gameObjects)
 		{

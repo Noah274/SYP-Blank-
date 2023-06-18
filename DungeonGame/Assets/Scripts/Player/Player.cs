@@ -32,6 +32,32 @@ public class Player : MonoBehaviour
         healthBar.setMaxHealth(maxHealth);
     }
 
+    public void MovePlayer()
+    {
+        Debug.Log("test");
+                GameObject[] spawnPoints = GameObject.FindGameObjectsWithTag("spawnPointPlayer");
+                Debug.Log(spawnPoints.Length);
+                GameObject playerSpawnPoint = null;
+        
+                foreach (GameObject spawnPoint in spawnPoints)
+                {
+                    if (spawnPoint.CompareTag("spawnPointPlayer"))
+                    {
+                        playerSpawnPoint = spawnPoint;
+                        Debug.Log(spawnPoint.transform.position);
+                        
+                        break;
+                    }
+                }
+        
+                if (playerSpawnPoint != null)
+                {
+                    Debug.Log(transform.position);
+                    transform.position = playerSpawnPoint.transform.position;
+                   
+                }
+                Debug.Log("test 2");
+    }
     void Update()
     {
         if (Input.GetKey(KeyCode.I))
