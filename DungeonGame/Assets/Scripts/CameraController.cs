@@ -15,10 +15,10 @@ public class CameraController : MonoBehaviour
     {
         if (targetRoom != null )
         {
-            Debug.Log("Camera pos: " + transform.position);
-            Debug.Log("target: "+ targetRoom.transform.position);
+            //Debug.Log("Camera pos: " + transform.position);
+            //Debug.Log("target: "+ targetRoom.transform.position);
             transform.position = new Vector3(targetRoom.transform.position.x, targetRoom.transform.position.y, -10);
-            Debug.Log("new Pos: " + transform.position);
+            //Debug.Log("new Pos: " + transform.position);
 
         }
     }

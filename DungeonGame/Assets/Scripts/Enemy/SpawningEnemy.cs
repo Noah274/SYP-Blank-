@@ -14,6 +14,11 @@ public class SpawningEnemy : MonoBehaviour
     {
         this.gOptions = gOptions;
         this.roomNumber = roomNumber;
+
+        if (isRoomDone(roomNumber))
+        {
+            return;
+        }
         
         int level = gOptions.layerLevel;
 
@@ -21,6 +26,21 @@ public class SpawningEnemy : MonoBehaviour
         //Debug.Log("EnemyCount: " + enemyCount);
 
         StartSpawning(enemyCount);
+    }
+    
+    private bool isRoomDone(int number)
+    {
+        GameObject[] gameObjects = FindObjectsOfType<GameObject>();
+        foreach (GameObject obj in gameObjects)
+        {
+            if (obj.name == number.ToString())
+            {
+                GenerateRoom roomObj = obj.GetComponent<RoomReference>().room;
+                return roomObj.GetRoomDone();
+            }
+        }
+
+        return false;
     }
 
     private void Update()
@@ -43,7 +63,7 @@ public class SpawningEnemy : MonoBehaviour
             RoomLogic logic = FindObjectOfType<RoomLogic>();
             if (logic != null)
             {
-                logic.OpenRoom(roomNumber);
+                logic.OpenRoom();
             }
             else
             {
