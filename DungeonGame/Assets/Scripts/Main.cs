@@ -1,14 +1,15 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Main : MonoBehaviour
 {
     private GeneratorOptions gOptions;
-    private int roomNumber = 0;
+    private int roomNumber;
     
-    void Start()
+    IEnumerator Start()
     {
+        yield return null;
+
         gOptions = gameObject.GetComponent<GeneratorOptions>();
         
         GenerateGrid generate = FindObjectOfType<GenerateGrid>();
@@ -20,7 +21,6 @@ public class Main : MonoBehaviour
         {
             Debug.LogError("Error: GenerateGrid script not found!");
         }
-        
         Player player = FindObjectOfType<Player>();
         if (player != null)
         {
@@ -30,7 +30,6 @@ public class Main : MonoBehaviour
         {
             Debug.LogError("Error: Player script not found!");
         }
-
         RoomLogic logic = FindObjectOfType<RoomLogic>();
         if (logic != null)
         {
@@ -40,17 +39,7 @@ public class Main : MonoBehaviour
         {
             Debug.LogError("Error: RoomLogic script not found!");
         }
-        CameraController camera = FindObjectOfType<CameraController>();
-        if (camera != null)
-        {
-            camera.StartCamera();
-        }
-        else
-        {
-            Debug.LogError("Error: CameraController script not found!");
-        }
-    }
-    
-    
 
+        Camera.main.GetComponent<CameraController>().StartCamera(roomNumber);
+    }
 }

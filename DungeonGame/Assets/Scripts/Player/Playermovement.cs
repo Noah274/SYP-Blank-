@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-/*
+
 public class Playermovement : MonoBehaviour
 {
     public float speed;
@@ -44,4 +44,3 @@ public class Playermovement : MonoBehaviour
         rb.rotation = aimAngle;
     }
 }
-*/
