@@ -90,12 +90,23 @@ public class RoomLogic : MonoBehaviour
             if (teleportPoint != null)
             {
                 GameObject player = GameObject.FindWithTag("Player");
-
-                //Todo-Kreni Kammera anpassen
+                
                 player.transform.position = teleportPoint.transform.position;
                 player.transform.rotation = teleportPoint.transform.rotation;
 
             }
+            
+            //Raum Logik neu ausführen
+            /*
+            Main main = FindObjectOfType<Main>();
+            if (main != null)
+            {
+                main.JoinRoom();
+            }
+            else
+            {
+                Debug.LogError("Error: CameraController script not found!");
+            }*/
         }
     }
 

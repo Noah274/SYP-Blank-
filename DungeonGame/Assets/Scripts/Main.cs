@@ -35,10 +35,10 @@ public class Main : MonoBehaviour
             Debug.LogError("Error: Player script not found!");
         }
 
-        joinRoom();
+        JoinRoom();
     }
 
-    public void joinRoom()
+    public void JoinRoom()
     {
         //Der Raum, in dem sich der Spieler befindet (roomNumber die id des Raumes)
         RoomLogic logic = FindObjectOfType<RoomLogic>();
