@@ -1147,16 +1147,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a3b6b9fa403641428a318e605043d04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  layerLevel: 50
+  layerLevel: 1
   enemy:
   - {fileID: 181010571996059647, guid: e2e31703ad652154da6bc4a9db052451, type: 3}
   - {fileID: 181010571996059647, guid: ece1d8676f846ec41bb4bf30eb5fd94b, type: 3}
   - {fileID: 181010571996059647, guid: 2e7a8f393d63dd54ca54fb7408d6fe9b, type: 3}
-  bossEnemy: {fileID: 0}
+  bossEnemy: {fileID: 181010571996059647, guid: 988c01df99e232549890acc5d0558ca4,
+    type: 3}
   spawnRange: 15
   spawnDelay: 2
-  damageMultiplier: 0
-  healthMultiplier: 0
+  damageMultiplier: 1.2
+  healthMultiplier: 1.2
   gridFloor: {fileID: 873951840}
   gridWall: {fileID: 424796479}
   fGrass:

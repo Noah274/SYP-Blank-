@@ -2,20 +2,28 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyAI : MonoBehaviour
+public class BossAI : MonoBehaviour
 {
+    [Header("Basic Info")]
     private GameObject player;
+    public float hitPoints;
     public float speed;
     public float distanceBetween;
-    public float hitPoints;
-    public float damage;
     public List<GameObject> spawnPool;
+
+    [Header("AttackInfo")]
+    public float damage;
     public GameObject projectilePrefab;
+    public GameObject slowProjectilePrefab;
     public float attackCooldown;
     public float projectileSpeed;
+    public float slowProjectileSpeed;
+    public float slowProjectileDuration;
+    public float slowProjectileCooldown;
     public bool isArcher;
 
     private bool canAttack = true;
+    private bool canLaunchSlowProjectile = true;
     private float distance;
     private Vector3 position;
 
@@ -44,6 +52,12 @@ public class EnemyAI : MonoBehaviour
             {
                 LaunchProjectile();
                 StartCoroutine(AttackCooldown());
+            }
+
+            if (canLaunchSlowProjectile)
+            {
+                LaunchSlowProjectile();
+                StartCoroutine(SlowProjectileCooldown());
             }
         }
     }
@@ -85,6 +99,8 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
+    private Coroutine projectileCooldownCoroutine;
+
     void LaunchProjectile()
     {
         GameObject projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
@@ -93,14 +109,74 @@ public class EnemyAI : MonoBehaviour
         {
             Vector2 direction = (player.transform.position - transform.position).normalized;
             projectileRb.velocity = direction * projectileSpeed;
+
+            projectileCooldownCoroutine = StartCoroutine(ProjectileCooldown());
         }
     }
 
+    IEnumerator ProjectileCooldown()
+    {
+        yield return new WaitForSeconds(3f);
+        // Disable the projectile
+        if (projectileCooldownCoroutine != null)
+        {
+            StopCoroutine(projectileCooldownCoroutine);
+            projectileCooldownCoroutine = null;
+        }
 
+        yield return new WaitForSeconds(2f);
+        // Resume the projectile
+        LaunchProjectile();
+    }
+    void LaunchSlowProjectile()
+    {
+        GameObject slowProjectile = Instantiate(slowProjectilePrefab, transform.position, Quaternion.identity);
+        Rigidbody2D slowProjectileRb = slowProjectile.GetComponent<Rigidbody2D>();
+        if (slowProjectileRb != null)
+        {
+            StartCoroutine(FollowPlayerForDuration(slowProjectileRb, slowProjectileSpeed, 2f));
+        }
+    }
+
+    IEnumerator FollowPlayerForDuration(Rigidbody2D rb, float initialSpeed, float duration)
+    {
+        Vector2 initialDirection = (player.transform.position - transform.position).normalized;
+        float timer = 0f;
+
+        while (timer < duration)
+        {
+            // Check if the slow projectile's rigidbody still exists
+            if (rb == null)
+                yield break;
+
+            // Adjust velocity to track the player
+            Vector2 updatedDirection = ((Vector2)player.transform.position - rb.position).normalized;
+
+            rb.velocity = updatedDirection * initialSpeed;
+
+            timer += Time.deltaTime;
+            yield return null;
+        }
+
+        // Disable the slow projectile
+        if (rb != null)
+        {
+            Destroy(rb.gameObject);
+        }
+    }
+
+    
     IEnumerator AttackCooldown()
     {
         canAttack = false;
         yield return new WaitForSeconds(attackCooldown);
         canAttack = true;
+    }
+
+    IEnumerator SlowProjectileCooldown()
+    {
+        canLaunchSlowProjectile = false;
+        yield return new WaitForSeconds(slowProjectileCooldown);
+        canLaunchSlowProjectile = true;
     }
 }

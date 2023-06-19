@@ -106,8 +106,9 @@ public class SpawningEnemy : MonoBehaviour
             GameObject enemy = Instantiate(gOptions.bossEnemy, enemySpawnPos, Quaternion.identity);
             enemy.tag = "EnemyBoss";
                     
-            enemy.GetComponent<EnemyAI>().hitPoints = enemy.GetComponent<EnemyAI>().hitPoints * ((gOptions.layerLevel * gOptions.healthMultiplier)/100);
-            enemy.GetComponent<EnemyAI>().damage = enemy.GetComponent<EnemyAI>().damage * ((gOptions.layerLevel * gOptions.damageMultiplier)/100);
+            enemy.GetComponent<BossAI>().hitPoints = enemy.GetComponent<BossAI>().hitPoints + (gOptions.layerLevel * gOptions.healthMultiplier);
+            enemy.GetComponent<BossAI>().damage = enemy.GetComponent<BossAI>().damage * (gOptions.layerLevel * gOptions.damageMultiplier);
+
         }
     }
 
@@ -146,8 +147,8 @@ public class SpawningEnemy : MonoBehaviour
                     GameObject enemy = Instantiate(gOptions.enemy[_random.Next(0, gOptions.enemy.Length)], enemySpawnPos, Quaternion.identity);
                     enemy.tag = "Enemy";
                     
-                    enemy.GetComponent<EnemyAI>().hitPoints = enemy.GetComponent<EnemyAI>().hitPoints * ((gOptions.layerLevel * gOptions.healthMultiplier)/100);
-                    enemy.GetComponent<EnemyAI>().damage = enemy.GetComponent<EnemyAI>().damage * ((gOptions.layerLevel * gOptions.damageMultiplier)/100);
+                    enemy.GetComponent<EnemyAI>().hitPoints = enemy.GetComponent<EnemyAI>().hitPoints + (gOptions.layerLevel * gOptions.healthMultiplier);
+                    enemy.GetComponent<EnemyAI>().damage = enemy.GetComponent<EnemyAI>().damage * (gOptions.layerLevel * gOptions.damageMultiplier);
 
                     float randomDelay = Random.Range(0, gOptions.spawnDelay);
                     yield return new WaitForSeconds(randomDelay);
