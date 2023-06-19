@@ -1147,14 +1147,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a3b6b9fa403641428a318e605043d04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  layerLevel: 1
+  layerLevel: 50
   enemy:
   - {fileID: 181010571996059647, guid: e2e31703ad652154da6bc4a9db052451, type: 3}
   - {fileID: 181010571996059647, guid: ece1d8676f846ec41bb4bf30eb5fd94b, type: 3}
   - {fileID: 181010571996059647, guid: 2e7a8f393d63dd54ca54fb7408d6fe9b, type: 3}
   bossEnemy: {fileID: 0}
-  spawnRange: 5
+  spawnRange: 15
   spawnDelay: 2
+  damageMultiplier: 0
+  healthMultiplier: 0
   gridFloor: {fileID: 873951840}
   gridWall: {fileID: 424796479}
   fGrass:
@@ -1169,6 +1171,7 @@ MonoBehaviour:
   fSpawnPoint: {fileID: 11400000, guid: 6d62ee5bebfab4543a4d42e4d00e4921, type: 2}
   fStone:
   - {fileID: 11400000, guid: f5945c4f4a016ae419bd0fb1152e2d1a, type: 2}
+  wdawd: []
   wTop: {fileID: 11400000, guid: cfb6b2e88c5f0ae4c9a8decf2233316d, type: 2}
   wBottom: {fileID: 11400000, guid: 815a98150ae40f24482bf4ae569f8718, type: 2}
   wCorner: {fileID: 11400000, guid: 8be27a7af89a7164283e45689a61753d, type: 2}
