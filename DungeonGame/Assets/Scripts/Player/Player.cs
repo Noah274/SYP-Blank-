@@ -57,12 +57,6 @@ public class Player : MonoBehaviour
         {
             SceneManager.LoadScene("SkillTree");
         }
-        
-        if (Input.GetKey(KeyCode.Escape))
-        {
-            SceneManager.LoadScene("OptionMenu");
-        }
-
         if (Input.GetKeyDown(KeyCode.Space))
         {
             TakeDamage(10);

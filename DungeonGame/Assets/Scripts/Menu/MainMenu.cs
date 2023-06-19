@@ -1,28 +1,38 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MainMenu : MonoBehaviour
+namespace Menu
 {
-    public void PlayGame()
+    public class MainMenu : MonoBehaviour
     {
-        SceneManager.LoadScene("Scenes/MainGame-Test");
+<<<<<<< HEAD
+        public void PlayGame()
+        {
+            SceneManager.LoadScene("Scenes/MainGame-Test");
+        }
+=======
+        SceneManager.LoadScene("MainGame - 1.0");
     }
+>>>>>>> 0ceb7b482cf24352ad44d456eb2bcfbc75cfe388
 
-    public void GoBackToMenu()
-    {
-        SceneManager.LoadScene("StartScreen");
-    }
+        public void GoBackToMenu()
+        {
+            SceneManager.LoadScene("StartScreen");
+        }
     
-    public void SwitchToOptionMenu()
-    {
-        SceneManager.LoadScene("OptionMenu");
-    }
+        public void SwitchToOptionMenu()
+        {
+            SceneManager.LoadScene("OptionMenu");
+        }
         
-    public void OnApplicationQuit()
-    {
-        Application.Quit();
-    }
+        public void OnApplicationQuit()
+        {
+            Application.Quit();
+        }
+        public void ResumeGame()
+        {
+            PauseMenu.Resume();
+        }
     
+    }
 }

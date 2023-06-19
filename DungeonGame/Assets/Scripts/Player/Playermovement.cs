@@ -14,6 +14,12 @@ public class Playermovement : MonoBehaviour
     {
         float moveX = Input.GetAxisRaw("Horizontal");
         float moveY = Input.GetAxisRaw("Vertical");
+<<<<<<< HEAD
+
+        moveDirection = new Vector2(moveX, moveY).normalized;
+        mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+=======
         if (Input.GetKey(KeyCode.Escape))
         {
             //TODO: Open pause menu 
@@ -27,8 +33,8 @@ public class Playermovement : MonoBehaviour
         moveDirection = new Vector2(moveX, moveY).normalized;
         mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         
+>>>>>>> 0ceb7b482cf24352ad44d456eb2bcfbc75cfe388
         if(Input.GetMouseButtonDown(0))
-
         {
             weapon.Fire();
         }
