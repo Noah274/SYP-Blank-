@@ -18,10 +18,9 @@ public class GenerateRoom
     
     //doors
     private int[] doorDirections = new int[4];
+    private int[] teleportDirections = new int[4];
     
     
-
-
     public GenerateRoom(GeneratorOptions gOptions, int roomType, int layerPosX, int layerPosY, int roomId, int[] doors)
     {
         this.gOptions = gOptions;
@@ -81,6 +80,33 @@ public class GenerateRoom
             }
         }
     }
+
+    public void SetTeleportDirections(int[] telDoor)
+    {
+        this.teleportDirections[0] = telDoor[0]; //dUp;
+        this.teleportDirections[1] = telDoor[1]; //dDown;
+        this.teleportDirections[2] = telDoor[2]; //dLeft;
+        this.teleportDirections[3] = telDoor[3]; //dRight;
+    }
+    
+    public int GetTelIdUp()
+    {
+        return teleportDirections[0];
+    }
+    
+    public int GetTelIdDown()
+    {
+        return teleportDirections[1];
+    }
+    public int GetTelIdLeft()
+    {
+        return teleportDirections[2];
+    }
+    public int GetTelIdRight()
+    {
+        return teleportDirections[3];
+    }
+    
     public void SetRoomDone()
     {
         roomDone = true;
