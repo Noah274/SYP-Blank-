@@ -19,7 +19,9 @@ public class LootPool : MonoBehaviour
                 int randomIndex = Random.Range(0, itemsToDrop.Count);
                 GameObject itemToDrop = itemsToDrop[randomIndex];
 
-                Instantiate(itemToDrop, transform.position, Quaternion.identity);
+                GameObject obj = Instantiate(itemToDrop, transform.position, Quaternion.identity);
+                GameObject createdObjectsContainer = GameObject.Find("createdObjects");
+                obj.transform.SetParent(createdObjectsContainer.transform);
             }
 
             gameObject.SetActive(false);

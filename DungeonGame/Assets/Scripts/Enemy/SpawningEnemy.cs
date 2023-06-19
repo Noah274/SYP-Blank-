@@ -105,6 +105,8 @@ public class SpawningEnemy : MonoBehaviour
         {
             GameObject enemy = Instantiate(gOptions.bossEnemy, enemySpawnPos, Quaternion.identity);
             enemy.tag = "EnemyBoss";
+            GameObject createdObjectsContainer = GameObject.Find("createdObjects");
+            enemy.transform.SetParent(createdObjectsContainer.transform);
                     
             enemy.GetComponent<EnemyAI>().hitPoints = enemy.GetComponent<EnemyAI>().hitPoints * ((gOptions.layerLevel * gOptions.healthMultiplier)/100);
             enemy.GetComponent<EnemyAI>().damage = enemy.GetComponent<EnemyAI>().damage * ((gOptions.layerLevel * gOptions.damageMultiplier)/100);
@@ -145,6 +147,8 @@ public class SpawningEnemy : MonoBehaviour
                 {
                     GameObject enemy = Instantiate(gOptions.enemy[_random.Next(0, gOptions.enemy.Length)], enemySpawnPos, Quaternion.identity);
                     enemy.tag = "Enemy";
+                    GameObject createdObjectsContainer = GameObject.Find("createdObjects");
+                    enemy.transform.SetParent(createdObjectsContainer.transform);
                     
                     enemy.GetComponent<EnemyAI>().hitPoints = enemy.GetComponent<EnemyAI>().hitPoints * ((gOptions.layerLevel * gOptions.healthMultiplier)/100);
                     enemy.GetComponent<EnemyAI>().damage = enemy.GetComponent<EnemyAI>().damage * ((gOptions.layerLevel * gOptions.damageMultiplier)/100);

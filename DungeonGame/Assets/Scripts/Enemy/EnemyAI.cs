@@ -59,9 +59,11 @@ public class EnemyAI : MonoBehaviour
         
         int randomItem = Random.Range(0, spawnPool.Count);
         GameObject toSpawn = spawnPool[randomItem];
-        
-        
-        Instantiate(toSpawn, transform.position, Quaternion.identity);
+
+
+        GameObject obj = Instantiate(toSpawn, transform.position, Quaternion.identity);
+        GameObject createdObjectsContainer = GameObject.Find("createdObjects");
+        obj.transform.SetParent(createdObjectsContainer.transform);
     }
     
     void Awake()
@@ -92,6 +94,9 @@ public class EnemyAI : MonoBehaviour
     void LaunchProjectile() 
     {
         GameObject projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
+        GameObject createdObjectsContainer = GameObject.Find("createdObjects");
+        projectile.transform.SetParent(createdObjectsContainer.transform);
+        
         Rigidbody2D projectileRb = projectile.GetComponent<Rigidbody2D>();
         if (projectileRb != null)
         {

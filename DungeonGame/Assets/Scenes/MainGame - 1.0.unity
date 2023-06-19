@@ -123,6 +123,37 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &326605183
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 326605184}
+  m_Layer: 0
+  m_Name: createdObjects
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &326605184
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 326605183}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 283.29205, y: -139.42155, z: 29.182364}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &337632779
 GameObject:
   m_ObjectHideFlags: 0
@@ -1101,6 +1132,7 @@ GameObject:
   - component: {fileID: 1594595085}
   - component: {fileID: 1594595088}
   - component: {fileID: 1594595089}
+  - component: {fileID: 1594595090}
   m_Layer: 0
   m_Name: Engine
   m_TagString: Untagged
@@ -1147,16 +1179,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a3b6b9fa403641428a318e605043d04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  layerLevel: 50
+  layerLevel: 1
   enemy:
   - {fileID: 181010571996059647, guid: e2e31703ad652154da6bc4a9db052451, type: 3}
   - {fileID: 181010571996059647, guid: ece1d8676f846ec41bb4bf30eb5fd94b, type: 3}
   - {fileID: 181010571996059647, guid: 2e7a8f393d63dd54ca54fb7408d6fe9b, type: 3}
-  bossEnemy: {fileID: 0}
+  bossEnemy: {fileID: 181010571996059647, guid: e2e31703ad652154da6bc4a9db052451,
+    type: 3}
   spawnRange: 15
   spawnDelay: 2
-  damageMultiplier: 0
-  healthMultiplier: 0
+  damageMultiplier: 1
+  healthMultiplier: 1
   gridFloor: {fileID: 873951840}
   gridWall: {fileID: 424796479}
   fGrass:
@@ -1254,6 +1287,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2fcada7b5bfb0424caed99548e3ae543, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1594595090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1594595081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 539660585fbfb654d95192f49fef3fe7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1609088134

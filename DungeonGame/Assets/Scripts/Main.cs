@@ -7,9 +7,15 @@ public class Main : MonoBehaviour
     private GeneratorOptions gOptions;
     private int roomNumber = 0;
     
-    IEnumerator Start()
+    void Start()
     {
-        yield return null;
+        MakeNewLayer();
+    }
+
+    public void MakeNewLayer()
+    {
+
+        //Debug.Log("Main");
 
         gOptions = gameObject.GetComponent<GeneratorOptions>();
         
@@ -34,7 +40,7 @@ public class Main : MonoBehaviour
         {
             Debug.LogError("Error: Player script not found!");
         }
-
+        ;
         JoinRoom();
     }
 
@@ -50,6 +56,8 @@ public class Main : MonoBehaviour
         {
             Debug.LogError("Error: CameraController script not found!");
         }
+
+        Debug.Log("Raum: " + roomNumber);
 
         //Kamera wird auf den Raum gesetzt
         CameraController camera = FindObjectOfType<CameraController>();

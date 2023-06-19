@@ -14,6 +14,9 @@ public class Weapon : MonoBehaviour
         if (!PauseMenu.GameIsPaused)
         {
             GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+            GameObject createdObjectsContainer = GameObject.Find("createdObjects");
+            bullet.transform.SetParent(createdObjectsContainer.transform);
+            
             bullet.GetComponent<Rigidbody2D>().AddForce(firePoint.up * fireForce, ForceMode2D.Impulse);
         }
         

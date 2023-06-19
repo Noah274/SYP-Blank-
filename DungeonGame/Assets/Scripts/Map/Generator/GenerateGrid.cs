@@ -20,9 +20,10 @@ public class GenerateGrid : MonoBehaviour
 
 	public void StartGenerationGrid(GeneratorOptions gOptions)
 	{
-
 		this.gOptions = gOptions;
 
+		rooms.Clear();	
+		
 		GoThroughLayer();
 		PrintLayer();
 		
@@ -271,6 +272,9 @@ public class GenerateGrid : MonoBehaviour
 		        
 		        Vector3 spawnPosition = new Vector3(posX, posY, 0f);
 		        GameObject spawnPointPlayer = new GameObject("spawnPointPlayer");
+		        GameObject createdObjectsContainer = GameObject.Find("createdObjects");
+		        spawnPointPlayer.transform.SetParent(createdObjectsContainer.transform);
+		        
 		        spawnPointPlayer.transform.position = spawnPosition;
 		        spawnPointPlayer.tag = "spawnPointPlayer";
 	        }
@@ -287,6 +291,9 @@ public class GenerateGrid : MonoBehaviour
 		{
 			Vector3 spawnPosition = new Vector3(posX, posY, 0f);
 			GameObject spawnPointPlayer = new GameObject("RoomCenterPoint_" + room.GetRoomId());
+			GameObject createdObjectsContainer = GameObject.Find("createdObjects");
+			spawnPointPlayer.transform.SetParent(createdObjectsContainer.transform);
+			
 			spawnPointPlayer.transform.position = spawnPosition;
 			spawnPointPlayer.tag = "RoomCenterPoint";
 			spawnPointPlayer.AddComponent<RoomReference>().room = room;
@@ -311,6 +318,9 @@ public class GenerateGrid : MonoBehaviour
 			
 			Vector3 position = new Vector3(posX, posY, 0f);
 			GameObject decorationInstance = Instantiate(randomDecoration, position, Quaternion.identity);
+			
+			GameObject createdObjectsContainer = GameObject.Find("createdObjects");
+			decorationInstance.transform.SetParent(createdObjectsContainer.transform);
 
 			decorationInstance.transform.position = position;	
 		}
@@ -325,6 +335,9 @@ public class GenerateGrid : MonoBehaviour
 			GameObject randomDecoration = gOptions.bossFloorDecorations[tileNumber];
 			Vector3 position = new Vector3(posX, posY, 0f);
 			GameObject decorationInstance = Instantiate(randomDecoration, position, Quaternion.identity);
+			
+			GameObject createdObjectsContainer = GameObject.Find("createdObjects");
+			decorationInstance.transform.SetParent(createdObjectsContainer.transform);
 
 			decorationInstance.transform.position = position;	
 		}
@@ -398,7 +411,11 @@ public class GenerateGrid : MonoBehaviour
 
 	private void placeWhitePlate(float posX, float posY, float rotation)
 	{
-		Instantiate(gOptions.doorHitbox, new Vector3(posX, posY, 0f), Quaternion.Euler(0f, 0f, rotation));
+		GameObject obj = Instantiate(gOptions.doorHitbox, new Vector3(posX, posY, 0f), Quaternion.Euler(0f, 0f, rotation));
+		
+		GameObject createdObjectsContainer = GameObject.Find("createdObjects");
+		obj.transform.SetParent(createdObjectsContainer.transform);
+		
 	}
 
 
@@ -408,13 +425,16 @@ public class GenerateGrid : MonoBehaviour
 	{
 		GameObject obj = Instantiate(o, new Vector3(distanceX, distanceY), Quaternion.Euler(0, 0, f));
 
+		// Finde oder erstelle den createdObjects-Container
+		GameObject createdObjectsContainer = GameObject.Find("createdObjects");
+		obj.transform.SetParent(createdObjectsContainer.transform);
+
 		if (room != null)
 		{
 			obj.name = (room.GetRoomId()).ToString();
 			//obj.AddComponent<RoomReference>().room = room;
-			
 		}
-		
+
 		if (isBossRoom)
 		{
 			Renderer renderer = obj.GetComponent<Renderer>();
@@ -427,6 +447,7 @@ public class GenerateGrid : MonoBehaviour
 			}
 		}
 	}
+
 
 	
 	private void paceWallOnMAp(int x, int y, int secondX, int secondY, float rotation)
