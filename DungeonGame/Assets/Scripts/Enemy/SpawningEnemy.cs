@@ -10,6 +10,7 @@ public class SpawningEnemy : MonoBehaviour
     private GeneratorOptions gOptions;
     private int roomNumber;
     private bool endetSpawning = false;
+    private GenerateRoom roomObj;
     public void StartSpawningEnemies(GeneratorOptions gOptions,int roomNumber)
     {
         this.gOptions = gOptions;
@@ -19,13 +20,21 @@ public class SpawningEnemy : MonoBehaviour
         {
             return;
         }
-        
         int level = gOptions.layerLevel;
 
         int enemyCount = _random.Next(2, level + 4) * 2;
         //Debug.Log("EnemyCount: " + enemyCount);
 
-        StartSpawning(enemyCount);
+        Debug.Log("Type: " +roomObj.GetRoomType());
+        Debug.Log("isBossroom: "  +(roomObj.GetRoomType() == gOptions.bossRoom));
+        if (roomObj.GetRoomType() == gOptions.bossRoom)
+        {
+            Debug.Log("Bossroom");
+        }
+        else
+        {
+            StartSpawning(enemyCount);   
+        }
     }
     
     private bool isRoomDone(int number)
@@ -36,6 +45,7 @@ public class SpawningEnemy : MonoBehaviour
             if (obj.name == number.ToString())
             {
                 GenerateRoom roomObj = obj.GetComponent<RoomReference>().room;
+                this.roomObj = roomObj;
                 return roomObj.GetRoomDone();
             }
         }
@@ -63,7 +73,7 @@ public class SpawningEnemy : MonoBehaviour
             RoomLogic logic = FindObjectOfType<RoomLogic>();
             if (logic != null)
             {
-                logic.OpenRoom();
+                logic.OpenRoom(roomNumber);
             }
             else
             {

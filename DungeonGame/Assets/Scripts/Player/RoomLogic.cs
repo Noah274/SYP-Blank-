@@ -46,15 +46,22 @@ public class RoomLogic : MonoBehaviour
         }
     }
 
-    public void OpenRoom()//int number
+    public void OpenRoom(int number)//int number
     {
         //Debug.Log("number: " + number);
         
-        SpriteRenderer spriteRenderer = objRoom.GetComponent<SpriteRenderer>();
-        spriteRenderer.sprite = gOptions.doorOpen.GetComponent<SpriteRenderer>().sprite;
+        GameObject[] gameObjects = FindObjectsOfType<GameObject>();
+        foreach (GameObject obj in gameObjects)
+        {
+            if (obj.name == number.ToString())
+            {
+                SpriteRenderer spriteRenderer = obj.GetComponent<SpriteRenderer>();
+                spriteRenderer.sprite = gOptions.doorOpen.GetComponent<SpriteRenderer>().sprite;
         
-        GenerateRoom roomObj = objRoom.GetComponent<RoomReference>().room;
-        roomObj.SetRoomDone();
+                GenerateRoom roomObj = obj.GetComponent<RoomReference>().room;
+                roomObj.SetRoomDone();
+            }
+        }
     }
 
     public void TeleportToNextRoom(Quaternion rotation)
@@ -64,27 +71,28 @@ public class RoomLogic : MonoBehaviour
 
         if (roomObj != null && roomObj.GetRoomDone())
         {
-            Debug.Log("Start Teleport");
+            //Debug.Log("Start Teleport");
+            int rotationZ = (int) rotation.eulerAngles.z;
             GameObject teleportPoint = null;
-            if (rotation.y == 0)
+            if (rotationZ == 0)
             {
                 roomID = roomObj.GetTelIdUp();
                 string roomCenterPointName = "RoomCenterPoint_" + roomID;
                 teleportPoint = GameObject.Find(roomCenterPointName);
             }
-            else if (rotation.y == 90)
+            else if (rotationZ == 90)
             {
                 roomID = roomObj.GetTelIdLeft();
                 string roomCenterPointName = "RoomCenterPoint_" + roomID;
                 teleportPoint = GameObject.Find(roomCenterPointName);
             }
-            else if (rotation.y == 180)
+            else if (rotationZ == 180)
             {
                 roomID = roomObj.GetTelIdDown();
                 string roomCenterPointName = "RoomCenterPoint_" + roomID;
                 teleportPoint = GameObject.Find(roomCenterPointName);
             }
-            else if (rotation.y == 270)
+            else if (rotationZ == 270)
             {
                 roomID = roomObj.GetTelIdRight();
                 string roomCenterPointName = "RoomCenterPoint_" + roomID;
@@ -107,20 +115,18 @@ public class RoomLogic : MonoBehaviour
                 {
                     Debug.LogError("Error: CameraController script not found!");
                 }
-
+                
+                //Raum Logik neu ausführen
+                Main main = FindObjectOfType<Main>();
+                if (main != null)
+                {
+                    main.JoinRoom();
+                }
+                else
+                {
+                    Debug.LogError("Error: Main script not found!");
+                }
             }
-            
-            //Raum Logik neu ausführen
-            /*
-            Main main = FindObjectOfType<Main>();
-            if (main != null)
-            {
-                main.JoinRoom();
-            }
-            else
-            {
-                Debug.LogError("Error: CameraController script not found!");
-            }*/
         }
     }
 

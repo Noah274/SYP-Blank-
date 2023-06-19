@@ -18,6 +18,7 @@ public class GeneratorOptions : MonoBehaviour
     
     [Header("Enemy - Spawning")]
     public GameObject[] enemy;
+    public GameObject bossEnemy;
     public int spawnRange;
     public int spawnDelay;
 
