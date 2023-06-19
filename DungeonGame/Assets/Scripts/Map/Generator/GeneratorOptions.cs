@@ -36,6 +36,9 @@ public class GeneratorOptions : MonoBehaviour
     public GameObject doorClosed;
     public GameObject doorOpen;
     public GameObject[] floorDecorations;
+    public GameObject[] lootDecorations;
+    public GameObject[] bossFloorDecorations;
+    
     
     [Header("Options - GenerateLayer")]
     public int layerArrayLength = 11;

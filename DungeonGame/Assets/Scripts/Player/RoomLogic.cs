@@ -33,19 +33,6 @@ public class RoomLogic : MonoBehaviour
         roomNumber = Int32.Parse(numberString);
 	        
         //Debug.Log(numberString + "----------");
-        
-		GameObject[] gameObjects = FindObjectsOfType<GameObject>();
-		foreach (GameObject obj in gameObjects)
-		{
-			if (obj.name == numberString)
-			{
-				SpriteRenderer spriteRenderer = obj.GetComponent<SpriteRenderer>();
-				spriteRenderer.sprite = gOptions.doorOpen.GetComponent<SpriteRenderer>().sprite;
-				
-				spriteRenderer.color = Color.red;
-				obj.GetComponent<RoomReference>().room.SetRoomDone();
-			}
-		}
     }
 
     

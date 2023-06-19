@@ -227,6 +227,7 @@ public class GenerateGrid : MonoBehaviour
 	        else  if (tileBlock == "fStone" || tileBlock == "centerfStone")
 	        {
 		        gOptions.gridFloor.SetTile(new Vector3Int(posX, posY), gOptions.fStone[_random.Next(0, gOptions.fStone.Length)]);
+		        PlaceBossFloorDecoration(posX, posY, room);
 		        PlaceCenterPoint(posX, posY, room, tileBlock);
 	        }
 	        else if (tileBlock == "fSpawnPoint")
@@ -265,11 +266,32 @@ public class GenerateGrid : MonoBehaviour
 		{
 			int tileNumber = _random.Next(0, gOptions.floorDecorations.Length);
 			GameObject randomDecoration = gOptions.floorDecorations[tileNumber];
-        
+		
+			random = _random.Next(0, 5);
+			if (random == 1)
+			{
+				tileNumber = _random.Next(0, gOptions.lootDecorations.Length);
+				randomDecoration = gOptions.lootDecorations[tileNumber];
+			}
+			
 			Vector3 position = new Vector3(posX, posY, 0f);
 			GameObject decorationInstance = Instantiate(randomDecoration, position, Quaternion.identity);
 
-			decorationInstance.transform.position = position;
+			decorationInstance.transform.position = position;	
+		}
+	}
+	
+	private void PlaceBossFloorDecoration(int posX, int posY, GenerateRoom room)
+	{
+		int random = _random.Next(0, 8);
+		if (random == 1)
+		{
+			int tileNumber = _random.Next(0, gOptions.bossFloorDecorations.Length);
+			GameObject randomDecoration = gOptions.bossFloorDecorations[tileNumber];
+			Vector3 position = new Vector3(posX, posY, 0f);
+			GameObject decorationInstance = Instantiate(randomDecoration, position, Quaternion.identity);
+
+			decorationInstance.transform.position = position;	
 		}
 	}
 
