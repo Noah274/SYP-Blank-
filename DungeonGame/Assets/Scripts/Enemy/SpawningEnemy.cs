@@ -39,12 +39,11 @@ public class SpawningEnemy : MonoBehaviour
         if (enemies.Length == 0)
         {
             endetSpawning = false;
-
-            //Debug.Log("waawdawdwawda---- " + roomNumber);
-            Main main = FindObjectOfType<Main>();
-            if (main != null)
+            
+            RoomLogic logic = FindObjectOfType<RoomLogic>();
+            if (logic != null)
             {
-                main.OpenRoom(roomNumber);
+                logic.OpenRoom(roomNumber);
             }
             else
             {

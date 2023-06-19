@@ -56,6 +56,9 @@ public class GeneratorOptions : MonoBehaviour
     
     [Header("Options - GenerateGrid")]
     public int baseOffset = 2;
+    public GameObject doorHitbox;
+    
+    
     private void Start()
     {
     }

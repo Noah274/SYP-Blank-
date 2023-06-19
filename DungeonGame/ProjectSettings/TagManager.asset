@@ -12,6 +12,7 @@ TagManager:
   - spawnPointPlayer
   - RoomCenterPoint
   - destroyable
+  - door
   layers:
   - Default
   - TransparentFX
