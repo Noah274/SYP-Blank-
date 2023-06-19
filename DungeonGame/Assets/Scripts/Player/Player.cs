@@ -85,10 +85,10 @@ public class Player : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collider.CompareTag("door"))
+        if (collider.CompareTag("TeleportDoor"))
         {
             Quaternion rotation = collider.transform.rotation;
-            Debug.Log("Rotation: " + rotation.eulerAngles);
+            //Debug.Log("TeleportDoor - Rotation: " + rotation.eulerAngles);
             
             RoomLogic logic = FindObjectOfType<RoomLogic>();
             if (logic != null)

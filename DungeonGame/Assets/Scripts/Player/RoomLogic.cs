@@ -6,11 +6,11 @@ using UnityEngine;
 public class RoomLogic : MonoBehaviour
 {
     private GeneratorOptions gOptions;
-    private GenerateRoom roomObj = null;
+    private GameObject objRoom;
     public void StartRoomLogic(GeneratorOptions options, ref int roomNumber)
     {
         this.gOptions = options;
-        this.roomObj = null;
+        this.objRoom = null;
         
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         GameObject[] roomCenterPoints = GameObject.FindGameObjectsWithTag("RoomCenterPoint");
@@ -35,30 +35,32 @@ public class RoomLogic : MonoBehaviour
         roomNumber = Int32.Parse(numberString);
 	        
         //Debug.Log(numberString + "----------");
-    }
-
-    public void OpenRoom(int number)
-    {
-        //Debug.Log("number: " + number);
+        
         GameObject[] gameObjects = FindObjectsOfType<GameObject>();
         foreach (GameObject obj in gameObjects)
         {
-            if (obj.name == number.ToString())
+            if (obj.name == numberString)
             {
-                SpriteRenderer spriteRenderer = obj.GetComponent<SpriteRenderer>();
-                spriteRenderer.sprite = gOptions.doorOpen.GetComponent<SpriteRenderer>().sprite;
-                
-                GenerateRoom roomObj = obj.GetComponent<RoomReference>().room;
-                roomObj.SetRoomDone();
-                //Debug.Log("ID Up: " + roomObj.GetTelIdUp() + " ID Down: " + roomObj.GetTelIdDown() + " ID Left: " + roomObj.GetTelIdLeft() + " ID Right: " + roomObj.GetTelIdRight());
-                
-                 this.roomObj = roomObj;
+                this.objRoom = obj;
             }
         }
     }
 
+    public void OpenRoom()//int number
+    {
+        //Debug.Log("number: " + number);
+        
+        SpriteRenderer spriteRenderer = objRoom.GetComponent<SpriteRenderer>();
+        spriteRenderer.sprite = gOptions.doorOpen.GetComponent<SpriteRenderer>().sprite;
+        
+        GenerateRoom roomObj = objRoom.GetComponent<RoomReference>().room;
+        roomObj.SetRoomDone();
+    }
+
     public void TeleportToNextRoom(Quaternion rotation)
     {
+        GenerateRoom roomObj = objRoom.GetComponent<RoomReference>().room;
+
         if (roomObj != null && roomObj.GetRoomDone())
         {
             Debug.Log("Start Teleport");
@@ -73,14 +75,14 @@ public class RoomLogic : MonoBehaviour
                 string roomCenterPointName = "RoomCenterPoint_" + roomObj.GetTelIdLeft();
                 teleportPoint = GameObject.Find(roomCenterPointName);
             }
-            else if (rotation.y == -90)
-            {
-                string roomCenterPointName = "RoomCenterPoint_" + roomObj.GetTelIdRight();
-                teleportPoint = GameObject.Find(roomCenterPointName);
-            }
-            else if (rotation.y == -180)
+            else if (rotation.y == 180)
             {
                 string roomCenterPointName = "RoomCenterPoint_" + roomObj.GetTelIdDown();
+                teleportPoint = GameObject.Find(roomCenterPointName);
+            }
+            else if (rotation.y == 270)
+            {
+                string roomCenterPointName = "RoomCenterPoint_" + roomObj.GetTelIdRight();
                 teleportPoint = GameObject.Find(roomCenterPointName);
             }
             

@@ -16,11 +16,12 @@ public class CameraController : MonoBehaviour
     {
         if (targetRoom != null )
         {
+            /*
             Debug.Log("Camera pos: " + transform.position);
             Debug.Log("target: "+ targetRoom.transform.position);
             Debug.Log("Offset: "+ offset); ;
-            Debug.Log("New Pos:" + targetRoom.transform.position + offset);
-            transform.position = targetRoom.transform.position + offset;
+            Debug.Log("New Pos:" + targetRoom.transform.position + offset);*/
+            transform.position =  -offset;
             
         }
     }
@@ -39,10 +40,6 @@ public class CameraController : MonoBehaviour
 
     void CalculateOffset()
     {
-        if (targetRoom != null)
-        {
-            offset = targetRoom.transform.position - transform.position;
-            Debug.Log(offset);
-        }
+        offset = transform.position - targetRoom.transform.position;
     }
 }

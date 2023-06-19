@@ -63,7 +63,7 @@ public class SpawningEnemy : MonoBehaviour
             RoomLogic logic = FindObjectOfType<RoomLogic>();
             if (logic != null)
             {
-                logic.OpenRoom(roomNumber);
+                logic.OpenRoom();
             }
             else
             {
