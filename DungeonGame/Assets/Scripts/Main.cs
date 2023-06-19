@@ -37,7 +37,7 @@ public class Main : MonoBehaviour
         CameraController camera = FindObjectOfType<CameraController>();
         if (camera != null)
         {
-            camera.StartCamera();
+            camera.StartCamera(roomNumber);
         }
         else
         {
@@ -72,10 +72,5 @@ public class Main : MonoBehaviour
                 obj.GetComponent<RoomReference>().room.SetRoomDone();
             }
         }
-    }
-    
-    
-
-        Camera.main.GetComponent<CameraController>().StartCamera(roomNumber);
     }
 }
