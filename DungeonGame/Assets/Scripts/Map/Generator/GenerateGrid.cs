@@ -331,7 +331,7 @@ public class GenerateGrid : MonoBehaviour
 	private void PlaceDoor(float posX, float posY, float rotation, bool roomDone, bool isBossRoom, GenerateRoom room)
 	{
 		placeGameObject(gOptions.doorFrame, posX, posY, rotation);
-		placeWhitePlate(posX, posY, rotation);
+		//placeWhitePlate(posX, posY, rotation);
 		
 		if (roomDone)
 		{

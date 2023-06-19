@@ -69,3 +69,6 @@ TagManager:
   - name: Layer GUI
     uniqueID: 3654026061
     locked: 0
+  - name: Background
+    uniqueID: 1964640655
+    locked: 0
