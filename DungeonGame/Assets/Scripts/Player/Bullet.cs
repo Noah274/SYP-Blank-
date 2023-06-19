@@ -10,7 +10,7 @@ public class Bullet : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D c2d)
     {
-        if (c2d.CompareTag("Enemy") || c2d.CompareTag("Wall")) {
+        if (c2d.CompareTag("Enemy") || c2d.CompareTag("Wall" )|| c2d.CompareTag("destroyable")){
             Destroy(gameObject);
         }
     }

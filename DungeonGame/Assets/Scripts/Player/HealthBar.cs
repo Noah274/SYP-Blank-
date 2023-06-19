@@ -9,7 +9,7 @@ public class HealthBar : MonoBehaviour
     public Gradient gradient;
     public Image fill;
 
-    public void setMaxHealth(int health)
+    public void setMaxHealth(float health)
     {
         slider.maxValue = health;
         slider.value = health;
@@ -17,7 +17,7 @@ public class HealthBar : MonoBehaviour
         fill.color = gradient.Evaluate(1F);
     }
     
-    public void setHealth(int health)
+    public void setHealth(float health)
     {
         slider.value = health;
         

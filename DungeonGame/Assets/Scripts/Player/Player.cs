@@ -12,8 +12,8 @@ public class Player : MonoBehaviour
         Meteor
     };
 
-    public int maxHealth;
-    private int currentHealth;
+    public float maxHealth;
+    private float currentHealth;
     public HealthBar healthBar;
     private SkillDef[] skill;
 
@@ -57,18 +57,13 @@ public class Player : MonoBehaviour
         {
             SceneManager.LoadScene("SkillTree");
         }
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            TakeDamage(10);
-        }
-
         if (Input.GetKeyDown(KeyCode.H))
         {
             TakeDamage(-10);
         }
     }
 
-    void TakeDamage(int damage)
+    public void TakeDamage(float damage)
     {
         if (damage < 0 && (currentHealth - damage) >= maxHealth)
         {
@@ -77,6 +72,7 @@ public class Player : MonoBehaviour
         else if (damage > 0 && (currentHealth - damage) <= 0)
         {
             currentHealth = 0;
+            SceneManager.LoadScene("EndScreen");
         }
         else
         {

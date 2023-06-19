@@ -152,7 +152,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.25490198, g: 0.25490198, b: 0.25490198, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -235,7 +235,7 @@ GameObject:
   - component: {fileID: 424796480}
   m_Layer: 0
   m_Name: gridWall
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1151,6 +1151,7 @@ MonoBehaviour:
   enemy:
   - {fileID: 181010571996059647, guid: e2e31703ad652154da6bc4a9db052451, type: 3}
   - {fileID: 181010571996059647, guid: ece1d8676f846ec41bb4bf30eb5fd94b, type: 3}
+  - {fileID: 181010571996059647, guid: 2e7a8f393d63dd54ca54fb7408d6fe9b, type: 3}
   spawnRange: 5
   spawnDelay: 2
   gridFloor: {fileID: 873951840}
@@ -1178,32 +1179,31 @@ MonoBehaviour:
     type: 3}
   floorDecorations:
   - {fileID: 7947911505737750455, guid: 5d42979a3c318c341b37b4b1f2c85750, type: 3}
-  - {fileID: 2055102311959635369, guid: 5b94bf9107369684a8153921f763da38, type: 3}
-  - {fileID: 2055102311959635369, guid: 0505844a909d2ea4996c19b67b2a40b9, type: 3}
-  - {fileID: 2055102311959635369, guid: 4bd7b41600416b54395bf9936a05dc8e, type: 3}
-  - {fileID: 2055102311959635369, guid: 9fb66d8c9d3b5194a82e9eed65a54afb, type: 3}
-  - {fileID: 2055102311959635369, guid: 39562e88b536753438a3153c5fbdf7b8, type: 3}
-  - {fileID: 2055102311959635369, guid: 39562e88b536753438a3153c5fbdf7b8, type: 3}
-  - {fileID: 3067587326924003671, guid: a0a66c9b152e801409fc26c4ca493d18, type: 3}
-  - {fileID: 3067587326924003671, guid: 2d546d2d8b016864ab41e2185c250eb5, type: 3}
-  - {fileID: 4527656619116180701, guid: 403080d7568a4f949b4bfc7128477a8c, type: 3}
-  - {fileID: 4331307297609962461, guid: fd980c817c63af4458df40a61e529e93, type: 3}
-  - {fileID: 5830985496270386004, guid: 019ab1af1d7a4b742a982c009534c058, type: 3}
-  - {fileID: 3497682136967392582, guid: 84d669757910f1f488023c92e71fcad5, type: 3}
-  - {fileID: 315867119948335876, guid: 8d15c39fd3e3cab47ab96fbaf6dc2f92, type: 3}
-  - {fileID: 8967995859665420069, guid: 8c66149e58003104daf96668db118b4f, type: 3}
-  - {fileID: 7607938130759153975, guid: 424ccba55881d2743a04e1f1a4947e4c, type: 3}
-  - {fileID: 9045697721186582932, guid: dbeab85cbe3b90b41a444794aab794ef, type: 3}
-  - {fileID: 9021710266125520640, guid: 4800845c2c4caa84eb6194552ae9c841, type: 3}
-  - {fileID: 4064746625110277272, guid: 1dc4948f20ddc324f84c815af63aa6a9, type: 3}
-  - {fileID: 860091500876104406, guid: c5c395a83c3338d46bd52e936cf46245, type: 3}
-  - {fileID: 5789172277201470184, guid: af67ceadc087899479232f75d2b79d59, type: 3}
-  - {fileID: 3753018676070325537, guid: bf462882706828c44a4465986b6fb8d2, type: 3}
+  - {fileID: 2055102311959635369, guid: e921cf68c12fb124fa191bce4d6ef803, type: 3}
+  - {fileID: 2055102311959635369, guid: 0427048aaf2ee1049add71e05f7180cc, type: 3}
+  - {fileID: 2055102311959635369, guid: c74768b11595e7e4b957c69830ce7450, type: 3}
+  - {fileID: 2055102311959635369, guid: e173eb159038cc144a751c2164fa2f94, type: 3}
+  - {fileID: 2055102311959635369, guid: 128e4d599f71ddd4183b26c3134a5e86, type: 3}
+  - {fileID: 3067587326924003671, guid: 582a800216f9a804f8f47f951fae7edc, type: 3}
+  - {fileID: 3067587326924003671, guid: 8235142f0fdbd474ca2dce20d3d87452, type: 3}
+  - {fileID: 4527656619116180701, guid: 0e5380f4d06bf804e93d9449ed3d9081, type: 3}
+  - {fileID: 4331307297609962461, guid: 4683206dd4750514caa09cf4dd4832ed, type: 3}
+  - {fileID: 5830985496270386004, guid: bb6a26d0418d76447b770cb9bb700e69, type: 3}
+  - {fileID: 3497682136967392582, guid: 893946cdd82b7b542a9e78a470f024c6, type: 3}
+  - {fileID: 315867119948335876, guid: 9526cf1b43b573c45b2a9d8f20df0342, type: 3}
+  - {fileID: 8967995859665420069, guid: 49c302407e8af434886c58a66e7049db, type: 3}
+  - {fileID: 7607938130759153975, guid: d0d997cd5831fdf42ba0e75f96c4c979, type: 3}
+  - {fileID: 9045697721186582932, guid: 652bc56852fa62c4080b95158ebdea8d, type: 3}
+  - {fileID: 9021710266125520640, guid: c8264c571d71be04eacae74166a23a7d, type: 3}
+  - {fileID: 4064746625110277272, guid: b9d9003cf47fff14ea47f7c3d7354dc0, type: 3}
+  - {fileID: 860091500876104406, guid: 6c31a21c0dc678144a89347be8bf90e0, type: 3}
+  - {fileID: 5789172277201470184, guid: 952ce13b7d567be4189822334de17639, type: 3}
+  - {fileID: 3753018676070325537, guid: 3115e25d136ffb24ca2cea5fd0775c1c, type: 3}
   lootDecorations:
-  - {fileID: 8150476868300563372, guid: 2e2ac125e54a1e44780363d638b1df34, type: 3}
+  - {fileID: 8150476868300563372, guid: 42626a703c98442448097983713c50c6, type: 3}
   - {fileID: 2577585254963922480, guid: ac719b1d0f58391469cc19fd947ca44c, type: 3}
-  - {fileID: 2577585254963922480, guid: fb2df5b680b64b449a78162ebcd98e97, type: 3}
-  - {fileID: 2055102311959635369, guid: 413081fc53a78a043b38591243616398, type: 3}
+  - {fileID: 2577585254963922480, guid: 6009ce33338d67b48a1f946938b517cd, type: 3}
+  - {fileID: 2055102311959635369, guid: 28b8c60c5bdf57d46a7feb4b016efbcd, type: 3}
   bossFloorDecorations:
   - {fileID: 2055102311959635369, guid: a0a71fda412ad0941ab44f1732ea4c1e, type: 3}
   layerArrayLength: 11
@@ -1332,8 +1332,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 3.4955, y: -0.30999756}
-  m_SizeDelta: {x: 363.77, y: 30}
+  m_AnchoredPosition: {x: 3.4955, y: -0.76049}
+  m_SizeDelta: {x: 363.77, y: 76.761}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1704986443
 MonoBehaviour:
@@ -1369,18 +1369,18 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 25
+    m_FontSize: 60
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 88
-    m_Alignment: 0
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 000
+  m_Text: 0
 --- !u!222 &1704986445
 CanvasRenderer:
   m_ObjectHideFlags: 0
