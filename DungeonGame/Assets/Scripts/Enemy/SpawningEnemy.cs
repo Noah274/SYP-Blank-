@@ -25,7 +25,7 @@ public class SpawningEnemy : MonoBehaviour
 
     private void Update()
     {
-        if (endetSpawning )
+        if (endetSpawning)
         {
             CheckIfRoomDone();   
         }
@@ -39,7 +39,8 @@ public class SpawningEnemy : MonoBehaviour
         if (enemies.Length == 0)
         {
             endetSpawning = false;
-            
+
+            //Debug.Log("waawdawdwawda---- " + roomNumber);
             Main main = FindObjectOfType<Main>();
             if (main != null)
             {
