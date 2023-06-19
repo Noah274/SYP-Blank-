@@ -15,6 +15,9 @@ public class GeneratorOptions : MonoBehaviour
 {
     [Header("Options - Game")]
     public int layerLevel = 1;
+    
+    [Header("Enemy")]
+    public GameObject normalEnemy;
 
     [Header("Tilemap")]
     public Tilemap gridFloor;

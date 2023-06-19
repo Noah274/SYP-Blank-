@@ -7,7 +7,7 @@ public class SpawningEnemy : MonoBehaviour
     private System.Random _random = new System.Random();
     public void StartSpawningEnemies(GeneratorOptions gOptions,int roomNumber)
     {
-        Debug.Log("Spawning Enemys" + roomNumber);
+        //Debug.Log("Spawning Enemys" + roomNumber);
         int level = gOptions.layerLevel;
         int room = roomNumber;
 
@@ -16,7 +16,7 @@ public class SpawningEnemy : MonoBehaviour
         GameObject targetRoom = GameObject.Find("RoomCenterPoint_" + roomNumber.ToString());
         Vector3 pos = targetRoom.transform.position;
         
-        GameObject block = new GameObject("block");
-        block.transform.position = pos;
+        GameObject enemy = Instantiate(gOptions.normalEnemy, pos, Quaternion.identity);
+        enemy.transform.position = pos;
     }
 }
