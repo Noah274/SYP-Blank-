@@ -93,27 +93,37 @@ public class SpawningEnemy : MonoBehaviour
     {
         GameObject targetRoom = GameObject.Find("RoomCenterPoint_" + roomNumber.ToString());
         Vector3 centerPos = targetRoom.transform.position;
-    
+
         int enemyPlaced = 0;
         int circleRadius = gOptions.spawnRange;
 
-        for (int i = 0; i < enemyCount+1; i++)
+        for (int i = 0; i < enemyCount + 1; i++)
         {
             if (enemyPlaced < enemyCount)
             {
                 enemyPlaced++;
-                    
+
                 float randomOffsetX = _random.Next(-circleRadius, circleRadius);
                 float randomOffsetY = _random.Next(-circleRadius, circleRadius);
-                
+
                 Vector3 enemySpawnPos = centerPos + new Vector3(randomOffsetX, randomOffsetY, 0);
-                GameObject enemy = Instantiate(gOptions.enemy[_random.Next(0, gOptions.enemy.Length)], enemySpawnPos, Quaternion.identity);
-                enemy.tag = "Enemy";
-                
-                enemy.GetComponent<EnemyAI>().hitPoints = 1;
-                
-                float randomDelay = Random.Range(0, gOptions.spawnDelay);
-                yield return new WaitForSeconds(randomDelay);
+                Vector3Int tilemapPos = gOptions.gridFloor.WorldToCell(enemySpawnPos);
+
+                if (!gOptions.gridFloor.HasTile(tilemapPos))
+                {
+                    //Debug.Log("No tile at spawn position, generating new position.");
+                    i--;
+                }
+                else
+                {
+                    GameObject enemy = Instantiate(gOptions.enemy[_random.Next(0, gOptions.enemy.Length)], enemySpawnPos, Quaternion.identity);
+                    enemy.tag = "Enemy";
+
+                    enemy.GetComponent<EnemyAI>().hitPoints = 1;
+
+                    float randomDelay = Random.Range(0, gOptions.spawnDelay);
+                    yield return new WaitForSeconds(randomDelay);
+                }
             }
             else
             {
@@ -121,6 +131,7 @@ public class SpawningEnemy : MonoBehaviour
             }
         }
     }
+
 
 
 }
