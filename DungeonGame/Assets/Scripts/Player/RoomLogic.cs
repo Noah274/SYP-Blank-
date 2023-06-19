@@ -106,6 +106,8 @@ public class RoomLogic : MonoBehaviour
                 
                 player.transform.position = teleportPoint.transform.position;
                 player.transform.rotation = teleportPoint.transform.rotation;
+                
+                /*
                 CameraController camera = FindObjectOfType<CameraController>();
                 if (camera != null)
                 {
@@ -114,7 +116,7 @@ public class RoomLogic : MonoBehaviour
                 else
                 {
                     Debug.LogError("Error: CameraController script not found!");
-                }
+                }*/
                 
                 //Raum Logik neu ausführen
                 Main main = FindObjectOfType<Main>();

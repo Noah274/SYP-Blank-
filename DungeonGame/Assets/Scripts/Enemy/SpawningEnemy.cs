@@ -25,8 +25,8 @@ public class SpawningEnemy : MonoBehaviour
         int enemyCount = _random.Next(2, level + 4) * 2;
         //Debug.Log("EnemyCount: " + enemyCount);
 
-        Debug.Log("Type: " +roomObj.GetRoomType());
-        Debug.Log("isBossroom: "  +(roomObj.GetRoomType() == gOptions.bossRoom));
+        //Debug.Log("Type: " +roomObj.GetRoomType());
+        //Debug.Log("isBossroom: "  +(roomObj.GetRoomType() == gOptions.bossRoom));
         if (roomObj.GetRoomType() == gOptions.bossRoom)
         {
             Debug.Log("Bossroom");
@@ -39,6 +39,7 @@ public class SpawningEnemy : MonoBehaviour
     
     private bool isRoomDone(int number)
     {
+        Debug.Log("check if room done - " + number.ToString());
         GameObject[] gameObjects = FindObjectsOfType<GameObject>();
         foreach (GameObject obj in gameObjects)
         {
@@ -46,6 +47,7 @@ public class SpawningEnemy : MonoBehaviour
             {
                 GenerateRoom roomObj = obj.GetComponent<RoomReference>().room;
                 this.roomObj = roomObj;
+                //Debug.Log("Type: " +roomObj.GetRoomType());
                 return roomObj.GetRoomDone();
             }
         }

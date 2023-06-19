@@ -403,6 +403,7 @@ public class GenerateGrid : MonoBehaviour
 		{
 			obj.name = (room.GetRoomId()).ToString();
 			obj.AddComponent<RoomReference>().room = room;
+			
 		}
 		
 		if (isBossRoom)
@@ -481,6 +482,7 @@ public class GenerateGrid : MonoBehaviour
 				if (layerArray[layerPosX, layerPosY] != 0)
 				{
 					int roomNumber = layerArray[layerPosX, layerPosY];
+					//Debug.Log("roomtype: " + roomNumber);
 					
 					
 					CreateRoom(roomNumber,layerPosX, layerPosY, layerArray);
