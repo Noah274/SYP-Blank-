@@ -1,6 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class RoomLogic : MonoBehaviour
@@ -60,27 +58,32 @@ public class RoomLogic : MonoBehaviour
 
     public void TeleportToNextRoom(Quaternion rotation)
     {
+        int roomNumber = 0;
         if (roomObj != null && roomObj.GetRoomDone())
         {
             GameObject teleportPoint = null;
             if (rotation.y == 0)
             {
-                string roomCenterPointName = "RoomCenterPoint_" + roomObj.GetTelIdUp();
+                roomNumber = roomObj.GetTelIdUp();
+                string roomCenterPointName = "RoomCenterPoint_" + roomNumber;
                 teleportPoint = GameObject.Find(roomCenterPointName);
             }
             else if (rotation.y == 90)
             {
-                string roomCenterPointName = "RoomCenterPoint_" + roomObj.GetTelIdLeft();
+                roomNumber = roomObj.GetTelIdLeft();
+                string roomCenterPointName = "RoomCenterPoint_" + roomNumber;
                 teleportPoint = GameObject.Find(roomCenterPointName);
             }
             else if (rotation.y == 180)
             {
-                string roomCenterPointName = "RoomCenterPoint_" + roomObj.GetTelIdDown();
+                roomNumber = roomObj.GetTelIdDown();
+                string roomCenterPointName = "RoomCenterPoint_" + roomNumber;
                 teleportPoint = GameObject.Find(roomCenterPointName);
             }
             else if (rotation.y == 270)
             {
-                string roomCenterPointName = "RoomCenterPoint_" + roomObj.GetTelIdRight();
+                roomNumber = roomObj.GetTelIdRight();
+                string roomCenterPointName = "RoomCenterPoint_" + roomNumber;
                 teleportPoint = GameObject.Find(roomCenterPointName);
             }
             
@@ -92,6 +95,15 @@ public class RoomLogic : MonoBehaviour
                 //Todo-Kreni Kammera anpassen
                 player.transform.position = teleportPoint.transform.position;
                 player.transform.rotation = teleportPoint.transform.rotation;
+                CameraController camera = FindObjectOfType<CameraController>();
+                if (camera != null)
+                {
+                    camera.StartCamera(roomNumber);
+                }
+                else
+                {
+                    Debug.LogError("Error: CameraController script not found!");
+                }
 
             }
         }
