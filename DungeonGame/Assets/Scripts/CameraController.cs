@@ -8,21 +8,18 @@ public class CameraController : MonoBehaviour
     
     public void StartCamera(int roomNumber)
     {
-        FindTargetRoom(roomNumber);
-        CalculateOffset();
+        FindTargetRoom(roomNumber); 
     }
     
     void LateUpdate()
     {
         if (targetRoom != null )
         {
-            /*
             Debug.Log("Camera pos: " + transform.position);
             Debug.Log("target: "+ targetRoom.transform.position);
-            Debug.Log("Offset: "+ offset); ;
-            Debug.Log("New Pos:" + targetRoom.transform.position + offset);*/
-            transform.position =  -offset;
-            
+            transform.position = new Vector3(targetRoom.transform.position.x, targetRoom.transform.position.y, -10);
+            Debug.Log("new Pos: " + transform.position);
+
         }
     }
 
@@ -30,16 +27,10 @@ public class CameraController : MonoBehaviour
     void FindTargetRoom(int roomNumber)
     {
         targetRoom = GameObject.Find("RoomCenterPoint_" + roomNumber.ToString());
-        Debug.Log(targetRoom.transform.position);
         if (targetRoom == null)
         {
             Debug.LogWarning("RoomCenterPoint_" + roomNumber.ToString() + " not found!");
         }
         
-    }
-
-    void CalculateOffset()
-    {
-        offset = transform.position - targetRoom.transform.position;
     }
 }
