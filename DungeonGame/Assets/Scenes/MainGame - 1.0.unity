@@ -196,7 +196,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 10}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1454802637}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1078,18 +1079,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1454802633}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 97}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 87}
+  m_LocalScale: {x: 0.6666667, y: 0.6666667, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1283657213}
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_Father: {fileID: 337632782}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0.234}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -11.92, y: 7.72}
+  m_AnchoredPosition: {x: -7.946666, y: 5.1466665}
   m_SizeDelta: {x: 7, y: 1.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1594595081
@@ -1154,9 +1155,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   layerLevel: 1
   enemy:
-  - {fileID: 0}
-  spawnRange: 0
-  spawnDelay: 0
+  - {fileID: 181010571996059647, guid: e2e31703ad652154da6bc4a9db052451, type: 3}
+  - {fileID: 181010571996059647, guid: ece1d8676f846ec41bb4bf30eb5fd94b, type: 3}
+  spawnRange: 5
+  spawnDelay: 2
   gridFloor: {fileID: 873951840}
   gridWall: {fileID: 424796479}
   fGrass:
