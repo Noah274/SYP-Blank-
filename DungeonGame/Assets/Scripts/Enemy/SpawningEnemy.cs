@@ -39,15 +39,15 @@ public class SpawningEnemy : MonoBehaviour
     
     private bool isRoomDone(int number)
     {
-        Debug.Log("check if room done - " + number.ToString());
+        string roomCenterPointPrefix = "RoomCenterPoint_" + number.ToString();
+        //Debug.Log("check if room done - " + number.ToString());
         GameObject[] gameObjects = FindObjectsOfType<GameObject>();
         foreach (GameObject obj in gameObjects)
         {
-            if (obj.name == number.ToString())
+            if (obj.name.StartsWith(roomCenterPointPrefix))
             {
                 GenerateRoom roomObj = obj.GetComponent<RoomReference>().room;
                 this.roomObj = roomObj;
-                //Debug.Log("Type: " +roomObj.GetRoomType());
                 return roomObj.GetRoomDone();
             }
         }

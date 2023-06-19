@@ -281,6 +281,7 @@ public class GenerateGrid : MonoBehaviour
 			GameObject spawnPointPlayer = new GameObject("RoomCenterPoint_" + room.GetRoomId());
 			spawnPointPlayer.transform.position = spawnPosition;
 			spawnPointPlayer.tag = "RoomCenterPoint";
+			spawnPointPlayer.AddComponent<RoomReference>().room = room;
 		}
 	}
 
@@ -402,7 +403,7 @@ public class GenerateGrid : MonoBehaviour
 		if (room != null)
 		{
 			obj.name = (room.GetRoomId()).ToString();
-			obj.AddComponent<RoomReference>().room = room;
+			//obj.AddComponent<RoomReference>().room = room;
 			
 		}
 		
