@@ -36,8 +36,7 @@ public class RoomLogic : MonoBehaviour
 	        
         //Debug.Log(numberString + "----------");
     }
-    
-    
+
     public void OpenRoom(int number)
     {
         //Debug.Log("number: " + number);
@@ -62,6 +61,7 @@ public class RoomLogic : MonoBehaviour
     {
         if (roomObj != null && roomObj.GetRoomDone())
         {
+            Debug.Log("Start Teleport");
             GameObject teleportPoint = null;
             if (rotation.y == 0)
             {
@@ -73,14 +73,14 @@ public class RoomLogic : MonoBehaviour
                 string roomCenterPointName = "RoomCenterPoint_" + roomObj.GetTelIdLeft();
                 teleportPoint = GameObject.Find(roomCenterPointName);
             }
-            else if (rotation.y == 180)
-            {
-                string roomCenterPointName = "RoomCenterPoint_" + roomObj.GetTelIdDown();
-                teleportPoint = GameObject.Find(roomCenterPointName);
-            }
-            else if (rotation.y == 270)
+            else if (rotation.y == -90)
             {
                 string roomCenterPointName = "RoomCenterPoint_" + roomObj.GetTelIdRight();
+                teleportPoint = GameObject.Find(roomCenterPointName);
+            }
+            else if (rotation.y == -180)
+            {
+                string roomCenterPointName = "RoomCenterPoint_" + roomObj.GetTelIdDown();
                 teleportPoint = GameObject.Find(roomCenterPointName);
             }
             

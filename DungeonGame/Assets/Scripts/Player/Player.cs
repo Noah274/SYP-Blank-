@@ -88,7 +88,7 @@ public class Player : MonoBehaviour
         if (collider.CompareTag("door"))
         {
             Quaternion rotation = collider.transform.rotation;
-            //Debug.Log("Rotation: " + rotation.eulerAngles);
+            Debug.Log("Rotation: " + rotation.eulerAngles);
             
             RoomLogic logic = FindObjectOfType<RoomLogic>();
             if (logic != null)

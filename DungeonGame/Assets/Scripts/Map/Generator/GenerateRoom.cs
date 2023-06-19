@@ -29,6 +29,10 @@ public class GenerateRoom
         this.layerPosY = layerPosY;
         this.roomId = roomId;
         this.roomDone = false;
+        if (roomType == gOptions.spawnRoom)
+        {
+            this.roomDone = true;
+        }
 
         this.doorDirections[0] = doors[0]; //dUp;
         this.doorDirections[1] = doors[1]; //dDown;
