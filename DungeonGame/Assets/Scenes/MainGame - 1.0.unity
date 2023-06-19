@@ -1386,6 +1386,7 @@ GameObject:
   - component: {fileID: 1594595086}
   - component: {fileID: 1594595085}
   - component: {fileID: 1594595088}
+  - component: {fileID: 1594595089}
   m_Layer: 0
   m_Name: Engine
   m_TagString: Untagged
@@ -1493,7 +1494,7 @@ MonoBehaviour:
   branch4Value: 4
   spawnRoom: 10
   bossRoom: 11
-  baseOffset: 5
+  baseOffset: 25
 --- !u!114 &1594595087
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1516,6 +1517,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4952649dcfe4e80429bdc8980653c749, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1594595089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1594595081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fcada7b5bfb0424caed99548e3ae543, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1631015592

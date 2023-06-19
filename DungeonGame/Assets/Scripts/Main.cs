@@ -43,6 +43,16 @@ public class Main : MonoBehaviour
         {
             Debug.LogError("Error: CameraController script not found!");
         }
+        
+        SpawningEnemy enemy = FindObjectOfType<SpawningEnemy>();
+        if (enemy != null)
+        {
+            enemy.StartSpawningEnemies(gOptions, roomNumber);
+        }
+        else
+        {
+            Debug.LogError("Error: SpawningEnemy script not found!");
+        }
     }
 
     private void GetRoomLocation()
