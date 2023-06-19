@@ -153,3 +153,7 @@ MonoBehaviour:
   damage: 10
   spawnPool:
   - {fileID: 5173097654445036439, guid: 14855c42ffd5e20408b4670ad4f262e8, type: 3}
+  projectilePrefab: {fileID: 0}
+  attackCooldown: 0
+  projectileSpeed: 0
+  isArcher: 0

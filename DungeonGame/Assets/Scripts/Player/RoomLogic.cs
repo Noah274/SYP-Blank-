@@ -59,6 +59,7 @@ public class RoomLogic : MonoBehaviour
 
     public void TeleportToNextRoom(Quaternion rotation)
     {
+        int roomID = 0;
         GenerateRoom roomObj = objRoom.GetComponent<RoomReference>().room;
 
         if (roomObj != null && roomObj.GetRoomDone())
@@ -67,22 +68,26 @@ public class RoomLogic : MonoBehaviour
             GameObject teleportPoint = null;
             if (rotation.y == 0)
             {
-                string roomCenterPointName = "RoomCenterPoint_" + roomObj.GetTelIdUp();
+                roomID = roomObj.GetTelIdUp();
+                string roomCenterPointName = "RoomCenterPoint_" + roomID;
                 teleportPoint = GameObject.Find(roomCenterPointName);
             }
             else if (rotation.y == 90)
             {
-                string roomCenterPointName = "RoomCenterPoint_" + roomObj.GetTelIdLeft();
+                roomID = roomObj.GetTelIdLeft();
+                string roomCenterPointName = "RoomCenterPoint_" + roomID;
                 teleportPoint = GameObject.Find(roomCenterPointName);
             }
             else if (rotation.y == 180)
             {
-                string roomCenterPointName = "RoomCenterPoint_" + roomObj.GetTelIdDown();
+                roomID = roomObj.GetTelIdDown();
+                string roomCenterPointName = "RoomCenterPoint_" + roomID;
                 teleportPoint = GameObject.Find(roomCenterPointName);
             }
             else if (rotation.y == 270)
             {
-                string roomCenterPointName = "RoomCenterPoint_" + roomObj.GetTelIdRight();
+                roomID = roomObj.GetTelIdRight();
+                string roomCenterPointName = "RoomCenterPoint_" + roomID;
                 teleportPoint = GameObject.Find(roomCenterPointName);
             }
             
@@ -93,6 +98,15 @@ public class RoomLogic : MonoBehaviour
                 
                 player.transform.position = teleportPoint.transform.position;
                 player.transform.rotation = teleportPoint.transform.rotation;
+                CameraController camera = FindObjectOfType<CameraController>();
+                if (camera != null)
+                {
+                    camera.StartCamera(roomID);
+                }
+                else
+                {
+                    Debug.LogError("Error: CameraController script not found!");
+                }
 
             }
             
