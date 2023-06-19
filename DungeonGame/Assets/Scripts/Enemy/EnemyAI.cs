@@ -1,12 +1,13 @@
 
 using System;
 using System.Collections.Generic;
+using TMPro.SpriteAssetUtilities;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
 public class EnemyAI : MonoBehaviour
 {
-    public GameObject player;
+    private GameObject player;
     public float speed;
     public float distanceBetween;
     public float hitPoints;
@@ -18,6 +19,7 @@ public class EnemyAI : MonoBehaviour
 
     private void Start()
     {
+        player= GameObject.Find("Player");
         position = transform.position;
     }
 
