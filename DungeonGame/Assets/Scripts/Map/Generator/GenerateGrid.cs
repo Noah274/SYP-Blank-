@@ -55,6 +55,8 @@ public class GenerateGrid : MonoBehaviour
 			buildPos.Add(roomPos, room);
 		}
 		
+		//int[] teleportRooms = new int[4];
+		
 		int layerLength = gOptions.layerArrayLength;
 		//ToDo-problem!!!!!
 		int arrayX = 7;
@@ -81,6 +83,30 @@ public class GenerateGrid : MonoBehaviour
 					}
 					
 					offsetX += arrayX + gOptions.baseOffset;
+					
+					//get ID
+					int[] teleportRooms = new int[4];
+					if (room.GetDUp() != 0)
+					{
+						int posOld =  Int32.Parse(layerPosX.ToString() +(layerPosY-1).ToString());
+						teleportRooms[0] = buildPos[posOld].GetRoomId();
+					}
+					if (room.GetDDown() != 0)
+					{
+						int posOld =  Int32.Parse(layerPosX.ToString() +(layerPosY+1).ToString());
+						teleportRooms[1] = buildPos[posOld].GetRoomId();
+					}
+					if (room.GetDLeft() != 0)
+					{
+						int posOld =  Int32.Parse((layerPosX - 1).ToString() +(layerPosY).ToString());
+						teleportRooms[2] = buildPos[posOld].GetRoomId();
+					}
+					if (room.GetDRight() != 0)
+					{
+						int posOld =  Int32.Parse((layerPosX + 1).ToString() +(layerPosY).ToString());
+						teleportRooms[3] = buildPos[posOld].GetRoomId();
+					}
+					room.SetTeleportDirections(teleportRooms);
 				}
 				else
 				{
@@ -331,7 +357,7 @@ public class GenerateGrid : MonoBehaviour
 	private void PlaceDoor(float posX, float posY, float rotation, bool roomDone, bool isBossRoom, GenerateRoom room)
 	{
 		placeGameObject(gOptions.doorFrame, posX, posY, rotation);
-		//placeWhitePlate(posX, posY, rotation);
+		placeWhitePlate(posX, posY, rotation);
 		
 		if (roomDone)
 		{
@@ -355,6 +381,7 @@ public class GenerateGrid : MonoBehaviour
 				placeGameObject(gOptions.doorClosed, posX, posY, rotation, false, room);
 			}
 		}
+		
 	}
 	
 
@@ -362,12 +389,10 @@ public class GenerateGrid : MonoBehaviour
 
 	private void placeWhitePlate(float posX, float posY, float rotation)
 	{
-		GameObject whitePlate = GameObject.CreatePrimitive(PrimitiveType.Quad);
-		whitePlate.transform.position = new Vector3(posX, posY, 0f);
-		whitePlate.transform.rotation = Quaternion.Euler(0f, 0f, rotation);
-		whitePlate.transform.localScale = new Vector3(1f, 3f, 1f);
-		whitePlate.GetComponent<Renderer>().material.color = Color.white;
+		Instantiate(gOptions.doorHitbox, new Vector3(posX, posY, 0f), Quaternion.Euler(0f, 0f, rotation));
 	}
+
+
 
 	
 	private void placeGameObject(GameObject o, float distanceX, float distanceY, float f, bool isBossRoom = false, GenerateRoom room = null)

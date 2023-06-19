@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 
@@ -85,4 +86,24 @@ public class Player : MonoBehaviour
 
         healthBar.setHealth(currentHealth);
     }
+
+    void OnTriggerEnter2D(Collider2D collider)
+    {
+        if (collider.CompareTag("door"))
+        {
+            Quaternion rotation = collider.transform.rotation;
+            //Debug.Log("Rotation: " + rotation.eulerAngles);
+            
+            RoomLogic logic = FindObjectOfType<RoomLogic>();
+            if (logic != null)
+            {
+                logic.TeleportToNextRoom(rotation);
+            }
+            else
+            {
+                Debug.LogError("Error: Main script not found!");
+            }
+        }
+    }
+
 }

@@ -1,10 +1,11 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
 public class Main : MonoBehaviour
 {
     private GeneratorOptions gOptions;
-    private int roomNumber;
+    private int roomNumber = 0;
     
     IEnumerator Start()
     {
@@ -31,8 +32,16 @@ public class Main : MonoBehaviour
             Debug.LogError("Error: Player script not found!");
         }
 
-        GetRoomLocation();
-        //OpenRoom(roomNumber);
+        RoomLogic logic = FindObjectOfType<RoomLogic>();
+        if (logic != null)
+        {
+            logic.StartRoomLogic(gOptions, ref roomNumber);
+        }
+        else
+        {
+            Debug.LogError("Error: CameraController script not found!");
+        }
+
         
         CameraController camera = FindObjectOfType<CameraController>();
         if (camera != null)
@@ -55,32 +64,5 @@ public class Main : MonoBehaviour
         }
     }
 
-    private void GetRoomLocation()
-    {
-        RoomLogic logic = FindObjectOfType<RoomLogic>();
-        if (logic != null)
-        {
-            logic.StartRoomLogic(gOptions, ref roomNumber);
-        }
-        else
-        {
-            Debug.LogError("Error: RoomLogic script not found!");
-        }
-    }
-
-    public void OpenRoom(int number)
-    {
-        GameObject[] gameObjects = FindObjectsOfType<GameObject>();
-        foreach (GameObject obj in gameObjects)
-        {
-            if (obj.name == number.ToString())
-            {
-                SpriteRenderer spriteRenderer = obj.GetComponent<SpriteRenderer>();
-                spriteRenderer.sprite = gOptions.doorOpen.GetComponent<SpriteRenderer>().sprite;
-				
-                //spriteRenderer.color = Color.red;
-                obj.GetComponent<RoomReference>().room.SetRoomDone();
-            }
-        }
-    }
+    
 }

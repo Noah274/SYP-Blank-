@@ -235,7 +235,7 @@ GameObject:
   - component: {fileID: 424796480}
   m_Layer: 0
   m_Name: gridWall
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1214,6 +1214,8 @@ MonoBehaviour:
   spawnRoom: 10
   bossRoom: 11
   baseOffset: 25
+  doorHitbox: {fileID: 88011621148746047, guid: b550ed39b883ed14da7e2fe74294d72a,
+    type: 3}
 --- !u!114 &1594595087
 MonoBehaviour:
   m_ObjectHideFlags: 0
