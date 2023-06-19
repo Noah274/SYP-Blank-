@@ -89,7 +89,7 @@ public class EnemyAI : MonoBehaviour
             }
         }
     }
-    void LaunchProjectile()
+    void LaunchProjectile() 
     {
         GameObject projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
         Rigidbody2D projectileRb = projectile.GetComponent<Rigidbody2D>();

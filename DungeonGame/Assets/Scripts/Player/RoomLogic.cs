@@ -58,32 +58,32 @@ public class RoomLogic : MonoBehaviour
 
     public void TeleportToNextRoom(Quaternion rotation)
     {
-        int roomNumber = 0;
+        int roomID = 0;
         if (roomObj != null && roomObj.GetRoomDone())
         {
             GameObject teleportPoint = null;
             if (rotation.y == 0)
             {
-                roomNumber = roomObj.GetTelIdUp();
-                string roomCenterPointName = "RoomCenterPoint_" + roomNumber;
+                roomID = roomObj.GetTelIdUp();
+                string roomCenterPointName = "RoomCenterPoint_" + roomID;
                 teleportPoint = GameObject.Find(roomCenterPointName);
             }
             else if (rotation.y == 90)
             {
-                roomNumber = roomObj.GetTelIdLeft();
-                string roomCenterPointName = "RoomCenterPoint_" + roomNumber;
+                roomID = roomObj.GetTelIdLeft();
+                string roomCenterPointName = "RoomCenterPoint_" + roomID;
                 teleportPoint = GameObject.Find(roomCenterPointName);
             }
             else if (rotation.y == 180)
             {
-                roomNumber = roomObj.GetTelIdDown();
-                string roomCenterPointName = "RoomCenterPoint_" + roomNumber;
+                roomID = roomObj.GetTelIdDown();
+                string roomCenterPointName = "RoomCenterPoint_" + roomID;
                 teleportPoint = GameObject.Find(roomCenterPointName);
             }
             else if (rotation.y == 270)
             {
-                roomNumber = roomObj.GetTelIdRight();
-                string roomCenterPointName = "RoomCenterPoint_" + roomNumber;
+                roomID = roomObj.GetTelIdRight();
+                string roomCenterPointName = "RoomCenterPoint_" + roomID;
                 teleportPoint = GameObject.Find(roomCenterPointName);
             }
             
@@ -98,7 +98,7 @@ public class RoomLogic : MonoBehaviour
                 CameraController camera = FindObjectOfType<CameraController>();
                 if (camera != null)
                 {
-                    camera.StartCamera(roomNumber);
+                    camera.StartCamera(roomID);
                 }
                 else
                 {
