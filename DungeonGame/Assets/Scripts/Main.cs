@@ -32,7 +32,7 @@ public class Main : MonoBehaviour
         }
 
         GetRoomLocation();
-        OpenRoom();
+        //OpenRoom(roomNumber);
         
         CameraController camera = FindObjectOfType<CameraController>();
         if (camera != null)
@@ -68,17 +68,17 @@ public class Main : MonoBehaviour
         }
     }
 
-    private void OpenRoom()
+    public void OpenRoom(int number)
     {
         GameObject[] gameObjects = FindObjectsOfType<GameObject>();
         foreach (GameObject obj in gameObjects)
         {
-            if (obj.name == roomNumber.ToString())
+            if (obj.name == number.ToString())
             {
                 SpriteRenderer spriteRenderer = obj.GetComponent<SpriteRenderer>();
                 spriteRenderer.sprite = gOptions.doorOpen.GetComponent<SpriteRenderer>().sprite;
 				
-                spriteRenderer.color = Color.red;
+                //spriteRenderer.color = Color.red;
                 obj.GetComponent<RoomReference>().room.SetRoomDone();
             }
         }

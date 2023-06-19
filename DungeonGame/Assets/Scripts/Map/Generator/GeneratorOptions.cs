@@ -16,8 +16,10 @@ public class GeneratorOptions : MonoBehaviour
     [Header("Options - Game")]
     public int layerLevel = 1;
     
-    [Header("Enemy")]
-    public GameObject normalEnemy;
+    [Header("Enemy - Spawning")]
+    public GameObject[] enemy;
+    public int spawnRange;
+    public int spawnDelay;
 
     [Header("Tilemap")]
     public Tilemap gridFloor;
