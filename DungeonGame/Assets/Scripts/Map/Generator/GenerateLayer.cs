@@ -2,43 +2,33 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UnityEngine.Tilemaps;
+using Newtonsoft.Json;
+using UnityEditor;
 
-
-public class GenerateLayer : MonoBehaviour
+public class GenerateLayer
 {
-    //---Einstellungen---
-    public const int mapArrayLength = 11;
-    public static int[,] mapArray = new int[mapArrayLength, mapArrayLength];
+    public static int[,] mapArray;
     const int startX = 5;
     const int startY = 5;
-            
-    const int branch1Value = 1;
-    const int branch2Value = 2;
-    const int branch3Value = 3;
-    const int branch4Value = 4;
-    public const int spawnRoom = 10;
-    public const int bossRoom = 11;
-    //----
     public System.Random _random = new System.Random();
-    public int Layerlevel = 1;
     int[] quantityWay = { 0, 0, 0, 0};
-    /*
-    void Start()
-        {
-            makeRooms();
 
-            mapScript = gameObject.FindGameObjectQitchTag(EngineMap).GetComponent<>(GenerateGrid);
-            //GenerateLayer.GetComponent<GenerateGrid>().startClass();
-            //GenerateGrid generateGrid = new GenerateGrid();
-            //generateGrid.startClass();
-        }
-        */
+    private GeneratorOptions gOptions;
+    public GenerateLayer(GeneratorOptions gOptions)
+    {
+        this.gOptions = gOptions;
+        //Debug.Log("GenerateLayer");
+    }
 
-    public void makeRooms()
+    public int[,] makeRooms()
         {
+            mapArray = new int[gOptions.layerArrayLength, gOptions.layerArrayLength];
+
             int quantityRooms = QuantityRoom();
             //Debug.Log(quantityRooms);
             selRoom(quantityRooms);
@@ -48,12 +38,14 @@ public class GenerateLayer : MonoBehaviour
             spawnBossRoom();
             
             //printArray(mapArray, quantityRooms);
+
+            return mapArray;
         }
 
         public void spawnBossRoom()
         {
             int[] posFathest = FindFarthestField(mapArray, startX, startY);
-            mapArray[posFathest[0], posFathest[1]] = bossRoom;
+            mapArray[posFathest[0], posFathest[1]] = gOptions.bossRoom;
         }
         
         public void printArray(int[,] array, int quantityRooms)
@@ -61,10 +53,10 @@ public class GenerateLayer : MonoBehaviour
             Debug.Log(quantityRooms);
             Debug.Log("--"+quantityWay[0] + quantityWay[1] + quantityWay[2] + quantityWay[3]);
             
-            for (int x = 0; x < mapArrayLength; x++)
+            for (int x = 0; x < gOptions.layerArrayLength; x++)
             {
                 string msg = " ";
-                for (int y = 0; y < mapArrayLength; y++)
+                for (int y = 0; y < gOptions.layerArrayLength; y++)
                 {
                     msg += " - " + array[x, y];
                 }
@@ -75,30 +67,30 @@ public class GenerateLayer : MonoBehaviour
         }
         
         public void GenerateRooms(){
-            mapArray[startX, startY] = spawnRoom;
+            mapArray[startX, startY] = gOptions.spawnRoom;
             
             if (quantityWay[0] != 0)
             {
-                mapArray[startX+1, startY] = branch1Value;
+                mapArray[startX+1, startY] = gOptions.branch1Value;
             }
             if (quantityWay[1] != 0)
             {
-                mapArray[startX-1, startY] = branch2Value;
+                mapArray[startX-1, startY] = gOptions.branch2Value;
             }
             if (quantityWay[2] != 0)
             {
-                mapArray[startX, startY+1] = branch3Value;
+                mapArray[startX, startY+1] = gOptions.branch3Value;
                 
             }
             if (quantityWay[3] != 0)
             {
-                mapArray[startX, startY-1] = branch4Value;
+                mapArray[startX, startY-1] = gOptions.branch4Value;
             }
             
-            GenerateBranch(mapArray, startX + 2, startY, branch1Value, quantityWay[0]-1);
-            GenerateBranch(mapArray, startX - 2, startY, branch2Value, quantityWay[1]-1);
-            GenerateBranch(mapArray, startX, startY + 2, branch3Value, quantityWay[2]-1);
-            GenerateBranch(mapArray, startX, startY - 2, branch4Value, quantityWay[3]-1);
+            GenerateBranch(mapArray, startX + 2, startY, gOptions.branch1Value, quantityWay[0]-1);
+            GenerateBranch(mapArray, startX - 2, startY, gOptions.branch2Value, quantityWay[1]-1);
+            GenerateBranch(mapArray, startX, startY + 2, gOptions.branch3Value, quantityWay[2]-1);
+            GenerateBranch(mapArray, startX, startY - 2, gOptions.branch4Value, quantityWay[3]-1);
         }
 
         public void GenerateBranch(int[,] array, int x, int y, int value, int remainingBranches)
@@ -181,7 +173,7 @@ public class GenerateLayer : MonoBehaviour
         
         public int QuantityRoom()
         {
-            return(_random.Next(0, 4) + (5 + (Layerlevel * 2)));
+            return(_random.Next(0, 4) + (5 + (gOptions.layerLevel * 2)));
         }
         
         public void selRoom(int quantityRooms)

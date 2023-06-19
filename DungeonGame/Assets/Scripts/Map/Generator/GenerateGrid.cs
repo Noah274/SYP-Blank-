@@ -2,391 +2,528 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UnityEngine.Tilemaps;
 using Newtonsoft.Json;
+using UnityEditor;
 
 
 public class GenerateGrid : MonoBehaviour
 {
-	public GenerateLayer script;
-    public System.Random _random = new System.Random();
-    private int[,] mapArray = GenerateLayer.mapArray;
-    private int mapArrayLength = GenerateLayer.mapArrayLength;
+	private GeneratorOptions gOptions;
+	private System.Random _random = new System.Random();
+	private LinkedList<GenerateRoom> rooms = new LinkedList<GenerateRoom>();
 
-    private string[,,] roomBuild = MapsArray.roomBuild;
-    //LoadRoomBuild()
-    //MapsArray.roomBuild
-    
-    public Tilemap gridFloor;
-    public Tilemap gridWall;
-    public GameObject doorFrame;
-    public GameObject doorClosed;
-    
-    private Dictionary<Tile, string> mapTile = new Dictionary<Tile, string>();
-    public Tile fGrass;
-    public Tile wTop;
-    public Tile wBottom;
-    public Tile wCorner;
-    public Tile test;
-    
-    void Start()
-    {
-        tileLinkedList();
-        //roomBuild = LoadRoomBuild();
-        //Debug.Log(roomBuild.GetLength(0));
-        //string jsonString = PlayerPrefs.GetString("firstJason");
-        //Debug.Log(jsonString);
-        
-        
-        script.makeRooms();
-        printArray(mapArray);
-        BuildRoom();
-    }
 
-    public void tileLinkedList()
-    {
-        //Alle Tiles die es zur verfügung gibt
-        mapTile.Add(fGrass, "fGrass");
-        mapTile.Add(wTop, "wTop");
-        mapTile.Add(wBottom, "wBottom");
-        mapTile.Add(wCorner, "wCorner");
-        mapTile.Add(test, "test");
-    }
+	public void StartGenerationGrid(GeneratorOptions gOptions)
+	{
 
-    public Tile GetTileByNum(int num)
-    {
-        //Gibt den ersten wert von mapTile aus
-        //(Ich habe keine bessere methode gefunden)
-        int count = 0;
-        foreach(KeyValuePair<Tile,string> pair in mapTile)
+		this.gOptions = gOptions;
+
+		GoThroughLayer();
+		PrintLayer();
+		
+		/*
+		GameObject[] gameObjects = FindObjectsOfType<GameObject>();
+		foreach (GameObject obj in gameObjects)
+		{
+			if (obj.name == "1")
+			{
+				SpriteRenderer spriteRenderer = obj.GetComponent<SpriteRenderer>();
+				spriteRenderer.sprite = gOptions.doorOpen.GetComponent<SpriteRenderer>().sprite;
+				
+				spriteRenderer.color = Color.red;
+				obj.GetComponent<RoomReference>().room.SetRoomDone();
+			}
+		}*/
+	}
+	
+
+	private void PrintLayer()
+	{
+
+		int offsetX = 0;
+		int offsetY = 0;
+
+		Dictionary<int, GenerateRoom> buildPos = new Dictionary<int, GenerateRoom>();
+		foreach (var room in rooms)
+		{
+			int roomPos =  Int32.Parse(room.GetLayerPosX().ToString() + room.GetLayerPosY().ToString());
+			buildPos.Add(roomPos, room);
+		}
+		
+		int layerLength = gOptions.layerArrayLength;
+		//ToDo-problem!!!!!
+		int arrayX = 7;
+		int arrayY = 7;
+		for (int layerPosY = 0; layerPosY < layerLength; layerPosY++)
+		{
+			for (int layerPosX = 0; layerPosX < layerLength; layerPosX++)
+			{
+				int pos =  Int32.Parse(layerPosX.ToString() +layerPosY.ToString());
+				if(buildPos.ContainsKey(pos))
+				{
+					GenerateRoom room = buildPos[pos];
+					string[,] roomArray = room.GetRoomArrayBuild();
+					arrayX = roomArray.GetLength(1);
+					arrayY = roomArray.GetLength(0);
+
+					for (int y = 0; y < arrayY; y++)
+					{
+						for (int x = 0; x < arrayX; x++)
+						{
+							string tileBlock = roomArray[(arrayY - 1 - y), (x)];
+							PlaceTile((x+ offsetX+layerPosX), (y - (offsetY+layerPosY)), tileBlock, room);
+						}
+					}
+					
+					offsetX += arrayX + gOptions.baseOffset;
+				}
+				else
+				{
+					offsetX += arrayX + gOptions.baseOffset;
+				}
+			}
+			offsetY += arrayY + gOptions.baseOffset;
+			offsetX = 0;
+		}
+		
+
+	}
+
+	private void PlaceTile(int posX, int posY, string tileBlock, GenerateRoom room)
+	{
+		bool wallPlaces = false;
+
+        if (tileBlock == "")
         {
-            if(count == num)
-            {
-                return pair.Key;
-            }
-
-            count++;
-        }
-        return null;
-    }
-    
-
-    public void printArray(int[,] array)
-    { 
-        //Der array wird in die Console geschrieben (du hättest auch einfach den namen der methode lesen können)
-        for (int x = 0; x < mapArrayLength; x++)
-        {
-            string msg = " ";
-            for (int y = 0; y < mapArrayLength; y++)
-            {
-                msg += " - " + array[y, x];
-            }
-
-            Debug.Log(x +": "+msg);
-        }
-
-    }
-    
-    
-    public int[] chooseRoom(int mapArrayPosX, int mapArrayPosY)
-    {
-        int[] values = new int[2];
-        
-        //Die Raum Art und der Raum wird ausgewählt
-        if (mapArray[mapArrayPosX, mapArrayPosY] == GenerateLayer.spawnRoom)
-        {
-            values[1] = 2;
-            values[0] = _random.Next(0, MapsArray.spawnBuild.GetLength(0)); 
-        }
-        else if (mapArray[mapArrayPosX, mapArrayPosY] == GenerateLayer.bossRoom)
-        {
-            values[1] = 1;
-            values[0] = _random.Next(0, MapsArray.bossBuild.GetLength(0)); 
-        }
-        else
-        {
-            values[0] = _random.Next(0, roomBuild.GetLength(0)); 
+	        return;
         }
 
-        return values;
-    }
-
-    public void BuildRoom()
-    {
-        //Debug.Log("-BuildRoom");
-        int distanceX = 0;
-        int distanceY = 0;
-        int boxLength = roomBuild.GetLength(2);
-        int arrayLength = 0;
-        
-        //Das Array mit dem Layer wird durchgegangen
-        for (int mapArrayPosY = 0; mapArrayPosY < mapArrayLength; mapArrayPosY++)
-        {
-            for (int mapArrayPosX = 0; mapArrayPosX < mapArrayLength; mapArrayPosX++)
-            {
-                //Debug.Log("A:"+a+" - B:"+b);
-                //Es wird überprüft, ob ein Raum gemacht werden soll
-                if (mapArray[mapArrayPosX, mapArrayPosY] != 0)
-                {
-                    int[] roomtype = chooseRoom(mapArrayPosX, mapArrayPosY);
-                    
-                    //Die liste (wie viele Map vorlagen es gibt), kann unterschiedlich lange sein
-                    switch (roomtype[1])
-                    {
-                        case 0:
-                            arrayLength = roomBuild.GetLength(0);
-                            break;
-                        case 1:
-                            arrayLength = MapsArray.bossBuild.GetLength(0);
-                            break;
-                        case 2:
-                            arrayLength = MapsArray.spawnBuild.GetLength(0);
-                            break;
-                    }
-                    
-                    //Die richtige Vorlage wird gefunden 
-                    for (int arrayNum = 0; arrayNum < arrayLength; arrayNum++)
-                    {
-                        if (arrayNum == roomtype[0])
-                        {
-                            //Die Vorlage wird platziert
-                            for (int y = 0; y < boxLength; y++)
-                            {
-                                for (int x = 0; x < boxLength; x++)
-                                {
-                                    printMap(arrayNum, y, x, distanceY, distanceX, mapArrayPosX, mapArrayPosY, roomtype[1]);
-                                }
-                            }
-
-                            distanceX += boxLength + 3;
-                        }
-                    }  
-                }
-                else
-                {
-                    distanceX += boxLength + 3;
-                }
-            }
-            distanceY += boxLength + 3;
-            distanceX = 0;
-        }
-    }
-    
-    /*
-        wUp
-        wLeft
-        wRight
-        wDown
-        wCorners
-        
-        dUp
-        dRight
-        dLeft
-        dDown
-        
-        fGrass
-     */
-    
-    public void printMap(int arrayNum, int y, int x, int distanceY, int distanceX, int mapArrayPosX, int mapArrayPosY, int roomType)
-    {
-        //Auswahl, welche Art von raum es ist
-        string tileBlock = "";
-        switch (roomType)
-        {
-            case 0:
-                tileBlock = roomBuild[arrayNum, y, x];
-                break;
-            case 1:
-                tileBlock = MapsArray.bossBuild[arrayNum, y, x];
-                break;
-            case 2:
-                tileBlock = MapsArray.spawnBuild[arrayNum, y, x];
-                break;
-        }
-        
-        int outputTile = 0;
-        bool output = false;
-        bool tile = true;
-        
-        //Auswahl, auf welcher seite die Tür Platziert werden muss
-        
         switch (tileBlock)
         {
-            case "dUp":
-                //Unten
-                output = makeDoor(mapArrayPosX, mapArrayPosY, mapArrayPosX, mapArrayPosY + 1);
-                if (output)
-                {
-                    placeGameObject(doorFrame, x + distanceX, y- distanceY+1, 180f);
-                    placeGameObject(doorClosed, x + distanceX, y- distanceY+1, 180f); 
-                }
-                else
-                {
-                    tile = false;
-                }
-                break;
-            case "dDown":
-                //Oben
-                output = makeDoor(mapArrayPosX, mapArrayPosY, mapArrayPosX, mapArrayPosY - 1);
-                if (output)
-                {
-                    placeGameObject(doorFrame, x + distanceX, y- distanceY, 0f);
-                    placeGameObject(doorClosed, x + distanceX, y- distanceY, 0f);
-                }
-                else
-                {
-                    tile = false;
-                }
-                break;
-            case "dRight":
-                output = makeDoor(mapArrayPosX, mapArrayPosY, mapArrayPosX + 1, mapArrayPosY);
-                if (output)
-                {
-                    placeGameObject(doorFrame, x + distanceX-0.5f, y- distanceY+0.5f, -90f);
-                    placeGameObject(doorClosed, x + distanceX-0.5f, y- distanceY+0.5f, -90f); 
-                }
-                else
-                {
-                    tile = false;
-                }
-                break;
-            case "dLeft":
-                output = makeDoor(mapArrayPosX, mapArrayPosY, mapArrayPosX - 1, mapArrayPosY);
-                if (output)
-                {
-                    placeGameObject(doorFrame, x + distanceX+0.5f, y- distanceY+0.5f, 90f);
-                    placeGameObject(doorClosed, x + distanceX+0.5f, y- distanceY+0.5f, 90f);
-                }
-                else
-                {
-                    tile = false;
-                }
-                break;
+	        case "dUp":
+		        int roomTypeUp = IsValidRoom(room, room.GetDUp());
+		        if (roomTypeUp == gOptions.bossRoom)
+		        {
+			        PlaceDoor(posX, posY, 0f, room.GetRoomDone(), true, room);
+			        wallPlaces = true;
+		        }
+		        else if (roomTypeUp == 0)
+		        {
+			        PlaceDoor(posX, posY, 0f, room.GetRoomDone(), false, room);
+			        wallPlaces = true;
+		        }
+		        break;
+	        case "dDown":
+		        int roomTypeDown = IsValidRoom(room, room.GetDDown());
+		        if (roomTypeDown == gOptions.bossRoom)
+		        {
+			        PlaceDoor(posX, posY + 1, 180f, room.GetRoomDone(), true, room);
+			        wallPlaces = true;
+		        }
+		        else if (roomTypeDown == 0)
+		        {
+			        PlaceDoor(posX, posY + 1, 180f, room.GetRoomDone(), false, room);
+			        wallPlaces = true;
+		        }
+		        break;
+	        case "dLeft":
+		        int roomTypeLeft = IsValidRoom(room, room.GetDLeft());
+		        if (roomTypeLeft == gOptions.bossRoom)
+		        {
+			        PlaceDoor(posX + 0.5f, posY + 0.5f, 90f, room.GetRoomDone(), true, room);
+			        wallPlaces = true;
+		        }
+		        else if (roomTypeLeft == 0)
+		        {
+			        PlaceDoor(posX + 0.5f, posY + 0.5f, 90f, room.GetRoomDone(), false, room);
+			        wallPlaces = true;
+		        }
+		        break;
+	        case "dRight":
+		        int roomTypeRight = IsValidRoom(room, room.GetDRight());
+		        if (roomTypeRight == gOptions.bossRoom)
+		        {
+			        PlaceDoor(posX - 0.5f, posY + 0.5f, -90f, room.GetRoomDone(), true, room);
+			        wallPlaces = true;
+		        }
+		        else if (roomTypeRight == 0)
+		        {
+			        PlaceDoor(posX - 0.5f, posY + 0.5f, -90f, room.GetRoomDone(), false, room);
+			        wallPlaces = true;
+		        }
+		        break;
         }
 
+
         
-        if (tileBlock == "wUp" || (tileBlock == "dUp" && tile == false))
-        {   
-            Debug.Log("test");
-            tile = false;
-            paceWallOnMAp(x + distanceX, y - distanceY, 0 , 1, 180);
-        }
-        else if (tileBlock == "wDown" || (tileBlock == "dDown" && tile == false))
-        {   
-            Debug.Log("test");
-            tile = false;
-            paceWallOnMAp(x + distanceX, y - distanceY, 0 , -1, 0);
-        }
-        else if (tileBlock == "wRight" || (tileBlock == "dRight" && tile == false))
-        {   
-            Debug.Log("test");
-            tile = false;
-            paceWallOnMAp(x + distanceX, y - distanceY, 1 , 0, -90);
-        }
-        else if (tileBlock == "wLeft" || (tileBlock == "dLeft" && tile == false))
+        if (tileBlock == "wUp" || (tileBlock == "dUp" && wallPlaces == false))
         {
-            Debug.Log("test");
-            tile = false;
-            paceWallOnMAp(x + distanceX, y - distanceY, -1 , 0, 90);
+	        paceWallOnMAp(posX, posY , 0 , -1, 0);
+	        wallPlaces = true;
         }
+        else if (tileBlock == "wDown" || (tileBlock == "dDown" && wallPlaces == false))
+        {
+	        paceWallOnMAp(posX, posY, 0 , 1, 180);
+	        wallPlaces = true;
+        }
+        else if (tileBlock == "wLeft" || (tileBlock == "dLeft" && wallPlaces == false))
+        {
+	        paceWallOnMAp(posX , posY, -1 , 0, 90);
+	        wallPlaces = true;
+        }
+        else if (tileBlock == "wRight" || (tileBlock == "dRight" && wallPlaces == false))
+        {
+            paceWallOnMAp(posX , posY, 1 , 0, -90);
+            wallPlaces = true;
+        }
+        
         
         switch (tileBlock)
         {
             case "wUpLeft":
-                tile = false;
-                gridFloor.SetTile(new Vector3Int(x + distanceX, y- distanceY), GetTileByNum(getNumOfTile("wCorner")));  
-                gridFloor.SetTile(new Vector3Int(x + distanceX-1, y- distanceY), GetTileByNum(getNumOfTile("wCorner")));  
-                gridFloor.SetTile(new Vector3Int(x + distanceX, y- distanceY-1), GetTileByNum(getNumOfTile("wCorner")));  
-                gridFloor.SetTile(new Vector3Int(x + distanceX-1, y- distanceY-1), GetTileByNum(getNumOfTile("wCorner")));  
+	            wallPlaces = true;
+                gOptions.gridWall.SetTile(new Vector3Int(posX, posY), GetTileByNum(getNumOfTile("wCorner")));  
+                gOptions.gridWall.SetTile(new Vector3Int(posX-1, posY), GetTileByNum(getNumOfTile("wCorner")));  
+                gOptions.gridWall.SetTile(new Vector3Int(posX, posY+1), GetTileByNum(getNumOfTile("wCorner")));  
+                gOptions.gridWall.SetTile(new Vector3Int(posX-1, posY+1), GetTileByNum(getNumOfTile("wCorner")));  
                 break;
             case "wUpRight":
-                tile = false;
-                gridFloor.SetTile(new Vector3Int(x + distanceX, y- distanceY), GetTileByNum(getNumOfTile("wCorner")));  
-                gridFloor.SetTile(new Vector3Int(x + distanceX+1, y- distanceY), GetTileByNum(getNumOfTile("wCorner")));  
-                gridFloor.SetTile(new Vector3Int(x + distanceX, y- distanceY-1), GetTileByNum(getNumOfTile("wCorner")));  
-                gridFloor.SetTile(new Vector3Int(x + distanceX+1, y- distanceY-1), GetTileByNum(getNumOfTile("wCorner")));  
+	            wallPlaces = true;
+                gOptions.gridWall.SetTile(new Vector3Int(posX, posY), GetTileByNum(getNumOfTile("wCorner")));  
+                gOptions.gridWall.SetTile(new Vector3Int(posX+1, posY), GetTileByNum(getNumOfTile("wCorner")));  
+                gOptions.gridWall.SetTile(new Vector3Int(posX, posY+1), GetTileByNum(getNumOfTile("wCorner")));  
+                gOptions.gridWall.SetTile(new Vector3Int(posX+1, posY+1), GetTileByNum(getNumOfTile("wCorner")));  
                 break;
             case "wDownLeft":
-                tile = false;
-                gridFloor.SetTile(new Vector3Int(x + distanceX, y- distanceY), GetTileByNum(getNumOfTile("wCorner")));  
-                gridFloor.SetTile(new Vector3Int(x + distanceX-1, y- distanceY), GetTileByNum(getNumOfTile("wCorner")));  
-                gridFloor.SetTile(new Vector3Int(x + distanceX, y- distanceY+1), GetTileByNum(getNumOfTile("wCorner")));  
-                gridFloor.SetTile(new Vector3Int(x + distanceX-1, y- distanceY+1), GetTileByNum(getNumOfTile("wCorner")));  
+	            wallPlaces = true;
+                gOptions.gridWall.SetTile(new Vector3Int(posX, posY), GetTileByNum(getNumOfTile("wCorner")));  
+                gOptions.gridWall.SetTile(new Vector3Int(posX-1, posY), GetTileByNum(getNumOfTile("wCorner")));  
+                gOptions.gridWall.SetTile(new Vector3Int(posX, posY-1), GetTileByNum(getNumOfTile("wCorner")));  
+                gOptions.gridWall.SetTile(new Vector3Int(posX-1, posY-1), GetTileByNum(getNumOfTile("wCorner")));  
                 break;
             case "wDownRight":
-                tile = false;
-                gridFloor.SetTile(new Vector3Int(x + distanceX, y- distanceY), GetTileByNum(getNumOfTile("wCorner")));  
-                gridFloor.SetTile(new Vector3Int(x + distanceX+1, y- distanceY), GetTileByNum(getNumOfTile("wCorner")));  
-                gridFloor.SetTile(new Vector3Int(x + distanceX, y- distanceY+1), GetTileByNum(getNumOfTile("wCorner")));  
-                gridFloor.SetTile(new Vector3Int(x + distanceX+1, y- distanceY+1), GetTileByNum(getNumOfTile("wCorner")));  
+	            wallPlaces = true;
+                gOptions.gridWall.SetTile(new Vector3Int(posX, posY), GetTileByNum(getNumOfTile("wCorner")));  
+                gOptions.gridWall.SetTile(new Vector3Int(posX+1, posY), GetTileByNum(getNumOfTile("wCorner")));  
+                gOptions.gridWall.SetTile(new Vector3Int(posX, posY-1), GetTileByNum(getNumOfTile("wCorner")));  
+                gOptions.gridWall.SetTile(new Vector3Int(posX+1, posY-1), GetTileByNum(getNumOfTile("wCorner")));  
                 break;
         }
+
+        if (!wallPlaces)
+        {
+	        if (tileBlock == "fGrass" || tileBlock == "centerfGrass")
+	        {
+		        gOptions.gridFloor.SetTile(new Vector3Int(posX, posY), gOptions.fGrass[_random.Next(0, gOptions.fGrass.Length)]);
+		        PlaceGrassFloorDecoration(posX, posY, room);
+		        PlaceCenterPoint(posX, posY, room, tileBlock);
+		        
+	        }
+	        else  if (tileBlock == "fStone" || tileBlock == "centerfStone")
+	        {
+		        gOptions.gridFloor.SetTile(new Vector3Int(posX, posY), gOptions.fStone[_random.Next(0, gOptions.fStone.Length)]);
+		        PlaceBossFloorDecoration(posX, posY, room);
+		        PlaceCenterPoint(posX, posY, room, tileBlock);
+	        }
+	        else if (tileBlock == "fSpawnPoint")
+	        {
+		        gOptions.gridFloor.SetTile(new Vector3Int(posX, posY), gOptions.fSpawnPoint);
+		        PlaceCenterPoint(posX, posY, room, tileBlock);
+		        
+		        Vector3 spawnPosition = new Vector3(posX, posY, 0f);
+		        GameObject spawnPointPlayer = new GameObject("spawnPointPlayer");
+		        spawnPointPlayer.transform.position = spawnPosition;
+		        spawnPointPlayer.tag = "spawnPointPlayer";
+	        }
+	        else
+	        {
+		        gOptions.gridFloor.SetTile(new Vector3Int(posX, posY), GetTileByNum(getNumOfTile(tileBlock)));       
+	        }
+        }
+	}
+
+	private void PlaceCenterPoint(int posX, int posY, GenerateRoom room, string tileBlock)
+	{
+		if (tileBlock == "centerfGrass" || tileBlock == "centerfStone"|| tileBlock == "fSpawnPoint")
+		{
+			Vector3 spawnPosition = new Vector3(posX, posY, 0f);
+			GameObject spawnPointPlayer = new GameObject("RoomCenterPoint_" + room.GetRoomId());
+			spawnPointPlayer.transform.position = spawnPosition;
+			spawnPointPlayer.tag = "RoomCenterPoint";
+		}
+	}
+
+
+	private void PlaceGrassFloorDecoration(int posX, int posY, GenerateRoom room)
+	{
+		int random = _random.Next(0, 8);
+		if (random == 1)
+		{
+			int tileNumber = _random.Next(0, gOptions.floorDecorations.Length);
+			GameObject randomDecoration = gOptions.floorDecorations[tileNumber];
+		
+			random = _random.Next(0, 5);
+			if (random == 1)
+			{
+				tileNumber = _random.Next(0, gOptions.lootDecorations.Length);
+				randomDecoration = gOptions.lootDecorations[tileNumber];
+			}
+			
+			Vector3 position = new Vector3(posX, posY, 0f);
+			GameObject decorationInstance = Instantiate(randomDecoration, position, Quaternion.identity);
+
+			decorationInstance.transform.position = position;	
+		}
+	}
+	
+	private void PlaceBossFloorDecoration(int posX, int posY, GenerateRoom room)
+	{
+		int random = _random.Next(0, 8);
+		if (random == 1)
+		{
+			int tileNumber = _random.Next(0, gOptions.bossFloorDecorations.Length);
+			GameObject randomDecoration = gOptions.bossFloorDecorations[tileNumber];
+			Vector3 position = new Vector3(posX, posY, 0f);
+			GameObject decorationInstance = Instantiate(randomDecoration, position, Quaternion.identity);
+
+			decorationInstance.transform.position = position;	
+		}
+	}
+
+
+	private int IsValidRoom(GenerateRoom room, int direction)
+	{
+		if (direction == 0 || room.GetRoomType() == gOptions.bossRoom)
+		{
+			return -1;
+		}
+
+		if (direction == gOptions.bossRoom)
+		{
+			return gOptions.bossRoom;
+		}
+
+		if (direction == gOptions.spawnRoom || room.GetRoomType() == gOptions.spawnRoom)
+		{
+			return 0;
+		}
+		
+		//Chance to place a door
+		if (room.GetRoomType() != direction)
+		{
+			int random = _random.Next(0, 2);
+			if (random == 1)
+			{
+				return 0;
+			}
+			
+			return -1;
+		}
+		
+		return 0;
+	}
+
+	private void PlaceDoor(float posX, float posY, float rotation, bool roomDone, bool isBossRoom, GenerateRoom room)
+	{
+		placeGameObject(gOptions.doorFrame, posX, posY, rotation);
+		placeWhitePlate(posX, posY, rotation);
+		
+		if (roomDone)
+		{
+			if (isBossRoom)
+			{
+				placeGameObject(gOptions.doorOpen, posX, posY, rotation, true,room);
+			}
+			else
+			{
+				placeGameObject(gOptions.doorOpen, posX, posY, rotation, false, room);	
+			}
+		}
+		else
+		{
+			if (isBossRoom)
+			{
+				placeGameObject(gOptions.doorClosed, posX, posY, rotation, true, room);
+			}
+			else
+			{
+				placeGameObject(gOptions.doorClosed, posX, posY, rotation, false, room);
+			}
+		}
+	}
+	
+
+	
+
+	private void placeWhitePlate(float posX, float posY, float rotation)
+	{
+		GameObject whitePlate = GameObject.CreatePrimitive(PrimitiveType.Quad);
+		whitePlate.transform.position = new Vector3(posX, posY, 0f);
+		whitePlate.transform.rotation = Quaternion.Euler(0f, 0f, rotation);
+		whitePlate.transform.localScale = new Vector3(1f, 3f, 1f);
+		whitePlate.GetComponent<Renderer>().material.color = Color.white;
+	}
+
+	
+	private void placeGameObject(GameObject o, float distanceX, float distanceY, float f, bool isBossRoom = false, GenerateRoom room = null)
+	{
+		GameObject obj = Instantiate(o, new Vector3(distanceX, distanceY), Quaternion.Euler(0, 0, f));
+
+		if (room != null)
+		{
+			obj.name = (room.GetRoomId()).ToString();
+			obj.AddComponent<RoomReference>().room = room;
+		}
+		
+		if (isBossRoom)
+		{
+			Renderer renderer = obj.GetComponent<Renderer>();
+			if (renderer != null)
+			{
+				foreach (Material material in renderer.materials)
+				{
+					material.color = Color.yellow;
+				}
+			}
+		}
+	}
+
+	
+	private void paceWallOnMAp(int x, int y, int secondX, int secondY, float rotation)
+	{
+		Matrix4x4 matrix = Matrix4x4.TRS(Vector3.zero, Quaternion.Euler(0f, 0f, rotation), Vector3.one);
         
-
-        //Tile wird platziert
-        if (tile)
-        {
-            gridFloor.SetTile(new Vector3Int(x + distanceX, y- distanceY), GetTileByNum(getNumOfTile(tileBlock)));   
-        }
-    }
-
-    private void placeGameObject(GameObject o, float distanceX, float distanceY, float f)
-    {
-        Instantiate(o, new Vector3(distanceX , distanceY), Quaternion.Euler(0, 0, f));
-    }
-
-    private void paceWallOnMAp(int x, int y, int secondX, int secondY, float rotation)
-    {
-        Matrix4x4 matrix = Matrix4x4.TRS(Vector3.zero, Quaternion.Euler(0f, 0f, rotation), Vector3.one);
+		gOptions.gridWall.SetTile(new Vector3Int(x , y), GetTileByNum(getNumOfTile("wBottom")));
+		gOptions.gridWall.SetTransformMatrix(new Vector3Int(x , y), matrix);  
         
-        gridFloor.SetTile(new Vector3Int(x , y), GetTileByNum(getNumOfTile("wBottom")));
-        gridFloor.SetTransformMatrix(new Vector3Int(x , y), matrix);  
-        
-        gridFloor.SetTile(new Vector3Int(x + secondX, y- secondY), GetTileByNum(getNumOfTile("wTop")));
-        gridFloor.SetTransformMatrix(new Vector3Int(x + secondX, y- secondY), matrix);  
-    }
+		gOptions.gridWall.SetTile(new Vector3Int(x + secondX, y- secondY), GetTileByNum(getNumOfTile("wTop")));
+		gOptions.gridWall.SetTransformMatrix(new Vector3Int(x + secondX, y- secondY), matrix);  
+	}
+	
+	private int getNumOfTile(string tileBlock)
+	{
+		//Es wird geschaut, welches Tile platziert werden muss
+		int outputTile = 0;
+		int count = 0;
+		foreach (KeyValuePair<Tile, string> combi in gOptions.GetTileLinkedList())
+		{
+			//Debug.Log("Value:" + combi.Value);
+			if (tileBlock ==  combi.Value)
+			{
+				outputTile = count;
+			}
 
-    private int getNumOfTile(string tileBlock)
-    {
-        //Es wird geschaut, welches Tile platziert werden muss
-        int outputTile = 0;
-        int count = 0;
-        foreach (KeyValuePair<Tile, string> combi in mapTile)
-        {
-            //Debug.Log("Value:" + combi.Value);
-            if (tileBlock ==  combi.Value)
-            {
-                outputTile = count;
-            }
+			count++;
+		}
 
-            count++;
-        }
+		return outputTile;
+	}
+	
+	public Tile GetTileByNum(int num)
+	{
+		//Gibt den ersten wert von mapTile aus
+		//(Ich habe keine bessere methode gefunden)
+		int count = 0;
+		foreach(KeyValuePair<Tile,string> pair in gOptions.GetTileLinkedList())
+		{
+			if(count == num)
+			{
+				return pair.Key;
+			}
 
-        return outputTile;
-    }
+			count++;
+		}
+		return null;
+	}
+	
 
-    private bool makeDoor(int mapArrayPosX, int mapArrayPosY, int posX, int posY)
-    {
-        //hier wird entschieden ob eine Tür ist oder nicht
-        int temp = mapArray[mapArrayPosX, mapArrayPosY];
-        if (script.IsPositionInArray(mapArray, posX, posY) == false )
-        {
-            return false;
-        }
+	private void GoThroughLayer()
+	{
+		int[,] layerArray = new GenerateLayer(gOptions).makeRooms();
+		int layerLength = gOptions.layerArrayLength;
 
-        if (((mapArray[posX, posY] == temp || mapArray[posX, posY] == GenerateLayer.spawnRoom)&& temp != 0)  || (temp == GenerateLayer.spawnRoom && mapArray[posX, posY] != 0)) 
-        {
-            return true;
-        }
-        return false;
-    }
-    
-    public string[,,] LoadRoomBuild()
-    {
-        string jsonString = PlayerPrefs.GetString("firstJason");
-        return JsonConvert.DeserializeObject<string[,,]>(jsonString);
-    }
+		//printArray(layerArray);
+		
+		for (int layerPosY = 0; layerPosY < layerLength; layerPosY++)
+		{
+			for (int layerPosX = 0; layerPosX < layerLength; layerPosX++)
+			{
+				if (layerArray[layerPosX, layerPosY] != 0)
+				{
+					int roomNumber = layerArray[layerPosX, layerPosY];
+					
+					
+					CreateRoom(roomNumber,layerPosX, layerPosY, layerArray);
+				}
+			}
+		}
+	}
+
+	private void CreateRoom(int roomNumber, int layerPosX, int layerPosY, int[,] layerArray)
+	{
+		//log("CreateRoom ->" + roomNumber);
+		int[] doorsPlace = new int[4];
+		
+		if (IsPossipleInArray(layerPosX, layerPosY - 1) && layerArray[layerPosX, layerPosY - 1] != 0) //dUp
+		{
+			doorsPlace[0] = layerArray[layerPosX, layerPosY - 1];
+		}
+		if (IsPossipleInArray(layerPosX, layerPosY + 1) && layerArray[layerPosX, layerPosY + 1] != 0) //dDown
+		{
+			doorsPlace[1] = layerArray[layerPosX, layerPosY + 1];
+		}
+		if (IsPossipleInArray(layerPosX - 1, layerPosY) && layerArray[layerPosX - 1, layerPosY] != 0) //dLeft
+		{
+			doorsPlace[2] = layerArray[layerPosX - 1, layerPosY];
+		}
+		if (IsPossipleInArray(layerPosX + 1, layerPosY) && layerArray[layerPosX + 1, layerPosY] != 0) //dRight
+		{
+			doorsPlace[3] = layerArray[layerPosX + 1, layerPosY];
+		}
+		
+
+		
+		rooms.AddLast(new GenerateRoom(gOptions,roomNumber,  layerPosX,  layerPosY, rooms.Count+1, doorsPlace));
+	}
+
+	private bool IsPossipleInArray(int pos1, int pos2)
+	{
+		int layerLength = gOptions.layerArrayLength;
+
+		if (pos1 < 0 || pos1 > layerLength - 1 || pos2 < 0 || pos2 > layerLength - 1)
+		{
+			return false;
+		}
+
+		return true;
+	}
+	
+	
+	
+	public void printArray(int[,] array)
+	{ 
+		//Der array wird in die Console geschrieben (du hättest auch einfach den namen der methode lesen können)
+		for (int x = 0; x < array.GetLength(0); x++)
+		{
+			string msg = " ";
+			for (int y = 0; y < array.GetLength(1); y++)
+			{
+				msg += " - " + array[y, x];
+			}
+
+			Debug.Log(x +": "+msg);
+		}
+
+	}
+
+	private void log(object msg)
+	{
+		Debug.Log(msg);
+	}
 }
+

@@ -23,66 +23,92 @@ public class MapsArray : MonoBehaviour
     }
     
     
-    /*
-        wUp
-        wLeft
-        wRight
-        wDown
-        wCorner
-        
-        dUp
-        dRight
-        dLeft
-        dDown
-        
-        fGrass
-     */
-    /*
-     * wUpLeft
-     * 21
-     * 22
-     *
-     * 
-     */
     public static string[,,] spawnBuild =
     {
         {
-            {"wUpLeft", "wUp", "wUp", "dUp", "wUp", "wUp", "wUpRight"},
-            {"wLeft", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "wRight"},
-            {"wLeft", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "wRight"},
-            {"dLeft","fGrass", "fGrass", "test", "fGrass", "fGrass", "dRight"},
-            {"wLeft", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "wRight"},
-            {"wLeft", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "wRight"},
-            {"wDownLeft","wDown", "wDown", "dDown", "wDown","wDown", "wDownRight"},
+            { "wUpLeft", "wUp", "wUp", "wUp", "wUp", "wUp", "dUp", "wUp", "wUp", "wUp", "wUp", "wUp", "wUpRight" },
+            { "wLeft", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "wRight" },
+            { "wLeft", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "wRight" },
+            { "wLeft", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "wRight" },
+            { "wLeft", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "wRight" },
+            { "wLeft", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "wRight" },
+            { "dLeft", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fSpawnPoint", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "dRight" },
+            { "wLeft", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "wRight" },
+            { "wLeft", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "wRight" },
+            { "wLeft", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "wRight" },
+            { "wLeft", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "wRight" },
+            { "wLeft", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "wRight" },
+            { "wDownLeft", "wDown" , "wDown" , "wDown" , "wDown", "wDown", "dDown", "wDown", "wDown" , "wDown" , "wDown", "wDown", "wDownRight" },
         }
     };
     
     public static string[,,] bossBuild =
     {
         {
-            {"wUpLeft", "wUp", "wUp", "dUp", "wUp", "wUp", "wUpRight"},
-            {"wLeft", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "wRight"},
-            {"wLeft", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "wRight"},
-            {"dLeft","fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "dRight"},
-            {"wLeft", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "wRight"},
-            {"wLeft", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "wRight"},
-            {"wDownLeft","wDown", "wDown", "dDown", "wDown","wDown", "wDownRight"},
+            { "wUpLeft", "wUp", "wUp", "wUp", "wUp", "wUp", "dUp", "wUp", "wUp", "wUp", "wUp", "wUp", "wUpRight" },
+            { "wLeft", "fStone", "fStone", "fStone", "fStone", "fStone", "fStone", "fStone", "fStone", "fStone", "fStone", "fStone", "wRight" },
+            { "wLeft", "fStone", "fStone", "fStone", "fStone", "fStone", "fStone", "fStone", "fStone", "fStone", "fStone", "fStone", "wRight" },
+            { "wLeft", "fStone", "fStone", "fStone", "fStone", "fStone", "fStone", "fStone", "fStone", "fStone", "fStone", "fStone", "wRight" },
+            { "wLeft", "fStone", "fStone", "fStone", "fStone", "fStone", "fStone", "fStone", "fStone", "fStone", "fStone", "fStone", "wRight" },
+            { "wLeft", "fStone", "fStone", "fStone", "fStone", "fStone", "fStone", "fStone", "fStone", "fStone", "fStone", "fStone", "wRight" },
+            { "dLeft", "fStone", "fStone", "fStone", "fStone", "fStone", "centerfStone", "fStone", "fStone", "fStone", "fStone", "fStone", "dRight" },
+            { "wLeft", "fStone", "fStone", "fStone", "fStone", "fStone", "fStone", "fStone", "fStone", "fStone", "fStone", "fStone", "wRight" },
+            { "wLeft", "fStone", "fStone", "fStone", "fStone", "fStone", "fStone", "fStone", "fStone", "fStone", "fStone", "fStone", "wRight" },
+            { "wLeft", "fStone", "fStone", "fStone", "fStone", "fStone", "fStone", "fStone", "fStone", "fStone", "fStone", "fStone", "wRight" },
+            { "wLeft", "fStone", "fStone", "fStone", "fStone", "fStone", "fStone", "fStone", "fStone", "fStone", "fStone", "fStone", "wRight" },
+            { "wLeft", "fStone", "fStone", "fStone", "fStone", "fStone", "fStone", "fStone", "fStone", "fStone", "fStone", "fStone", "wRight" },
+            { "wDownLeft", "wDown", "wDown", "wDown", "wDown", "wDown", "dDown", "wDown", "wDown", "wDown", "wDown", "wDown", "wDownRight" },
         }
     };
-    
+
     public static string[,,] roomBuild =
     {
         //y
         {
-            //x
-            {"wUpLeft", "wUp", "wUp", "dUp", "wUp", "wUp", "wUpRight"},
-            {"wLeft", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "wRight"},
-            {"wLeft", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "wRight"},
-            {"dLeft","fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "dRight"},
-            {"wLeft", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "wRight"},
-            {"wLeft", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "wRight"},
-            {"wDownLeft","wDown", "wDown", "dDown", "wDown","wDown", "wDownRight"},
+            { "wUpLeft", "wUp", "wUp", "wUp", "wUp", "wUp", "dUp", "wUp", "wUp", "wUp", "wUp", "wUp", "wUpRight" },
+            { "wLeft", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "wRight" },
+            { "wLeft", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "wRight" },
+            { "wLeft", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "wRight" },
+            { "wLeft", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "wRight" },
+            { "wLeft", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "wRight" },
+            { "dLeft", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "centerfGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "dRight" },
+            { "wLeft", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "wRight" },
+            { "wLeft", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "wRight" },
+            { "wLeft", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "wRight" },
+            { "wLeft", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "wRight" },
+            { "wLeft", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "wRight" },
+            { "wDownLeft", "wDown" , "wDown" , "wDown" , "wDown", "wDown", "dDown", "wDown", "wDown" , "wDown" , "wDown", "wDown", "wDownRight" },
+        }, 
+        {
+            { "wUpLeft", "wUp", "wUp", "wUp", "wUp", "wUp", "dUp", "wUp", "wUp", "wUp", "wUp", "wUp", "wUpRight" },
+            { "wLeft", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "wRight" },
+            { "wLeft", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "wRight" },
+            { "wLeft", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "dRight" },
+            { "wLeft", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "wRight" },
+            { "wLeft", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "wRight" },
+            { "dLeft", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "centerfGrass", "wDownRight", "", "wDown", "wDown", "wDown", "wDownRight" },
+            { "wLeft", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "wRight", "", "", "", "", "" },
+            { "wLeft", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "wRight", "", "", "", "", "" },
+            { "wLeft", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "wRight", "", "", "", "", "" },
+            { "wLeft", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "wRight", "", "", "", "", "" },
+            { "wLeft", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "wRight", "", "", "", "", "" },
+            { "wDownLeft", "wDown" , "wDown" , "dDown" , "wDown", "wDown", "wDown", "wDownRight", "" , "" , "", "", "" },
+        },
+        {
+            { "wUpLeft", "wUp", "wUp", "wUp", "wUp", "wUp", "dUp", "wUp", "wUp", "wUp", "wUp", "wUp", "wUpRight" },
+            { "wLeft", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "wRight" },
+            { "wLeft", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "wRight" },
+            { "wLeft", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "wRight" },
+            { "wLeft", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "wRight" },
+            { "dLeft", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "centerfGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "dRight" },
+            { "wLeft", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "wRight" },
+            { "wLeft", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "wRight" },
+            { "wLeft", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "wRight" },
+            { "wLeft", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "fGrass", "wRight" },
+            { "wDownLeft", "wDown" , "wDown" , "wDown" , "wDown", "wDown", "dDown", "wDown", "wDown" , "wDown" , "wDown", "wDown", "wDownRight" },
+            { "", "", "", "", "", "", "", "", "", "", "", "", "" },
+            { "", "", "", "", "", "", "", "", "", "", "", "", "" },
         }
-
     };
+
 }
