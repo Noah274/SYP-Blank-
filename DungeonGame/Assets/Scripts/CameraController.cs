@@ -17,7 +17,7 @@ public class CameraController : MonoBehaviour
         {
             //Debug.Log("Camera pos: " + transform.position);
             //Debug.Log("target: "+ targetRoom.transform.position);
-            transform.position = new Vector3(targetRoom.transform.position.x, targetRoom.transform.position.y, -10);
+            transform.position = new Vector3(targetRoom.transform.position.x, targetRoom.transform.position.y+1, -10);
             //Debug.Log("new Pos: " + transform.position);
 
         }

@@ -36,10 +36,11 @@ public class RoomLogic : MonoBehaviour
 	        
         //Debug.Log(numberString + "----------");
         
+        string roomCenterPointPrefix = "RoomCenterPoint_" + numberString;
         GameObject[] gameObjects = FindObjectsOfType<GameObject>();
         foreach (GameObject obj in gameObjects)
         {
-            if (obj.name == numberString)
+            if (obj.name.StartsWith(roomCenterPointPrefix))
             {
                 this.objRoom = obj;
             }
@@ -57,7 +58,15 @@ public class RoomLogic : MonoBehaviour
             {
                 SpriteRenderer spriteRenderer = obj.GetComponent<SpriteRenderer>();
                 spriteRenderer.sprite = gOptions.doorOpen.GetComponent<SpriteRenderer>().sprite;
+            }
+        }
         
+        string roomCenterPointPrefix = "RoomCenterPoint_" + number.ToString();
+         gameObjects = FindObjectsOfType<GameObject>();
+        foreach (GameObject obj in gameObjects)
+        {
+            if (obj.name.StartsWith(roomCenterPointPrefix))
+            {
                 GenerateRoom roomObj = obj.GetComponent<RoomReference>().room;
                 roomObj.SetRoomDone();
             }
@@ -106,6 +115,8 @@ public class RoomLogic : MonoBehaviour
                 
                 player.transform.position = teleportPoint.transform.position;
                 player.transform.rotation = teleportPoint.transform.rotation;
+                
+                /*
                 CameraController camera = FindObjectOfType<CameraController>();
                 if (camera != null)
                 {
@@ -114,7 +125,7 @@ public class RoomLogic : MonoBehaviour
                 else
                 {
                     Debug.LogError("Error: CameraController script not found!");
-                }
+                }*/
                 
                 //Raum Logik neu ausführen
                 Main main = FindObjectOfType<Main>();

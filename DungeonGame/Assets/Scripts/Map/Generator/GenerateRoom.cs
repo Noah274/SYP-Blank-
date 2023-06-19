@@ -8,13 +8,13 @@ public class GenerateRoom
     private System.Random _random = new System.Random();
     private GeneratorOptions gOptions;
 
-    private int roomId;//X
-    private int roomType;
+    private int roomId = 0;//X
+    private int roomType = 0;
     private string[,] roomArrayBuild;
-    private bool roomDone;
+    private bool roomDone = false;
     
-    private int layerPosX;
-    private int layerPosY;
+    private int layerPosX = 0;
+    private int layerPosY = 0;
     
     //doors
     private int[] doorDirections = new int[4];

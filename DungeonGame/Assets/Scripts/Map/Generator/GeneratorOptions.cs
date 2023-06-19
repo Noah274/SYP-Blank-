@@ -21,6 +21,8 @@ public class GeneratorOptions : MonoBehaviour
     public GameObject bossEnemy;
     public int spawnRange;
     public int spawnDelay;
+    public float damageMultiplier;
+    public float healthMultiplier;
 
     [Header("Tilemap")]
     public Tilemap gridFloor;
@@ -30,6 +32,7 @@ public class GeneratorOptions : MonoBehaviour
     public Tile[] fGrass;
     public Tile fSpawnPoint;
     public Tile[] fStone;
+    public Tile[] wdawd;
     
     
     [Header("Tiles - GenerateGrid")]

@@ -85,28 +85,36 @@ public class GenerateGrid : MonoBehaviour
 					offsetX += arrayX + gOptions.baseOffset;
 					
 					//get ID
-					int[] teleportRooms = new int[4];
-					if (room.GetDUp() != 0)
+					try
 					{
-						int posOld =  Int32.Parse(layerPosX.ToString() +(layerPosY-1).ToString());
-						teleportRooms[0] = buildPos[posOld].GetRoomId();
+						int[] teleportRooms = new int[4];
+						if (room.GetDUp() != 0)
+						{
+							int posOld =  Int32.Parse(layerPosX.ToString() +(layerPosY-1).ToString());
+							teleportRooms[0] = buildPos[posOld].GetRoomId();
+						}
+						if (room.GetDDown() != 0)
+						{
+							int posOld =  Int32.Parse(layerPosX.ToString() +(layerPosY+1).ToString());
+							teleportRooms[1] = buildPos[posOld].GetRoomId();
+						}
+						if (room.GetDLeft() != 0)
+						{
+							int posOld =  Int32.Parse((layerPosX - 1).ToString() +(layerPosY).ToString());
+							teleportRooms[2] = buildPos[posOld].GetRoomId();
+						}
+						if (room.GetDRight() != 0)
+						{
+							int posOld =  Int32.Parse((layerPosX + 1).ToString() +(layerPosY).ToString());
+							teleportRooms[3] = buildPos[posOld].GetRoomId();
+						}
+						room.SetTeleportDirections(teleportRooms);
 					}
-					if (room.GetDDown() != 0)
+					catch (Exception e)
 					{
-						int posOld =  Int32.Parse(layerPosX.ToString() +(layerPosY+1).ToString());
-						teleportRooms[1] = buildPos[posOld].GetRoomId();
+						Debug.Log("TeleportRoom - Error");
 					}
-					if (room.GetDLeft() != 0)
-					{
-						int posOld =  Int32.Parse((layerPosX - 1).ToString() +(layerPosY).ToString());
-						teleportRooms[2] = buildPos[posOld].GetRoomId();
-					}
-					if (room.GetDRight() != 0)
-					{
-						int posOld =  Int32.Parse((layerPosX + 1).ToString() +(layerPosY).ToString());
-						teleportRooms[3] = buildPos[posOld].GetRoomId();
-					}
-					room.SetTeleportDirections(teleportRooms);
+					
 				}
 				else
 				{
@@ -281,6 +289,7 @@ public class GenerateGrid : MonoBehaviour
 			GameObject spawnPointPlayer = new GameObject("RoomCenterPoint_" + room.GetRoomId());
 			spawnPointPlayer.transform.position = spawnPosition;
 			spawnPointPlayer.tag = "RoomCenterPoint";
+			spawnPointPlayer.AddComponent<RoomReference>().room = room;
 		}
 	}
 
@@ -402,7 +411,8 @@ public class GenerateGrid : MonoBehaviour
 		if (room != null)
 		{
 			obj.name = (room.GetRoomId()).ToString();
-			obj.AddComponent<RoomReference>().room = room;
+			//obj.AddComponent<RoomReference>().room = room;
+			
 		}
 		
 		if (isBossRoom)
@@ -481,6 +491,7 @@ public class GenerateGrid : MonoBehaviour
 				if (layerArray[layerPosX, layerPosY] != 0)
 				{
 					int roomNumber = layerArray[layerPosX, layerPosY];
+					//Debug.Log("roomtype: " + roomNumber);
 					
 					
 					CreateRoom(roomNumber,layerPosX, layerPosY, layerArray);

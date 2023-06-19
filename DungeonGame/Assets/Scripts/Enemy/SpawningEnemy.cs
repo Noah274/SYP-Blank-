@@ -25,11 +25,12 @@ public class SpawningEnemy : MonoBehaviour
         int enemyCount = _random.Next(2, level + 4) * 2;
         //Debug.Log("EnemyCount: " + enemyCount);
 
-        Debug.Log("Type: " +roomObj.GetRoomType());
-        Debug.Log("isBossroom: "  +(roomObj.GetRoomType() == gOptions.bossRoom));
+        //Debug.Log("Type: " +roomObj.GetRoomType());
+        //Debug.Log("isBossroom: "  +(roomObj.GetRoomType() == gOptions.bossRoom));
         if (roomObj.GetRoomType() == gOptions.bossRoom)
         {
-            Debug.Log("Bossroom");
+            //Debug.Log("Bossroom");
+            SpawnBoss();
         }
         else
         {
@@ -39,10 +40,12 @@ public class SpawningEnemy : MonoBehaviour
     
     private bool isRoomDone(int number)
     {
+        string roomCenterPointPrefix = "RoomCenterPoint_" + number.ToString();
+        //Debug.Log("check if room done - " + number.ToString());
         GameObject[] gameObjects = FindObjectsOfType<GameObject>();
         foreach (GameObject obj in gameObjects)
         {
-            if (obj.name == number.ToString())
+            if (obj.name.StartsWith(roomCenterPointPrefix))
             {
                 GenerateRoom roomObj = obj.GetComponent<RoomReference>().room;
                 this.roomObj = roomObj;
@@ -82,6 +85,32 @@ public class SpawningEnemy : MonoBehaviour
         }
     }
 
+    private void SpawnBoss()
+    {
+        GameObject targetRoom = GameObject.Find("RoomCenterPoint_" + roomNumber.ToString());
+        Vector3 centerPos = targetRoom.transform.position;
+        
+        int circleRadius = gOptions.spawnRange;
+        float randomOffsetX = _random.Next(-circleRadius, circleRadius);
+        float randomOffsetY = _random.Next(-circleRadius, circleRadius);
+
+        Vector3 enemySpawnPos = centerPos + new Vector3(randomOffsetX, randomOffsetY, 0);
+        Vector3Int tilemapPos = gOptions.gridFloor.WorldToCell(enemySpawnPos);
+
+        if (!gOptions.gridFloor.HasTile(tilemapPos))
+        {
+            SpawnBoss();
+        }
+        else
+        {
+            GameObject enemy = Instantiate(gOptions.bossEnemy, enemySpawnPos, Quaternion.identity);
+            enemy.tag = "EnemyBoss";
+                    
+            enemy.GetComponent<EnemyAI>().hitPoints = enemy.GetComponent<EnemyAI>().hitPoints * ((gOptions.layerLevel * gOptions.healthMultiplier)/100);
+            enemy.GetComponent<EnemyAI>().damage = enemy.GetComponent<EnemyAI>().damage * ((gOptions.layerLevel * gOptions.damageMultiplier)/100);
+        }
+    }
+
     private void StartSpawning(int enemyCount)
     {
         StartCoroutine(SpawnEnemies(enemyCount));
@@ -91,27 +120,38 @@ public class SpawningEnemy : MonoBehaviour
     {
         GameObject targetRoom = GameObject.Find("RoomCenterPoint_" + roomNumber.ToString());
         Vector3 centerPos = targetRoom.transform.position;
-    
+
         int enemyPlaced = 0;
         int circleRadius = gOptions.spawnRange;
 
-        for (int i = 0; i < enemyCount+1; i++)
+        for (int i = 0; i < enemyCount + 1; i++)
         {
             if (enemyPlaced < enemyCount)
             {
                 enemyPlaced++;
-                    
+
                 float randomOffsetX = _random.Next(-circleRadius, circleRadius);
                 float randomOffsetY = _random.Next(-circleRadius, circleRadius);
-                
+
                 Vector3 enemySpawnPos = centerPos + new Vector3(randomOffsetX, randomOffsetY, 0);
-                GameObject enemy = Instantiate(gOptions.enemy[_random.Next(0, gOptions.enemy.Length)], enemySpawnPos, Quaternion.identity);
-                enemy.tag = "Enemy";
-                
-                enemy.GetComponent<EnemyAI>().hitPoints = 1;
-                
-                float randomDelay = Random.Range(0, gOptions.spawnDelay);
-                yield return new WaitForSeconds(randomDelay);
+                Vector3Int tilemapPos = gOptions.gridFloor.WorldToCell(enemySpawnPos);
+
+                if (!gOptions.gridFloor.HasTile(tilemapPos))
+                {
+                    //Debug.Log("No tile at spawn position, generating new position.");
+                    i--;
+                }
+                else
+                {
+                    GameObject enemy = Instantiate(gOptions.enemy[_random.Next(0, gOptions.enemy.Length)], enemySpawnPos, Quaternion.identity);
+                    enemy.tag = "Enemy";
+                    
+                    enemy.GetComponent<EnemyAI>().hitPoints = enemy.GetComponent<EnemyAI>().hitPoints * ((gOptions.layerLevel * gOptions.healthMultiplier)/100);
+                    enemy.GetComponent<EnemyAI>().damage = enemy.GetComponent<EnemyAI>().damage * ((gOptions.layerLevel * gOptions.damageMultiplier)/100);
+
+                    float randomDelay = Random.Range(0, gOptions.spawnDelay);
+                    yield return new WaitForSeconds(randomDelay);
+                }
             }
             else
             {
@@ -119,6 +159,7 @@ public class SpawningEnemy : MonoBehaviour
             }
         }
     }
+
 
 
 }

@@ -11,6 +11,10 @@ TagManager:
   - Wall
   - spawnPointPlayer
   - RoomCenterPoint
+  - destroyable
+  - TeleportDoor
+  - door
+  - EnemyBoss
   layers:
   - Default
   - TransparentFX
