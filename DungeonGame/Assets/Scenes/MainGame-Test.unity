@@ -2861,12 +2861,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc8d1bec44b20b34ebf2277ed4f50097, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 118924805}
   speed: 0
   distanceBetween: 10
   hitPoints: 50
+  damage: 0
   spawnPool:
   - {fileID: 5173097654445036439, guid: 14855c42ffd5e20408b4670ad4f262e8, type: 3}
+  projectilePrefab: {fileID: 0}
+  attackCooldown: 0
+  projectileSpeed: 0
+  isArcher: 0
 --- !u!50 &1242149390
 Rigidbody2D:
   serializedVersion: 4
@@ -4705,7 +4709,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!223 &1646676125
 Canvas:
   m_ObjectHideFlags: 0
