@@ -13,6 +13,7 @@ public class Main : MonoBehaviour
 
         gOptions = gameObject.GetComponent<GeneratorOptions>();
         
+        //Dungeon wird generiert
         GenerateGrid generate = FindObjectOfType<GenerateGrid>();
         if (generate != null)
         {
@@ -22,6 +23,8 @@ public class Main : MonoBehaviour
         {
             Debug.LogError("Error: GenerateGrid script not found!");
         }
+        
+        //Spieler wird zum Spawnraum gebracht
         Player player = FindObjectOfType<Player>();
         if (player != null)
         {
@@ -32,6 +35,7 @@ public class Main : MonoBehaviour
             Debug.LogError("Error: Player script not found!");
         }
 
+        //Der Raum, in dem sich der Spieler befindet (roomNumber die id des Raumes)
         RoomLogic logic = FindObjectOfType<RoomLogic>();
         if (logic != null)
         {
@@ -42,7 +46,7 @@ public class Main : MonoBehaviour
             Debug.LogError("Error: CameraController script not found!");
         }
 
-        
+        //Kamera wird auf den Raum gesetzt
         CameraController camera = FindObjectOfType<CameraController>();
         if (camera != null)
         {
@@ -53,6 +57,7 @@ public class Main : MonoBehaviour
             Debug.LogError("Error: CameraController script not found!");
         }
         
+        //Gegner werden gespawnt
         SpawningEnemy enemy = FindObjectOfType<SpawningEnemy>();
         if (enemy != null)
         {
