@@ -10,6 +10,7 @@ using UnityEngine.Tilemaps;
 using Newtonsoft.Json;
 using UnityEditor;
 using UnityEngine.Serialization;
+using UnityEngine.UI;
 
 public class GeneratorOptions : MonoBehaviour
 {
@@ -61,6 +62,10 @@ public class GeneratorOptions : MonoBehaviour
     [Header("Options - GenerateGrid")]
     public int baseOffset = 2;
     public GameObject doorHitbox;
+    
+    [Header("Options - nextLayer")]
+    public float waitingTime;
+    public Text levelText;
     
     
     private void Start()

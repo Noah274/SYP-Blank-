@@ -35,21 +35,15 @@ public class Player : MonoBehaviour
 
     public void MovePlayer()
     {
-        GameObject[] spawnPoints = GameObject.FindGameObjectsWithTag("spawnPointPlayer");
-        GameObject playerSpawnPoint = null;
+        GameObject spawnPoint = GameObject.FindGameObjectWithTag("spawnPointPlayer");
         
-        foreach (GameObject spawnPoint in spawnPoints)
+        if (spawnPoint != null)
         {
-            if (spawnPoint.CompareTag("spawnPointPlayer"))
-            {
-                playerSpawnPoint = spawnPoint;
-                break;
-            }
+            transform.position = spawnPoint.transform.position;
         }
-        
-        if (playerSpawnPoint != null)
+        else
         {
-            transform.position = playerSpawnPoint.transform.position;
+            Debug.LogError("Spawn point for player not found!");
         }
     }
     void Update()
