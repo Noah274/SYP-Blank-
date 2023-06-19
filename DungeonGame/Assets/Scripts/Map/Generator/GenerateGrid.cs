@@ -85,28 +85,36 @@ public class GenerateGrid : MonoBehaviour
 					offsetX += arrayX + gOptions.baseOffset;
 					
 					//get ID
-					int[] teleportRooms = new int[4];
-					if (room.GetDUp() != 0)
+					try
 					{
-						int posOld =  Int32.Parse(layerPosX.ToString() +(layerPosY-1).ToString());
-						teleportRooms[0] = buildPos[posOld].GetRoomId();
+						int[] teleportRooms = new int[4];
+						if (room.GetDUp() != 0)
+						{
+							int posOld =  Int32.Parse(layerPosX.ToString() +(layerPosY-1).ToString());
+							teleportRooms[0] = buildPos[posOld].GetRoomId();
+						}
+						if (room.GetDDown() != 0)
+						{
+							int posOld =  Int32.Parse(layerPosX.ToString() +(layerPosY+1).ToString());
+							teleportRooms[1] = buildPos[posOld].GetRoomId();
+						}
+						if (room.GetDLeft() != 0)
+						{
+							int posOld =  Int32.Parse((layerPosX - 1).ToString() +(layerPosY).ToString());
+							teleportRooms[2] = buildPos[posOld].GetRoomId();
+						}
+						if (room.GetDRight() != 0)
+						{
+							int posOld =  Int32.Parse((layerPosX + 1).ToString() +(layerPosY).ToString());
+							teleportRooms[3] = buildPos[posOld].GetRoomId();
+						}
+						room.SetTeleportDirections(teleportRooms);
 					}
-					if (room.GetDDown() != 0)
+					catch (Exception e)
 					{
-						int posOld =  Int32.Parse(layerPosX.ToString() +(layerPosY+1).ToString());
-						teleportRooms[1] = buildPos[posOld].GetRoomId();
+						Debug.Log("TeleportRoom - Error");
 					}
-					if (room.GetDLeft() != 0)
-					{
-						int posOld =  Int32.Parse((layerPosX - 1).ToString() +(layerPosY).ToString());
-						teleportRooms[2] = buildPos[posOld].GetRoomId();
-					}
-					if (room.GetDRight() != 0)
-					{
-						int posOld =  Int32.Parse((layerPosX + 1).ToString() +(layerPosY).ToString());
-						teleportRooms[3] = buildPos[posOld].GetRoomId();
-					}
-					room.SetTeleportDirections(teleportRooms);
+					
 				}
 				else
 				{
