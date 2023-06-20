@@ -105,6 +105,8 @@ public class BossAI : MonoBehaviour
     {
         GameObject projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
         Rigidbody2D projectileRb = projectile.GetComponent<Rigidbody2D>();
+        GameObject createdObjectsContainer = GameObject.Find("createdObjects");
+        projectile.transform.SetParent(createdObjectsContainer.transform);
         if (projectileRb != null)
         {
             Vector2 direction = (player.transform.position - transform.position).normalized;
@@ -131,7 +133,8 @@ public class BossAI : MonoBehaviour
     void LaunchSlowProjectile()
     {
         GameObject slowProjectile = Instantiate(slowProjectilePrefab, transform.position, Quaternion.identity);
-        Rigidbody2D slowProjectileRb = slowProjectile.GetComponent<Rigidbody2D>();
+        Rigidbody2D slowProjectileRb = slowProjectile.GetComponent<Rigidbody2D>();GameObject createdObjectsContainer = GameObject.Find("createdObjects");
+        slowProjectile.transform.SetParent(createdObjectsContainer.transform);
         if (slowProjectileRb != null)
         {
             StartCoroutine(FollowPlayerForDuration(slowProjectileRb, slowProjectileSpeed, 2f));
