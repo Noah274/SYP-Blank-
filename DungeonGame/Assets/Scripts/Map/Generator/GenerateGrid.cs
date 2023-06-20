@@ -323,11 +323,25 @@ public class GenerateGrid : MonoBehaviour
 	
 	private void PlaceBossFloorDecoration(int posX, int posY, GenerateRoom room)
 	{
-		int random = _random.Next(0, 8);
+		int random = _random.Next(0, 9);
 		if (random == 1)
 		{
-			int tileNumber = _random.Next(0, gOptions.bossFloorDecorations.Length);
-			GameObject randomDecoration = gOptions.bossFloorDecorations[tileNumber];
+			int tileNumber;
+			GameObject randomDecoration;
+			
+			random = _random.Next(0, 8);
+			if (random == 1)
+			{
+				tileNumber = _random.Next(0, gOptions.bossFloorDecorationsPillar.Length);
+				randomDecoration = gOptions.bossFloorDecorationsPillar[tileNumber];
+			}
+			else
+			{
+				tileNumber = _random.Next(0, gOptions.bossFloorDecorations.Length);
+				randomDecoration = gOptions.bossFloorDecorations[tileNumber];	
+			}
+
+
 			Vector3 position = new Vector3(posX, posY, 0f);
 			GameObject decorationInstance = Instantiate(randomDecoration, position, Quaternion.identity);
 			

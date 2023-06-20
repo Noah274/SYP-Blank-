@@ -33,7 +33,7 @@ public class GeneratorOptions : MonoBehaviour
     public Tile[] fGrass;
     public Tile fSpawnPoint;
     public Tile[] fStone;
-    public Tile[] wdawd;
+    public GameObject[] wdawd;
     
     
     [Header("Tiles - GenerateGrid")]
@@ -48,7 +48,7 @@ public class GeneratorOptions : MonoBehaviour
     public GameObject[] floorDecorations;
     public GameObject[] lootDecorations;
     public GameObject[] bossFloorDecorations;
-    
+    public GameObject[] bossFloorDecorationsPillar;
     
     [Header("Options - GenerateLayer")]
     public int layerArrayLength = 11;

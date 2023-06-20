@@ -73,9 +73,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingLayerID: -1869315837
+  m_SortingLayer: 1
+  m_SortingOrder: 5
   m_Sprite: {fileID: 362754621, guid: e5278e85a2c1bfe48b7f3387314e7010, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -130,6 +130,7 @@ MonoBehaviour:
   attackCooldown: 0
   projectileSpeed: 0
   isArcher: 0
+  meleeCooldown: 0.5
 --- !u!61 &181010571996059641
 BoxCollider2D:
   m_ObjectHideFlags: 0
