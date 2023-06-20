@@ -22,7 +22,7 @@ public class SpawningEnemy : MonoBehaviour
         }
         int level = gOptions.layerLevel;
 
-        int enemyCount = _random.Next((level + 3), (level + 4)) * 2;
+        int enemyCount = _random.Next((level + 2), ((level + 4)* 2));
         //Debug.Log("EnemyCount: " + enemyCount);
 
         
