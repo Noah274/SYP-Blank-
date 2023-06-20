@@ -14,7 +14,7 @@ PlayerSettings:
   accelerometerFrequency: 60
   companyName: DefaultCompany
   productName: DungeonGame
-  defaultCursor: {fileID: 0}
+  defaultCursor: {fileID: 2800000, guid: 432426364f0e2474b9817a7e5b9dd1c2, type: 3}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
   m_ShowUnitySplashScreen: 1
