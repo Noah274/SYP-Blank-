@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 181010571996059643}
   - component: {fileID: 181010571996059642}
   - component: {fileID: 181010571996059641}
+  - component: {fileID: 2944223875249514494}
   m_Layer: 0
   m_Name: tankEnemy
   m_TagString: Enemy
@@ -130,6 +131,7 @@ MonoBehaviour:
   attackCooldown: 0
   projectileSpeed: 0
   isArcher: 0
+  meleeCooldown: 0.5
 --- !u!61 &181010571996059641
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -156,3 +158,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.16, y: 0.16}
   m_EdgeRadius: 0
+--- !u!58 &2944223875249514494
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 181010571996059647}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.05
