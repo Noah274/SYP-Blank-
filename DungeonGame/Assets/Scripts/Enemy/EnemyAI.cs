@@ -79,8 +79,7 @@ public class EnemyAI : MonoBehaviour
 
         if (c2d.CompareTag("Bullet"))
         {
-            GeneratorOptions gOptions = gameObject.GetComponent<GeneratorOptions>();
-            hitPoints -= gOptions.playerDamage;
+            hitPoints -= 10;
             if (hitPoints <= 0)
             {
                 SpawnObjects();
