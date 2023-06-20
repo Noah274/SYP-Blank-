@@ -35,6 +35,7 @@ public class BossAI : MonoBehaviour
 
     void Update()
     {
+        
         distance = Vector2.Distance(transform.position, player.transform.position);
         Vector2 direction = player.transform.position - position;
         direction.Normalize();
@@ -181,5 +182,10 @@ public class BossAI : MonoBehaviour
         canLaunchSlowProjectile = false;
         yield return new WaitForSeconds(slowProjectileCooldown);
         canLaunchSlowProjectile = true;
+    }
+
+    IEnumerator isFrozen()
+    {
+        
     }
 }

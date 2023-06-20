@@ -25,7 +25,7 @@ namespace Menu
         }
         public void ResumeGame()
         {
-            PauseMenu.Resume();
+            pauseMenu.Resume();
         }
     
     }
