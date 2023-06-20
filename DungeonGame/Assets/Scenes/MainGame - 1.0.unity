@@ -3463,5 +3463,10 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 1319210412}
+    - target: {fileID: 5804433127730227855, guid: 6e2cb597a22a3be4fa650f7d5e35fa4e,
+        type: 3}
+      propertyPath: bulletCooldown
+      value: 0.05
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6e2cb597a22a3be4fa650f7d5e35fa4e, type: 3}
