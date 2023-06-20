@@ -14,6 +14,8 @@ public class EnemyAI : MonoBehaviour
     public float attackCooldown;
     public float projectileSpeed;
     public bool isArcher;
+    private float meleeStart = 0f;
+    public float meleeCooldown = 0.5f;
 
     private bool canAttack = true;
     private float distance;
@@ -68,10 +70,15 @@ public class EnemyAI : MonoBehaviour
     {
         if (c2d.CompareTag("Player"))
         {
+            
             Player playerHealth = c2d.GetComponent<Player>();
             if (playerHealth != null)
             {
-                playerHealth.TakeDamage(damage);
+                if(meleeStart+meleeCooldown < Time.time)
+                {
+                    playerHealth.TakeDamage(damage);
+                    meleeStart = Time.time;
+                }
             }
         }
 
