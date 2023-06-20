@@ -8,6 +8,7 @@ public class Playermovement : MonoBehaviour
     public Weapon weapon;
     private float bulletStart = 0f;
     public float bulletCooldown = 0.05f;
+    public bool canRotate = false;
 
     Vector2 moveDirection;
     Vector2 mousePosition;
@@ -47,9 +48,16 @@ public class Playermovement : MonoBehaviour
     {
         rb.velocity = new Vector2(moveDirection.x * speed, moveDirection.y * speed);
 
-        Vector2 aimDirection = mousePosition - rb.position;
-        float aimAngle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg - 90f;
+        if (canRotate)
+        {
+            Vector2 aimDirection = mousePosition - rb.position;
+            float aimAngle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg - 90f;
 
-        rb.rotation = aimAngle;
+            rb.rotation = aimAngle;
+        }
+        else
+        {
+            rb.rotation = 0f;
+        }
     }
 }
