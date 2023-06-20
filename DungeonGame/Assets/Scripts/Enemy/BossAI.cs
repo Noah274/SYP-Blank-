@@ -184,8 +184,8 @@ public class BossAI : MonoBehaviour
         canLaunchSlowProjectile = true;
     }
 
-    IEnumerator isFrozen()
+    public void StartAttack()
     {
-        
+        throw new System.NotImplementedException();
     }
 }

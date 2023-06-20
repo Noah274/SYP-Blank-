@@ -93,7 +93,7 @@ public class RoomLogic : MonoBehaviour
                 teleportPoint = GameObject.Find(roomCenterPointName);
 
                 newPosition.x = teleportPoint.transform.position.x;
-                newPosition.y = teleportPoint.transform.position.y - 3.7f;
+                newPosition.y = teleportPoint.transform.position.y - 3.4f;
             }
             else if (rotationZ == 90)
             {
@@ -101,7 +101,7 @@ public class RoomLogic : MonoBehaviour
                 string roomCenterPointName = "RoomCenterPoint_" + roomID;
                 teleportPoint = GameObject.Find(roomCenterPointName);
                 
-                newPosition.x = teleportPoint.transform.position.x + 10.7f;
+                newPosition.x = teleportPoint.transform.position.x + 10.4f;
                 newPosition.y = teleportPoint.transform.position.y;
             }
             else if (rotationZ == 180)
@@ -111,7 +111,7 @@ public class RoomLogic : MonoBehaviour
                 teleportPoint = GameObject.Find(roomCenterPointName);
                 
                 newPosition.x = teleportPoint.transform.position.x;
-                newPosition.y = teleportPoint.transform.position.y + 5.7f;
+                newPosition.y = teleportPoint.transform.position.y + 5.4f;
             }
             else if (rotationZ == 270)
             {
@@ -119,7 +119,7 @@ public class RoomLogic : MonoBehaviour
                 string roomCenterPointName = "RoomCenterPoint_" + roomID;
                 teleportPoint = GameObject.Find(roomCenterPointName);
                 
-                newPosition.x = teleportPoint.transform.position.x - 10.7f;
+                newPosition.x = teleportPoint.transform.position.x - 10.4f;
                 newPosition.y = teleportPoint.transform.position.y;
             }
             

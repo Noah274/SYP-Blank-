@@ -22,7 +22,7 @@ public class SpawningEnemy : MonoBehaviour
         }
         int level = gOptions.layerLevel;
 
-        int enemyCount = _random.Next(4, level + 4) * 2;
+        int enemyCount = _random.Next((level + 3), (level + 4)) * 2;
         //Debug.Log("EnemyCount: " + enemyCount);
 
         
@@ -86,6 +86,13 @@ public class SpawningEnemy : MonoBehaviour
         }
     }
 
+    private IEnumerator WaitForAttack(GameObject enemy)
+    {
+        yield return new WaitForSeconds(2f);
+        
+        enemy.GetComponent<BossAI>().StartAttack();
+    }
+
     private void SpawnBoss()
     {
         GameObject targetRoom = GameObject.Find("RoomCenterPoint_" + roomNumber.ToString());
@@ -96,33 +103,10 @@ public class SpawningEnemy : MonoBehaviour
 
         enemy.GetComponent<BossAI>().hitPoints = enemy.GetComponent<BossAI>().hitPoints + (gOptions.layerLevel * gOptions.healthMultiplier);
         enemy.GetComponent<BossAI>().damage = enemy.GetComponent<BossAI>().damage * (gOptions.layerLevel * gOptions.damageMultiplier);
-
-        /*
-        Vector3 centerPos = targetRoom.transform.position;
         
-        int circleRadius = gOptions.spawnRange;
-        float randomOffsetX = _random.Next(-circleRadius, circleRadius);
-        float randomOffsetY = _random.Next(-circleRadius, circleRadius);
-
-        Vector3 enemySpawnPos = centerPos + new Vector3(randomOffsetX, randomOffsetY, 0);
-        Vector3Int tilemapPos = gOptions.gridFloor.WorldToCell(enemySpawnPos);
-
-        if (!gOptions.gridFloor.HasTile(tilemapPos))
-        {
-            SpawnBoss();
-        }
-        else
-        {
-            GameObject enemy = Instantiate(gOptions.bossEnemy, enemySpawnPos, Quaternion.identity);
-            enemy.tag = "EnemyBoss";
-            GameObject createdObjectsContainer = GameObject.Find("createdObjects");
-            enemy.transform.SetParent(createdObjectsContainer.transform);
-                    
-            enemy.GetComponent<BossAI>().hitPoints = enemy.GetComponent<BossAI>().hitPoints + (gOptions.layerLevel * gOptions.healthMultiplier);
-            enemy.GetComponent<BossAI>().damage = enemy.GetComponent<BossAI>().damage * (gOptions.layerLevel * gOptions.damageMultiplier);
-
-        }*/
+        StartCoroutine(WaitForAttack(enemy));
     }
+
 
     private void StartSpawning(int enemyCount)
     {
@@ -153,6 +137,7 @@ public class SpawningEnemy : MonoBehaviour
                 {
                     //Debug.Log("No tile at spawn position, generating new position.");
                     i--;
+                    enemyPlaced--;
                 }
                 else
                 {
