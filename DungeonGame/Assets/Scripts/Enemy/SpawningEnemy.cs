@@ -22,15 +22,13 @@ public class SpawningEnemy : MonoBehaviour
         }
         int level = gOptions.layerLevel;
 
-        int enemyCount = _random.Next(4, level + 4) * 2;
-        //Debug.Log("EnemyCount: " + enemyCount);
+        int enemyCount = _random.Next(3, (level + 4)) * 2;
 
-        
+
         Debug.Log("RoomNumber: " + roomNumber + " - Roomtype: " + roomObj.GetRoomType() + " - EnemyCount: " + enemyCount);
         
         if (roomObj.GetRoomType() == gOptions.bossRoom)
         {
-            //Debug.Log("Bossroom");
             SpawnBoss();
         }
         else
@@ -153,6 +151,7 @@ public class SpawningEnemy : MonoBehaviour
                 {
                     //Debug.Log("No tile at spawn position, generating new position.");
                     i--;
+                    enemyPlaced--;
                 }
                 else
                 {
