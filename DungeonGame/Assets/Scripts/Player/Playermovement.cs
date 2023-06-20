@@ -6,7 +6,8 @@ public class Playermovement : MonoBehaviour
     public float speed;
     public Rigidbody2D rb;
     public Weapon weapon;
-
+    private float nextWallTime = 0f;
+    public float WallCooldown = 5f;
     Vector2 moveDirection;
     Vector2 mousePosition;
 
@@ -33,6 +34,14 @@ public class Playermovement : MonoBehaviour
         if(Input.GetMouseButtonDown(0))
         {
             weapon.Fire();
+        }
+        if(Input.GetKeyDown(KeyCode.Q))
+        {
+            if (nextWallTime + WallCooldown > Time.time)
+            {
+                weapon.FireWall();
+                nextWallTime = Time.time;
+            }
         }
     }
 
