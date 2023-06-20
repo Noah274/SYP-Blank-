@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BoneRotation : MonoBehaviour
 {
-    public float rotationSpeed = 10f;
+    public float rotationSpeed = 500f;
     
     void Update()
     {

@@ -449,10 +449,10 @@ public class GenerateGrid : MonoBehaviour
 	{
 		Matrix4x4 matrix = Matrix4x4.TRS(Vector3.zero, Quaternion.Euler(0f, 0f, rotation), Vector3.one);
         
-		gOptions.gridWall.SetTile(new Vector3Int(x , y), GetTileByNum(getNumOfTile("wBottom")));
+		gOptions.gridWall.SetTile(new Vector3Int(x , y), gOptions.wBottom[_random.Next(0, gOptions.wBottom.Length)]);
 		gOptions.gridWall.SetTransformMatrix(new Vector3Int(x , y), matrix);  
         
-		gOptions.gridWall.SetTile(new Vector3Int(x + secondX, y- secondY), GetTileByNum(getNumOfTile("wTop")));
+		gOptions.gridWall.SetTile(new Vector3Int(x + secondX, y- secondY), gOptions.wTop[_random.Next(0, gOptions.wTop.Length)]);
 		gOptions.gridWall.SetTransformMatrix(new Vector3Int(x + secondX, y- secondY), matrix);  
 	}
 	
