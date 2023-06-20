@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 181010571996059643}
   - component: {fileID: 181010571996059641}
   - component: {fileID: 181010571996059642}
+  - component: {fileID: 8057198881372845168}
   m_Layer: 0
   m_Name: normalEnemy
   m_TagString: Enemy
@@ -73,9 +74,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1869315837
-  m_SortingLayer: 1
-  m_SortingOrder: 5
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 497287806, guid: e5278e85a2c1bfe48b7f3387314e7010, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -157,3 +158,19 @@ MonoBehaviour:
   projectileSpeed: 0
   isArcher: 0
   meleeCooldown: 0.5
+--- !u!58 &8057198881372845168
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 181010571996059647}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.05
