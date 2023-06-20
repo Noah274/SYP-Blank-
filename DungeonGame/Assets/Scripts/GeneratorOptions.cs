@@ -33,8 +33,6 @@ public class GeneratorOptions : MonoBehaviour
     public Tile[] fGrass;
     public Tile fSpawnPoint;
     public Tile[] fStone;
-    public GameObject[] wdawd;
-    
     
     [Header("Tiles - GenerateGrid")]
     public Tile[] wTop;
