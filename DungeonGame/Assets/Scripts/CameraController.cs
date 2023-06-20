@@ -4,8 +4,7 @@ public class CameraController : MonoBehaviour
 {
     private GameObject targetRoom;
     private Vector3 offset;
-    private int spawn = 1;
-    
+
     public void StartCamera(int roomNumber)
     {
         FindTargetRoom(roomNumber); 

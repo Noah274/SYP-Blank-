@@ -69,8 +69,6 @@ public class BossAI : MonoBehaviour
 
     public void SpawnObjects()
     {
-        Vector2 pos;
-
         int randomItem = Random.Range(0, spawnPool.Count);
         GameObject toSpawn = spawnPool[randomItem];
 
