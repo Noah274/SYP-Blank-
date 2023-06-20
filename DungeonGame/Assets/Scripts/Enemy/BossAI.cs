@@ -24,6 +24,7 @@ public class BossAI : MonoBehaviour
 
     private bool canAttack = true;
     private bool canLaunchSlowProjectile = true;
+    private bool isFrozen = true;
     private float distance;
     private Vector3 position;
 
@@ -35,29 +36,33 @@ public class BossAI : MonoBehaviour
 
     void Update()
     {
-        distance = Vector2.Distance(transform.position, player.transform.position);
-        Vector2 direction = player.transform.position - position;
-        direction.Normalize();
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-
-        if (distance < distanceBetween)
+        if (!isFrozen)
         {
-            transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
-            transform.rotation = Quaternion.Euler(Vector3.forward * angle);
-        }
+            distance = Vector2.Distance(transform.position, player.transform.position);
+            Vector2 direction = player.transform.position - position;
+            direction.Normalize();
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
-        if (isArcher)
-        {
-            if (canAttack)
+            if (distance < distanceBetween)
             {
-                LaunchProjectile();
-                StartCoroutine(AttackCooldown());
+                transform.position =
+                    Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
+                transform.rotation = Quaternion.Euler(Vector3.forward * angle);
             }
 
-            if (canLaunchSlowProjectile)
+            if (isArcher)
             {
-                LaunchSlowProjectile();
-                StartCoroutine(SlowProjectileCooldown());
+                if (canAttack)
+                {
+                    LaunchProjectile();
+                    StartCoroutine(AttackCooldown());
+                }
+
+                if (canLaunchSlowProjectile)
+                {
+                    LaunchSlowProjectile();
+                    StartCoroutine(SlowProjectileCooldown());
+                }
             }
         }
     }
@@ -105,6 +110,8 @@ public class BossAI : MonoBehaviour
     {
         GameObject projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
         Rigidbody2D projectileRb = projectile.GetComponent<Rigidbody2D>();
+        GameObject createdObjectsContainer = GameObject.Find("createdObjects");
+        projectile.transform.SetParent(createdObjectsContainer.transform);
         if (projectileRb != null)
         {
             Vector2 direction = (player.transform.position - transform.position).normalized;
@@ -131,7 +138,8 @@ public class BossAI : MonoBehaviour
     void LaunchSlowProjectile()
     {
         GameObject slowProjectile = Instantiate(slowProjectilePrefab, transform.position, Quaternion.identity);
-        Rigidbody2D slowProjectileRb = slowProjectile.GetComponent<Rigidbody2D>();
+        Rigidbody2D slowProjectileRb = slowProjectile.GetComponent<Rigidbody2D>();GameObject createdObjectsContainer = GameObject.Find("createdObjects");
+        slowProjectile.transform.SetParent(createdObjectsContainer.transform);
         if (slowProjectileRb != null)
         {
             StartCoroutine(FollowPlayerForDuration(slowProjectileRb, slowProjectileSpeed, 2f));
@@ -178,5 +186,10 @@ public class BossAI : MonoBehaviour
         canLaunchSlowProjectile = false;
         yield return new WaitForSeconds(slowProjectileCooldown);
         canLaunchSlowProjectile = true;
+    }
+
+    public void StartAttack()
+    {
+        isFrozen = false;
     }
 }

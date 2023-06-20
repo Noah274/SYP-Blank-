@@ -83,37 +83,53 @@ public class RoomLogic : MonoBehaviour
             //Debug.Log("Start Teleport");
             int rotationZ = (int) rotation.eulerAngles.z;
             GameObject teleportPoint = null;
+            Vector3 newPosition;
+            newPosition.y = 0;
+            newPosition.x = 0;
             if (rotationZ == 0)
             {
                 roomID = roomObj.GetTelIdUp();
                 string roomCenterPointName = "RoomCenterPoint_" + roomID;
                 teleportPoint = GameObject.Find(roomCenterPointName);
+
+                newPosition.x = teleportPoint.transform.position.x;
+                newPosition.y = teleportPoint.transform.position.y - 3.4f;
             }
             else if (rotationZ == 90)
             {
                 roomID = roomObj.GetTelIdLeft();
                 string roomCenterPointName = "RoomCenterPoint_" + roomID;
                 teleportPoint = GameObject.Find(roomCenterPointName);
+                
+                newPosition.x = teleportPoint.transform.position.x + 10.4f;
+                newPosition.y = teleportPoint.transform.position.y;
             }
             else if (rotationZ == 180)
             {
                 roomID = roomObj.GetTelIdDown();
                 string roomCenterPointName = "RoomCenterPoint_" + roomID;
                 teleportPoint = GameObject.Find(roomCenterPointName);
+                
+                newPosition.x = teleportPoint.transform.position.x;
+                newPosition.y = teleportPoint.transform.position.y + 5.4f;
             }
             else if (rotationZ == 270)
             {
                 roomID = roomObj.GetTelIdRight();
                 string roomCenterPointName = "RoomCenterPoint_" + roomID;
                 teleportPoint = GameObject.Find(roomCenterPointName);
+                
+                newPosition.x = teleportPoint.transform.position.x - 10.4f;
+                newPosition.y = teleportPoint.transform.position.y;
             }
+            
             
             
             if (teleportPoint != null)
             {
                 GameObject player = GameObject.FindWithTag("Player");
                 
-                player.transform.position = teleportPoint.transform.position;
+                player.transform.position = new Vector3(newPosition.x, newPosition.y, player.transform.position.z);
                 player.transform.rotation = teleportPoint.transform.rotation;
                 
                 /*

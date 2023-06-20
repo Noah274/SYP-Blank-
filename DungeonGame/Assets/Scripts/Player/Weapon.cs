@@ -13,7 +13,7 @@ public class Weapon : MonoBehaviour
 
     public void Fire()
     {
-        if (!PauseMenu.GameIsPaused)
+        if (!pauseMenu.GameIsPaused)
         {
             GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
             GameObject createdObjectsContainer = GameObject.Find("createdObjects");
