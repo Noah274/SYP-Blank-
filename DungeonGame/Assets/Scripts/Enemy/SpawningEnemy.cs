@@ -16,37 +16,45 @@ public class SpawningEnemy : MonoBehaviour
         this.gOptions = gOptions;
         this.roomNumber = roomNumber;
 
-        if (isRoomDone(roomNumber))
-        {
-            return;
-        }
         int level = gOptions.layerLevel;
-
         int enemyCount = _random.Next((level + 3), ((level + 4)* 2));
-        //Debug.Log("EnemyCount: " + enemyCount);
+        
+        StartCoroutine(WaitForASecondToSpawnEnemy(enemyCount));
+    }
+    
+
+    
+    private IEnumerator WaitForASecondToSpawnEnemy(int enemyCount)
+    {
+        yield return new WaitForSeconds(1f);
+
+
+        if (!isRoomDone(roomNumber))
+        {
+            //Debug.Log("EnemyCount: " + enemyCount);
 
         
-        Debug.Log("RoomNumber: " + roomNumber + " - Roomtype: " + roomObj.GetRoomType() + " - EnemyCount: " + enemyCount);
+            Debug.Log("RoomNumber: " + roomNumber + " - Roomtype: " + roomObj.GetRoomType() + " - EnemyCount: " + enemyCount);
         
-        if (roomObj.GetRoomType() == gOptions.bossRoom)
-        {
-            //Debug.Log("Bossroom");
-            SpawnBoss();
-        }
-        else
-        {
-            StartSpawning(enemyCount);   
+            if (roomObj.GetRoomType() == gOptions.bossRoom)
+            {
+                //Debug.Log("Bossroom");
+                SpawnBoss();
+            }
+            else
+            {
+                StartSpawning(enemyCount);   
+            }
         }
     }
     
     private bool isRoomDone(int number)
     {
         string roomCenterPointPrefix = "RoomCenterPoint_" + number.ToString();
-        //Debug.Log("check if room done - " + number.ToString());
         GameObject[] gameObjects = FindObjectsOfType<GameObject>();
         foreach (GameObject obj in gameObjects)
         {
-            if (obj.name.StartsWith(roomCenterPointPrefix))
+            if (obj.name == roomCenterPointPrefix)
             {
                 GenerateRoom roomObj = obj.GetComponent<RoomReference>().room;
                 this.roomObj = roomObj;
@@ -56,6 +64,8 @@ public class SpawningEnemy : MonoBehaviour
 
         return false;
     }
+    
+    
 
     private void Update()
     {
