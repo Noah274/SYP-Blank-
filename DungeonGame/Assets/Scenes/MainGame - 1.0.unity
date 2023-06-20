@@ -1669,6 +1669,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1707203901}
     m_Modifications:
+    - target: {fileID: 5804433127298665520, guid: 6e2cb597a22a3be4fa650f7d5e35fa4e,
+        type: 3}
+      propertyPath: fireWallPrefab
+      value: 
+      objectReference: {fileID: 4792813160405668809, guid: e89949d79346e1648989829cc6b27c60,
+        type: 3}
     - target: {fileID: 5804433127730227850, guid: 6e2cb597a22a3be4fa650f7d5e35fa4e,
         type: 3}
       propertyPath: m_RootOrder
