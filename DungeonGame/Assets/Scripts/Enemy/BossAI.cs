@@ -182,4 +182,9 @@ public class BossAI : MonoBehaviour
         yield return new WaitForSeconds(slowProjectileCooldown);
         canLaunchSlowProjectile = true;
     }
+
+    public void StartAttack()
+    {
+        throw new System.NotImplementedException();
+    }
 }
