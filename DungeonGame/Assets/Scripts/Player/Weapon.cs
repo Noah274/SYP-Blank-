@@ -30,7 +30,7 @@ public class Weapon : MonoBehaviour
         Quaternion firePointRotation = firePoint.rotation;
         Vector3 spawnPos = firePointPos + firePointDirection*spawnDistance;
 
-        if (!PauseMenu.GameIsPaused)
+        if (!pauseMenu.GameIsPaused)
         {
             Quaternion rotatedRotation = firePointRotation * Quaternion.Euler(0f, 90f, 0f);
             GameObject fireWall = Instantiate(fireWallPrefab, spawnPos, firePointRotation);
