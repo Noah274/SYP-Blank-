@@ -2259,9 +2259,18 @@ MonoBehaviour:
   fSpawnPoint: {fileID: 11400000, guid: 6d62ee5bebfab4543a4d42e4d00e4921, type: 2}
   fStone:
   - {fileID: 11400000, guid: f5945c4f4a016ae419bd0fb1152e2d1a, type: 2}
-  wdawd: []
-  wTop: {fileID: 11400000, guid: cfb6b2e88c5f0ae4c9a8decf2233316d, type: 2}
-  wBottom: {fileID: 11400000, guid: 815a98150ae40f24482bf4ae569f8718, type: 2}
+  wdawd:
+  - {fileID: 0}
+  wTop:
+  - {fileID: 11400000, guid: 18cbc117f3291f642b4ac9ca0aa22178, type: 2}
+  - {fileID: 11400000, guid: 5cb2704116eff4443b949135e9fe07f9, type: 2}
+  - {fileID: 11400000, guid: 5c0720cf3f2e0fd40ab1e12cd776ccdc, type: 2}
+  - {fileID: 11400000, guid: f6d4829a6950ff94e85270d3fa1f75ed, type: 2}
+  wBottom:
+  - {fileID: 11400000, guid: f8a08cc7e1ef4bd41ad3d91c4ae0824a, type: 2}
+  - {fileID: 11400000, guid: 46b9ac16ba9ac6d4a9d82ef266ac5150, type: 2}
+  - {fileID: 11400000, guid: 3e71cd8fd02745948b1ad875522f5f72, type: 2}
+  - {fileID: 11400000, guid: 6008c5e0b4430914e81e97e42cb887da, type: 2}
   wCorner: {fileID: 11400000, guid: 8be27a7af89a7164283e45689a61753d, type: 2}
   doorFrame: {fileID: 6644944589867386885, guid: 4be821d0b78ad5043985b57b738e951b,
     type: 3}

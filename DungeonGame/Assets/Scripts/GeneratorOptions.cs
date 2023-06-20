@@ -37,8 +37,8 @@ public class GeneratorOptions : MonoBehaviour
     
     
     [Header("Tiles - GenerateGrid")]
-    public Tile wTop;
-    public Tile wBottom;
+    public Tile[] wTop;
+    public Tile[] wBottom;
     public Tile wCorner;
 
     [Header("GameObjects")]
@@ -80,8 +80,8 @@ public class GeneratorOptions : MonoBehaviour
         tilesFilled = true;
         //Alle Tiles die es zur verfügung gibt
         //mapTile.Add(fGrass, "fGrass");
-        mapTile.Add(wTop, "wTop");
-        mapTile.Add(wBottom, "wBottom");
+        //mapTile.Add(wTop, "wTop");
+        //mapTile.Add(wBottom, "wBottom");
         mapTile.Add(wCorner, "wCorner");
         mapTile.Add(fSpawnPoint, "spawnPoint");
         
