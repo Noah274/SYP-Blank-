@@ -16,12 +16,6 @@ public class GeneratorOptions : MonoBehaviour
 {
     [Header("Options - Game")]
     public int layerLevel = 1;
-
-    [Header("Options - Player")] 
-    public int playerDamage;
-    
-    [Header("Options - buyCosts")] 
-    public int increaseDamageCosts;
     
     [Header("Enemy - Spawning")]
     public GameObject[] enemy;
