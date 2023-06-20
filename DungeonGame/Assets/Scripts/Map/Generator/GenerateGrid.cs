@@ -15,14 +15,14 @@ public class GenerateGrid : MonoBehaviour
 {
 	private GeneratorOptions gOptions;
 	private System.Random _random = new System.Random();
-	private LinkedList<GenerateRoom> rooms = new LinkedList<GenerateRoom>();
+	private LinkedList<GenerateRoom> rooms;
 
 
 	public void StartGenerationGrid(GeneratorOptions gOptions)
 	{
 		this.gOptions = gOptions;
 
-		rooms.Clear();	
+		rooms = new LinkedList<GenerateRoom>();
 		
 		GoThroughLayer();
 		PrintLayer();
@@ -551,9 +551,9 @@ public class GenerateGrid : MonoBehaviour
 		{
 			doorsPlace[3] = layerArray[layerPosX + 1, layerPosY];
 		}
-		
 
-		
+
+		//Debug.Log("RoomType create: " + roomNumber);
 		rooms.AddLast(new GenerateRoom(gOptions,roomNumber,  layerPosX,  layerPosY, rooms.Count+1, doorsPlace));
 	}
 
