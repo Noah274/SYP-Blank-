@@ -4,13 +4,16 @@ using UnityEngine.SceneManagement;
 
 namespace Menu
 {
-public class PauseMenu :MonoBehaviour
+public class pauseMenu :MonoBehaviour
 {
     [SerializeField] public GameObject PauseObj;
     
     public static GameObject PauseMenuUI;
     
     public static bool GameIsPaused = false;
+    
+    
+    
     
     private void Start()
     {
