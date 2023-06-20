@@ -38,11 +38,12 @@ public class HandlingFinishedLayer : MonoBehaviour
     
     private IEnumerator WaitForTwoSeconds()
     {
-        Debug.Log("Start waiting");
+        //Debug.Log("Start waiting");
         gOptions.levelText.gameObject.SetActive(true);
         gOptions.levelText.text = "Nächstes Level: " +  gOptions.layerLevel;
         yield return new WaitForSeconds(gOptions.waitingTime);
-        Debug.Log("Finish waiting");        
+        
+        //Debug.Log("Finish waiting");        
         gOptions.levelText.gameObject.SetActive(false);
         
         MakeNewLayer();

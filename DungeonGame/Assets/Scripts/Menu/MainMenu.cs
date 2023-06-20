@@ -11,6 +11,7 @@ namespace Menu
         }
         public void GoBackToMenu()
         {
+            Coin.totalCoins=0;
             SceneManager.LoadScene("StartScreen");
         }
     

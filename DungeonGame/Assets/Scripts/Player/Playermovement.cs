@@ -6,6 +6,8 @@ public class Playermovement : MonoBehaviour
     public float speed;
     public Rigidbody2D rb;
     public Weapon weapon;
+    private float bulletStart = 0f;
+    public float bulletCooldown = 0.05f;
 
     Vector2 moveDirection;
     Vector2 mousePosition;
@@ -32,8 +34,13 @@ public class Playermovement : MonoBehaviour
         mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         if(Input.GetMouseButtonDown(0))
         {
-            weapon.Fire();
+            if (bulletCooldown+ bulletStart < Time.time)
+            {
+                weapon.Fire();
+                bulletStart = Time.time;
+            }
         }
+        
     }
 
     private void FixedUpdate()
