@@ -3,7 +3,7 @@
 + Noah Grundner
 + Jonas Schönbaß
 + Paul Krenmayr
-+ Lorenz Kasiezcka
++ Jonas Pamminger
 
 ## Ideas
 + Skill Tree
