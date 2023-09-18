@@ -4,6 +4,8 @@
 + Jonas Schönbaß
 + Paul Krenmayr
 + Jonas Pamminger
++ Lorenz Kasietzcka
+  
 
 ## Ideas
 + Skill Tree
