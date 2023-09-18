@@ -3,7 +3,6 @@
 + Noah Grundner
 + Jonas Schönbaß
 + Paul Krenmayr
-+ Jonas Pamminger
 + Lorenz Kasietzcka
   
 
